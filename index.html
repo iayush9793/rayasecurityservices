@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiant Guards - Premium Security Services</title>
-    <!-- Lucide Icons CDN for clean icon representations -->
+    <title>Raya Security Services Pvt. Ltd. - Your Safety, Our Priority</title>
+    <!-- Lucide Icons CDN for professional, modern icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -13,18 +13,19 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --bg-dark: #0b0c10;
-            --bg-card: #1f2833;
-            --text-light: #c5c6c7;
-            --text-bright: #ffffff;
-            --primary-gold: #c5a880;
-            --primary-gold-hover: #b39268;
-            --light-accent: #f4f6f9;
-            --text-dark: #1f2833;
+            --bg-dark: #05162e;          /* Dark Corporate Navy Blue from Media.jpg */
+            --bg-card: #0b2545;          /* Professional Slate Blue Card Background */
+            --text-light: #d5e1f0;       /* Soft Light Blue-Gray Text */
+            --text-bright: #ffffff;      /* Pure White Text */
+            --primary-gold: #e5a93b;     /* Dynamic Brand Gold Accent from Media.jpg */
+            --primary-gold-hover: #c9922b; /* Slightly Deeper Gold Accent on Hover */
+            --light-accent: #f0f4f9;     /* Soft Light Blue-Slate Accent Background */
+            --text-dark: #05162e;        /* Dark Navy for Light Backgrounds */
+            --corporate-blue: #134074;   /* Deep Royal Blue Accent */
         }
 
         body {
@@ -38,7 +39,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .text-center { text-align: center; }
@@ -50,41 +51,64 @@
             letter-spacing: 2px;
             font-size: 0.85rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         h2 {
             color: var(--text-bright);
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+            font-size: 2.4rem;
+            margin-bottom: 45px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        /* --- Navigation --- */
+        /* --- Navigation Bar --- */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(11, 12, 16, 0.95);
+            padding: 22px 6%;
+            background-color: rgba(5, 22, 46, 0.96);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+            border-bottom: 1px solid rgba(229, 169, 59, 0.15);
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .logo-container {
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-bright);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .navbar .logo span {
             color: var(--primary-gold);
+        }
+
+        .navbar .sublogo {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--text-light);
+            text-transform: uppercase;
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
+            margin: 0 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
 
@@ -92,96 +116,131 @@
 
         /* --- Buttons --- */
         .btn {
-            padding: 10px 24px;
+            padding: 12px 28px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-primary {
             background-color: var(--primary-gold);
-            color: #000;
+            color: var(--text-dark);
+            box-shadow: 0 4px 14px rgba(229, 169, 59, 0.3);
         }
 
-        .btn-primary:hover { background-color: var(--primary-gold-hover); }
+        .btn-primary:hover { 
+            background-color: var(--primary-gold-hover);
+            transform: translateY(-2px);
+        }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--text-bright);
-            border: 2px solid var(--text-light);
-            margin-left: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin-left: 12px;
         }
 
         .btn-secondary:hover {
-            background-color: var(--text-bright);
-            color: var(--bg-dark);
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+            transform: translateY(-2px);
         }
 
         /* --- Hero Section --- */
         .hero {
-            height: 90vh;
-            background: url('https://via.placeholder.com/1920x1080?text=Security+Operations+Background') no-repeat center center/cover;
+            min-height: 95vh;
+            background: url('https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Security+Command+Center+Operations') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(11,12,16,0.85), rgba(11,12,16,0.95));
+            background: linear-gradient(rgba(5, 22, 46, 0.88), rgba(5, 22, 46, 0.96));
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 800px;
+            max-width: 850px;
+            padding: 20px;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: var(--text-bright);
-            margin: 15px 0 25px 0;
-            line-height: 1.2;
+            margin: 20px 0 25px 0;
+            line-height: 1.25;
+            font-weight: 900;
+            letter-spacing: -1px;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            color: var(--text-light);
+            font-weight: 400;
         }
 
         .badge {
             border: 1px solid var(--primary-gold);
-            padding: 4px 12px;
-            font-size: 0.75rem;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
             border-radius: 20px;
             color: var(--primary-gold);
+            background: rgba(229, 169, 59, 0.1);
+            letter-spacing: 1.5px;
         }
 
         /* --- Stats Bar --- */
         .stats-bar {
-            background-color: rgba(197, 168, 128, 0.05);
+            background-color: rgba(11, 37, 69, 0.4);
             display: flex;
             justify-content: space-around;
-            padding: 30px 5%;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+            padding: 40px 5%;
+            border-bottom: 1px solid rgba(229, 169, 59, 0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 20;
+        }
+
+        .stat-item {
+            text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary-gold);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-bright);
+            font-weight: 500;
         }
 
         /* --- Common Layout Grids --- */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
@@ -196,24 +255,28 @@
         /* --- About Section --- */
         .about-image img {
             width: 100%;
-            border-radius: 8px;
-            border: 1px solid rgba(197, 168, 128, 0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(229, 169, 59, 0.25);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
         .features-list {
             list-style: none;
-            margin: 20px 0 30px 0;
+            margin: 25px 0 35px 0;
         }
 
         .features-list li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            font-size: 1.05rem;
         }
 
         .features-list li svg {
             color: var(--primary-gold);
-            margin-right: 12px;
+            margin-right: 14px;
+            flex-shrink: 0;
+            margin-top: 3px;
         }
 
         /* --- Why Choose Us (Light Theme Accent) --- */
@@ -226,149 +289,290 @@
 
         .clean-card {
             background: var(--text-bright);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            padding-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(5, 22, 46, 0.08);
+            border: 1px solid rgba(19, 64, 116, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .clean-card img { width: 100%; height: 200px; object-fit: cover; }
-        .clean-card h3 { margin: 15px; color: var(--text-dark); }
-        .clean-card p { margin: 0 15px; font-size: 0.95rem; color: #555; }
+        .clean-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(5, 22, 46, 0.15);
+        }
+
+        .clean-card img { width: 100%; height: 220px; object-fit: cover; }
+        .clean-card h3 { margin: 20px 20px 10px 20px; color: var(--text-dark); font-size: 1.35rem; }
+        .clean-card p { margin: 0 20px; font-size: 1rem; color: #5a6b82; }
 
         /* --- Services (Dark Cards Grid) --- */
         .service-card {
             background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(229, 169, 59, 0.08);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary-gold);
+            background-color: rgba(11, 37, 69, 0.8);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .service-icon-box {
+            background: rgba(229, 169, 59, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(229, 169, 59, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--primary-gold);
+            color: var(--text-dark);
         }
 
         .service-card svg {
-            width: 40px; height: 40px;
+            width: 32px; height: 32px;
             color: var(--primary-gold);
-            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover svg {
+            color: var(--text-dark);
         }
 
         .service-card h3 {
             color: var(--text-bright);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
         }
 
         /* --- Brands --- */
         .logo-cloud {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            align-items: center;
+            gap: 50px;
             flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .logo-cloud img {
+            max-height: 55px;
             opacity: 0.6;
+            filter: grayscale(100%) invert(100%);
+            transition: opacity 0.3s, filter 0.3s;
+        }
+
+        .logo-cloud img:hover {
+            opacity: 1;
+            filter: none;
         }
 
         /* --- Certifications --- */
         .cert-card {
-            background: transparent;
+            background: rgba(11, 37, 69, 0.25);
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
         }
 
         .cert-card img {
             width: 100%;
-            max-width: 260px;
+            max-width: 280px;
             height: auto;
-            border-radius: 4px;
-            margin-bottom: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* --- Map --- */
+        .cert-card h3 {
+            color: var(--text-bright);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- Map Footprint --- */
+        .map-section {
+            background: radial-gradient(circle at center, #0b2545 0%, #05162e 100%);
+        }
+
+        .map-container {
+            margin-top: 30px;
+            display: inline-block;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(229, 169, 59, 0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
         .map-img {
             width: 100%;
-            max-width: 900px;
-            opacity: 0.7;
+            max-width: 950px;
+            display: block;
         }
 
         /* --- Testimonials --- */
         .testimonial-card {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.02);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(197, 168, 128, 0.1);
+            background: rgba(11, 37, 69, 0.4);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(229, 169, 59, 0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
         }
 
         .quote-icon {
-            width: 40px; height: 40px;
+            width: 45px; height: 45px;
             color: var(--primary-gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .quote-text {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--text-bright);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            line-height: 1.7;
         }
 
         /* --- Insights / Blogs --- */
         .blog-card {
             background: var(--bg-card);
-            border-radius: 6px;
+            border-radius: 10px;
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
         }
 
-        .blog-card img { width: 100%; height: 220px; object-fit: cover; }
-        .blog-meta { padding: 15px 20px 5px 20px; font-size: 0.8rem; color: var(--primary-gold); }
-        .blog-card h3 { padding: 0 20px 20px 20px; color: var(--text-bright); font-size: 1.2rem; }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .blog-card img { width: 100%; height: 240px; object-fit: cover; }
+        .blog-meta { padding: 20px 20px 5px 20px; font-size: 0.85rem; color: var(--primary-gold); font-weight: 600; }
+        .blog-card h3 { padding: 0 20px 20px 20px; color: var(--text-bright); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
         .read-more {
             display: flex;
             align-items: center;
-            padding: 0 20px 20px 20px;
+            gap: 6px;
+            padding: 0 20px 25px 20px;
             color: var(--primary-gold);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--text-bright);
         }
 
         /* --- Footer --- */
         .main-footer {
-            background-color: #050608;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 60px;
-            font-size: 0.9rem;
+            background-color: #020b17;
+            border-top: 1px solid rgba(229, 169, 59, 0.15);
+            padding-top: 80px;
+            font-size: 0.95rem;
         }
 
         .grid-4 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-links h4 { color: var(--text-bright); margin-bottom: 15px; }
+        .footer-info h3 {
+            font-size: 1.5rem;
+            color: var(--text-bright);
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .footer-info h3 span {
+            color: var(--primary-gold);
+        }
+
+        .footer-links h4 { 
+            color: var(--text-bright); 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-gold);
+        }
+
         .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 8px; }
-        .footer-links ul li a { color: var(--text-light); text-decoration: none; }
+        .footer-links ul li { margin-bottom: 12px; }
+        .footer-links ul li a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
         .footer-links ul li a:hover { color: var(--primary-gold); }
         
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .footer-contact-item svg {
+            color: var(--primary-gold);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
         .footer-bottom {
             padding: 30px 0;
-            margin-top: 40px;
+            margin-top: 50px;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         /* --- Responsive Layout Configurations --- */
+        @media (max-width: 991px) {
+            .two-col { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+
         @media (max-width: 768px) {
-            .two-col { grid-template-columns: 1fr; }
             .navbar { padding: 15px 5%; }
             .nav-links { display: none; }
             .hero-content h1 { font-size: 2.3rem; }
-            .stats-bar { flex-direction: column; gap: 20px; text-align: center; }
+            .stats-bar { flex-direction: column; gap: 30px; text-align: center; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -376,80 +580,96 @@
 
     <!-- Header / Navbar -->
     <header class="navbar">
-        <div class="logo">Radiant Guards</div>
+        <div class="logo-container">
+            <div class="logo">RAYA <span>SECURITY</span></div>
+            <div class="sublogo">Your Safety, Our Priority</div>
+        </div>
         <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#why-choose">Why Us</a>
             <a href="#services">Services</a>
-            <a href="#industries">Industries</a>
+            <a href="#certifications">Compliances</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#insights">Insights</a>
         </nav>
-        <button class="btn btn-primary">Contact Us</button>
+        <a href="#contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="badge">TRUSTED SECURITY PARTNER</span>
-            <h1>Security Excellence Anywhere, Anytime</h1>
-            <p>Providing premier, highly trained tactical and guarding solutions across the region with uncompromised integrity.</p>
+            <span class="badge">RAYA SECURITY SERVICES PVT. LTD.</span>
+            <h1>Your Safety, Our Absolute Priority</h1>
+            <p>Providing premier tactical physical guarding, background-verified security parameters, and 24/7 technical monitoring solutions designed to protect your physical premises with high integrity.</p>
             <div class="hero-actions">
-                <button class="btn btn-primary">Explore Services</button>
-                <button class="btn btn-secondary">Learn More</button>
+                <a href="#services" class="btn btn-primary">Our Solutions <i data-lucide="arrow-right"></i></a>
+                <a href="#contact" class="btn btn-secondary">Contact Hub</a>
             </div>
         </div>
     </section>
 
     <!-- Stats Bar -->
     <section class="stats-bar">
-        <div class="stat-item"><h3>15,000+</h3><p>Guards Deployed</p></div>
-        <div class="stat-item"><h3>250+</h3><p>Corporate Clients</p></div>
-        <div class="stat-item"><h3>15+</h3><p>Years Experience</p></div>
-        <div class="stat-item"><h3>24/7</h3><p>Active Monitoring</p></div>
+        <div class="stat-item">
+            <h3>15,000+</h3>
+            <p>Guards Deployed</p>
+        </div>
+        <div class="stat-item">
+            <h3>250+</h3>
+            <p>Corporate Clients</p>
+        </div>
+        <div class="stat-item">
+            <h3>15+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Active Support</p>
+        </div>
     </section>
 
     <!-- About / Shaping Security Section -->
     <section class="about-section" id="about">
         <div class="container two-col">
             <div class="about-image">
-                <img src="https://via.placeholder.com/600x400" alt="image1">
+                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Professional+Security+Deployment" alt="image1">
             </div>
             <div class="about-text">
                 <span class="section-tag">ABOUT OUR COMPANY</span>
                 <h2>Shaping Security That Makes India Safer</h2>
-                <p>We leverage advanced logistics, standard-setting training, and cutting-edge remote operational support to stay steps ahead of standard threat definitions.</p>
+                <p>We leverage advanced coordination networks, standard-setting physical drilling setups, and cutting-edge remote operational support grids to protect logistical hubs, enterprise buildings, and corporate infrastructure.</p>
                 <ul class="features-list">
-                    <li><i data-lucide="shield-check"></i> <strong>Rigorous Background Clearance:</strong> Verified personnel only.</li>
-                    <li><i data-lucide="users"></i> <strong>Tailored Sector Focus:</strong> Custom strategies for retail, tech, & events.</li>
-                    <li><i data-lucide="zap"></i> <strong>Rapid Crisis Response:</strong> Real-time operations desk.</li>
+                    <li><i data-lucide="shield-check"></i> <div><strong>PASARA Registered:</strong> Completely compliant with government standards.</div></li>
+                    <li><i data-lucide="users"></i> <div><strong>Elite Training Drills:</strong> Background evaluated, disciplined tactical assets.</div></li>
+                    <li><i data-lucide="zap"></i> <div><strong>24/7 Operations Desk:</strong> Constant oversight ensuring seamless communication.</div></li>
                 </ul>
-                <button class="btn btn-primary">Discover More</button>
+                <a href="#services" class="btn btn-primary">Discover More</a>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us (Light Alternate Section) -->
-    <section class="why-choose-us">
+    <section class="why-choose-us" id="why-choose">
         <div class="container text-center">
-            <span class="section-tag">WHY RADIANT?</span>
-            <h2>Why Radiant?</h2>
+            <span class="section-tag">THE RAYA ADVANTAGE</span>
+            <h2>Why Raya?</h2>
             <div class="cards-grid three-col">
                 <div class="card clean-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image2">
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2">
                     <h3>Elite Training Academy</h3>
-                    <p>Every guard goes through physical, mental, and de-escalation training regimes.</p>
+                    <p>Every field asset completes professional industrial drilling, physical fitness checkpoints, and crowd control management courses.</p>
                 </div>
                 <div class="card clean-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image3">
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3">
                     <h3>Smart Tech Integration</h3>
-                    <p>Live geo-tracking, reporting infrastructure, and instantly accessible logs.</p>
+                    <p>We utilize modern geo-tracking check-ins, allowing instant status alerts and transparent physical patrolling records.</p>
                 </div>
                 <div class="card clean-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image4">
-                    <h3>24/7 Operational Control</h3>
-                    <p>Our centralized management control room maintains persistent contact.</p>
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4">
+                    <h3>24/7 Command Control</h3>
+                    <p>Our centralized operational command hubs continuously monitor patrols and manage backup deployment networks.</p>
                 </div>
             </div>
         </div>
@@ -460,47 +680,59 @@
         <div class="container">
             <div class="text-center">
                 <span class="section-tag">OUR SERVICES</span>
-                <h2>Sectors capable tailored security solutions</h2>
+                <h2>Sectors Capable of Tailored Security Solutions</h2>
             </div>
             <div class="cards-grid three-col">
                 <div class="card service-card">
-                    <i data-lucide="shield" class="service-icon"></i>
-                    <h3>Manned Guarding</h3>
-                    <p>Professional static guard infrastructure deployed across your key physical premises.</p>
+                    <div class="service-icon-box">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Security Guards</h3>
+                    <p>Static, highly alert manned guarding professionals deployed to protect access control gates, commercial sites, and logistics lines.</p>
                 </div>
                 <div class="card service-card">
-                    <i data-lucide="user-check"></i>
-                    <h3>Executive Protection</h3>
-                    <p>Low-profile or high-visibility protection details for high-net-worth clients.</p>
+                    <div class="service-icon-box">
+                        <i data-lucide="user-check"></i>
+                    </div>
+                    <h3>Event Security</h3>
+                    <p>Comprehensive entry logistical parameters, crowd management architectures, and personal protection details for safe assemblies.</p>
                 </div>
                 <div class="card service-card">
-                    <i data-lucide="activity"></i>
-                    <h3>Event Security Logistics</h3>
-                    <p>Crowd control, entry logistics, and secure perimeter design for gatherings.</p>
+                    <div class="service-icon-box">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3>All Types of Security</h3>
+                    <p>Flexible tactical security structures matches directly to risk profiles for complexes, housing setups, and corporate spaces.</p>
                 </div>
                 <div class="card service-card">
-                    <i data-lucide="monitor"></i>
-                    <h3>CCTV Remote Surveillance</h3>
-                    <p>Continuous off-site analytics feed monitoring to prevent incidents before they escalate.</p>
+                    <div class="service-icon-box">
+                        <i data-lucide="monitor"></i>
+                    </div>
+                    <h3>CCTV Surveillance</h3>
+                    <p>Consistent remote video analysis systems highlighting potential perimeter anomalies before physical escalation paths occur.</p>
                 </div>
                 <div class="card service-card">
-                    <i data-lucide="truck"></i>
+                    <div class="service-icon-box">
+                        <i data-lucide="truck"></i>
+                    </div>
                     <h3>Cash-in-Transit</h3>
-                    <p>Armored secure logistics lines utilizing military-grade armored moving assets.</p>
+                    <p>Highly vetted security details conducting armored logistics transportation of funds and high-value physical goods safely.</p>
                 </div>
                 <div class="card service-card">
-                    <i data-lucide="alert-triangle"></i>
-                    <h3>Risk Management</h3>
-                    <p>Full risk analysis matrix sweeps to discover physical facility structural gaps.</p>
+                    <div class="service-icon-box">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <h3>Comprehensive Audits</h3>
+                    <p>On-site vulnerability audits exposing structural weaknesses, layout risks, and communication issues.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Trusted By Industry Leaders (Logos) -->
-    <section class="brands-section" id="industries">
+    <section class="brands-section">
         <div class="container text-center">
-            <h2>Trusted by Industry Leaders</h2>
+            <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Trusted by Industry Leaders</h2>
             <div class="logo-cloud">
                 <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5">
                 <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6">
@@ -512,7 +744,7 @@
     </section>
 
     <!-- Certification / Verification Grid -->
-    <section class="certifications-section">
+    <section class="certifications-section" id="certifications">
         <div class="container">
             <div class="text-center">
                 <span class="section-tag">COMPLIANCE</span>
@@ -520,19 +752,19 @@
             </div>
             <div class="cards-grid three-col">
                 <div class="card cert-card">
-                    <img src="https://via.placeholder.com/300x400" alt="image10">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+9001:2015+Certificate" alt="image10">
                     <h3>ISO 9001:2015</h3>
-                    <p>Certified Quality Management Systems execution protocols.</p>
+                    <p>Demonstrating global standards in quality management protocols and administration process flows.</p>
                 </div>
                 <div class="card cert-card">
-                    <img src="https://via.placeholder.com/300x400" alt="image11">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=PASARA+License+Raya" alt="image11">
                     <h3>PASARA License</h3>
-                    <p>Fully compliant with Private Security Agencies Regulation Act standards.</p>
+                    <p>Fully compliant with the Private Security Agencies Regulation Act standards across regions.</p>
                 </div>
                 <div class="card cert-card">
-                    <img src="https://via.placeholder.com/300x400" alt="image12">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+45001:2018+Certificate" alt="image12">
                     <h3>ISO 45001:2018</h3>
-                    <p>Top-tier occupational health & safety management validation standard.</p>
+                    <p>Certified operational occupational safety methodologies deployed directly inside site configurations.</p>
                 </div>
             </div>
         </div>
@@ -541,10 +773,10 @@
     <!-- Map Geographic Footprint -->
     <section class="map-section">
         <div class="container text-center">
-            <span class="section-tag">FOOTPRINT</span>
+            <span class="section-tag">OUR FOOTPRINT</span>
             <h2>Our Operational Reach</h2>
             <div class="map-container">
-                <img src="https://via.placeholder.com/800x400?text=Operational+Geographic+Map+Representation" alt="image13" class="map-img">
+                <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="map-img">
             </div>
         </div>
     </section>
@@ -557,9 +789,9 @@
             <div class="testimonial-carousel">
                 <div class="testimonial-card">
                     <i data-lucide="quote" class="quote-icon"></i>
-                    <p class="quote-text">"Radiant Guards completely transformed our logistics center's dynamic. Their swift operational setup and flawless technical asset compliance are completely unrivaled."</p>
-                    <h4>Vikram Malhotra</h4>
-                    <span>COO, National Logistics Corp</span>
+                    <p class="quote-text">"Raya Security Services completely transformed our logistics center's dynamic in Pune. Their static guard units are exceptionally disciplined, always punctual, and communicate with transparency."</p>
+                    <h4>Shreevardhan Deshmukh</h4>
+                    <span style="color: var(--primary-gold); font-size: 0.9rem; font-weight: 700;">VP of Operations, Maharashtra Logistics Hub</span>
                 </div>
             </div>
         </div>
@@ -570,23 +802,23 @@
         <div class="container">
             <div class="text-center">
                 <span class="section-tag">INSIGHTS</span>
-                <h2>Founders Articles As City Guides</h2>
+                <h2>Founders Articles & Safety Guides</h2>
             </div>
             <div class="cards-grid three-col">
                 <div class="card blog-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image14">
-                    <div class="blog-meta"><span>July 10, 2026</span> • <span>Security Management</span></div>
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Modern+Threat+Controls" alt="image14">
+                    <div class="blog-meta"><span>July 10, 2026</span> • <span>Threat Mitigation</span></div>
                     <h3>Understanding Modern Electronic Threat Control Networks</h3>
                     <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
                 </div>
                 <div class="card blog-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image15">
-                    <div class="blog-meta"><span>July 05, 2026</span> • <span>Safety Protocols</span></div>
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Corporate+Enterprise+Guarding" alt="image15">
+                    <div class="blog-meta"><span>July 05, 2026</span> • <span>Enterprise Scale</span></div>
                     <h3>How Corporate Enterprise Scalability Shifts Guarding Needs</h3>
                     <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
                 </div>
                 <div class="card blog-card">
-                    <img src="https://via.placeholder.com/400x250" alt="image16">
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Crowd+De-escalation" alt="image16">
                     <div class="blog-meta"><span>June 28, 2026</span> • <span>Operations</span></div>
                     <h3>De-escalation Mechanics Within High Crowd Environments</h3>
                     <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
@@ -596,36 +828,66 @@
     </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" id="contact">
         <div class="container grid-4">
             <div class="footer-info">
-                <h3>Radiant Guards</h3>
-                <p>Premium modern security architecture engineering platforms serving businesses nationwide.</p>
+                <h3>RAYA <span>SECURITY</span></h3>
+                <p style="margin-bottom: 20px;">Premium modern safety architecture and verified personnel solutions serving corporate structures, logistics grids, and event venues across India.</p>
+                <div style="font-weight: 700; color: var(--primary-gold); font-size: 1.1rem; margin-bottom: 5px;">
+                    Call Support: +91 8624998789
+                </div>
+                <div style="font-weight: 700; color: #25D366; font-size: 1.1rem;">
+                    WhatsApp: +91 9284022701
+                </div>
             </div>
+            
             <div class="footer-links">
                 <h4>Core Operations</h4>
                 <ul>
-                    <li><a href="#">Manned Guard Detail</a></li>
-                    <li><a href="#">Asset Tracking</a></li>
-                    <li><a href="#">Corporate Consultations</a></li>
+                    <li><a href="#services">Security Guards</a></li>
+                    <li><a href="#services">Event Security Logistics</a></li>
+                    <li><a href="#services">All Types of Security</a></li>
+                    <li><a href="#services">Vulnerability Audit Sweeps</a></li>
                 </ul>
             </div>
+
             <div class="footer-links">
-                <h4>Legal & Compliances</h4>
-                <ul>
-                    <li><a href="#">PASARA Registry</a></li>
-                    <li><a href="#">Privacy Framework</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
+                <h4>Branch Addresses</h4>
+                <div class="footer-contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <strong>Nagpur HO:</strong><br>
+                        B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <strong>Pune Branch:</strong><br>
+                        Shop No. 17 Ellora Shopee Complex, Indrayani Nagar, Bhosari, Pune - 411026
+                    </div>
+                </div>
             </div>
+
             <div class="footer-links">
                 <h4>Reach Us</h4>
-                <p>Corporate Hub, Sector 62,<br>Noida, India</p>
-                <p>Email: desk@radiantguards.io</p>
+                <div class="footer-contact-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        info@rayasecurityservices.com<br>
+                        rayasecurityservices7860@gmail.com
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i data-lucide="globe"></i>
+                    <div>
+                        www.rayasecurityservices.com
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2026 Radiant Guards Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Raya Security Services Pvt. Ltd. All Rights Reserved. | Your Safety, Our Priority.</p>
         </div>
     </footer>
 
@@ -634,7 +896,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Simple interaction scripts for modern UX components 
+        // Interactive states and dynamic script setups
         document.addEventListener('DOMContentLoaded', () => {
             
             // Smooth scrolling alignment for navigation triggers
@@ -648,22 +910,24 @@
                     
                     if (targetSection) {
                         window.scrollTo({
-                            top: targetSection.offsetTop - 80, // Accounts for sticky navbar height offset
+                            top: targetSection.offsetTop - 85, // Accounts for sticky navbar offset
                             behavior: 'smooth'
                         });
                     }
                 });
             });
 
-            // Sticky Navbar transparency dynamic configuration adjustment
+            // Sticky Navbar transparency dynamic adjustment
             const navbar = document.querySelector('.navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    navbar.style.backgroundColor = 'rgba(11, 12, 16, 0.98)';
-                    navbar.style.padding = '12px 5%';
+                    navbar.style.backgroundColor = 'rgba(5, 22, 46, 0.98)';
+                    navbar.style.padding = '14px 6%';
+                    navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
                 } else {
-                    navbar.style.backgroundColor = 'rgba(11, 12, 16, 0.95)';
-                    navbar.style.padding = '20px 5%';
+                    navbar.style.backgroundColor = 'rgba(5, 22, 46, 0.96)';
+                    navbar.style.padding = '22px 6%';
+                    navbar.style.boxShadow = 'none';
                 }
             });
         });
