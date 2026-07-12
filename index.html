@@ -4,930 +4,762 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raya Security Services Pvt. Ltd. - Your Safety, Our Priority</title>
-    <!-- Lucide Icons CDN for professional, modern icons -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#05162e',       /* Deep corporate navy from Media.jpg */
+                            slate: '#0b2545',      /* Slate blue card background */
+                            gold: '#e5a93b',       /* Dynamic brand gold accent from Media.jpg */
+                            goldHover: '#c9922b',  /* Gold hover state */
+                            lightBlue: '#d5e1f0',  /* Premium soft light text contrast */
+                            darkText: '#020b17',   /* Ultra dark gray for deep elements */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* --- Global Reset & Variables --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Webkit scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        :root {
-            --bg-dark: #05162e;          /* Dark Corporate Navy Blue from Media.jpg */
-            --bg-card: #0b2545;          /* Professional Slate Blue Card Background */
-            --text-light: #d5e1f0;       /* Soft Light Blue-Gray Text */
-            --text-bright: #ffffff;      /* Pure White Text */
-            --primary-gold: #e5a93b;     /* Dynamic Brand Gold Accent from Media.jpg */
-            --primary-gold-hover: #c9922b; /* Slightly Deeper Gold Accent on Hover */
-            --light-accent: #f0f4f9;     /* Soft Light Blue-Slate Accent Background */
-            --text-dark: #05162e;        /* Dark Navy for Light Backgrounds */
-            --corporate-blue: #134074;   /* Deep Royal Blue Accent */
+        ::-webkit-scrollbar-track {
+            background: #020b17;
         }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
+        ::-webkit-scrollbar-thumb {
+            background: #134074;
+            border-radius: 4px;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 0;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e5a93b;
         }
-
-        .text-center { text-align: center; }
         
-        .section-tag {
-            color: var(--primary-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 12px;
+        /* Premium glass panels styled exactly like image_8195c9.jpg */
+        .glass-panel {
+            background: rgba(5, 22, 46, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(229, 169, 59, 0.15);
         }
 
-        h2 {
-            color: var(--text-bright);
-            font-size: 2.4rem;
-            margin-bottom: 45px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        /* --- Navigation Bar --- */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 6%;
-            background-color: rgba(5, 22, 46, 0.96);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(229, 169, 59, 0.15);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar .logo-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .navbar .logo {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--text-bright);
-            letter-spacing: 1px;
-            line-height: 1.1;
-        }
-
-        .navbar .logo span {
-            color: var(--primary-gold);
-        }
-
-        .navbar .sublogo {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            color: var(--text-light);
-            text-transform: uppercase;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 16px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary-gold); }
-
-        /* --- Buttons --- */
-        .btn {
-            padding: 12px 28px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-gold);
-            color: var(--text-dark);
-            box-shadow: 0 4px 14px rgba(229, 169, 59, 0.3);
-        }
-
-        .btn-primary:hover { 
-            background-color: var(--primary-gold-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-bright);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            margin-left: 12px;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary-gold);
-            color: var(--primary-gold);
-            transform: translateY(-2px);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 95vh;
-            background: url('https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Security+Command+Center+Operations') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding-top: 100px;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(5, 22, 46, 0.88), rgba(5, 22, 46, 0.96));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 850px;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.8rem;
-            color: var(--text-bright);
-            margin: 20px 0 25px 0;
-            line-height: 1.25;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 35px;
-            color: var(--text-light);
-            font-weight: 400;
-        }
-
-        .badge {
-            border: 1px solid var(--primary-gold);
-            padding: 6px 16px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 20px;
-            color: var(--primary-gold);
-            background: rgba(229, 169, 59, 0.1);
-            letter-spacing: 1.5px;
-        }
-
-        /* --- Stats Bar --- */
-        .stats-bar {
-            background-color: rgba(11, 37, 69, 0.4);
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 5%;
-            border-bottom: 1px solid rgba(229, 169, 59, 0.15);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            z-index: 20;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--primary-gold);
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .stat-item p {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-bright);
-            font-weight: 500;
-        }
-
-        /* --- Common Layout Grids --- */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .cards-grid {
-            display: grid;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .three-col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-        /* --- About Section --- */
-        .about-image img {
-            width: 100%;
-            border-radius: 12px;
+        .glass-badge {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(229, 169, 59, 0.25);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
-        .features-list {
-            list-style: none;
-            margin: 25px 0 35px 0;
-        }
-
-        .features-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            font-size: 1.05rem;
-        }
-
-        .features-list li svg {
-            color: var(--primary-gold);
-            margin-right: 14px;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        /* --- Why Choose Us (Light Theme Accent) --- */
-        .why-choose-us {
-            background-color: var(--light-accent);
-            color: var(--text-dark);
-        }
-
-        .why-choose-us h2 { color: var(--text-dark); }
-
-        .clean-card {
-            background: var(--text-bright);
-            border-radius: 12px;
-            overflow: hidden;
-            padding-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(5, 22, 46, 0.08);
-            border: 1px solid rgba(19, 64, 116, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .clean-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(5, 22, 46, 0.15);
-        }
-
-        .clean-card img { width: 100%; height: 220px; object-fit: cover; }
-        .clean-card h3 { margin: 20px 20px 10px 20px; color: var(--text-dark); font-size: 1.35rem; }
-        .clean-card p { margin: 0 20px; font-size: 1rem; color: #5a6b82; }
-
-        /* --- Services (Dark Cards Grid) --- */
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 40px 30px;
-            border-radius: 10px;
-            border: 1px solid rgba(229, 169, 59, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-gold);
-            background-color: rgba(11, 37, 69, 0.8);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .service-icon-box {
-            background: rgba(229, 169, 59, 0.1);
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(229, 169, 59, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon-box {
-            background: var(--primary-gold);
-            color: var(--text-dark);
-        }
-
-        .service-card svg {
-            width: 32px; height: 32px;
-            color: var(--primary-gold);
-            transition: color 0.3s;
-        }
-
-        .service-card:hover svg {
-            color: var(--text-dark);
-        }
-
-        .service-card h3 {
-            color: var(--text-bright);
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-        }
-
-        /* --- Brands --- */
-        .logo-cloud {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .logo-cloud img {
-            max-height: 55px;
-            opacity: 0.6;
-            filter: grayscale(100%) invert(100%);
-            transition: opacity 0.3s, filter 0.3s;
-        }
-
-        .logo-cloud img:hover {
-            opacity: 1;
-            filter: none;
-        }
-
-        /* --- Certifications --- */
-        .cert-card {
-            background: rgba(11, 37, 69, 0.25);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .cert-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-5px);
-        }
-
-        .cert-card img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cert-card h3 {
-            color: var(--text-bright);
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        /* --- Map Footprint --- */
-        .map-section {
-            background: radial-gradient(circle at center, #0b2545 0%, #05162e 100%);
-        }
-
-        .map-container {
-            margin-top: 30px;
-            display: inline-block;
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(229, 169, 59, 0.15);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-        }
-
-        .map-img {
-            width: 100%;
-            max-width: 950px;
-            display: block;
-        }
-
-        /* --- Testimonials --- */
-        .testimonial-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(11, 37, 69, 0.4);
-            padding: 50px 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(229, 169, 59, 0.15);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            position: relative;
-        }
-
-        .quote-icon {
-            width: 45px; height: 45px;
-            color: var(--primary-gold);
-            margin-bottom: 25px;
-        }
-
-        .quote-text {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--text-bright);
-            margin-bottom: 25px;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-
-        /* --- Insights / Blogs --- */
-        .blog-card {
-            background: var(--bg-card);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .blog-card img { width: 100%; height: 240px; object-fit: cover; }
-        .blog-meta { padding: 20px 20px 5px 20px; font-size: 0.85rem; color: var(--primary-gold); font-weight: 600; }
-        .blog-card h3 { padding: 0 20px 20px 20px; color: var(--text-bright); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
-        .read-more {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 0 20px 25px 20px;
-            color: var(--primary-gold);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-
-        .read-more:hover {
-            color: var(--text-bright);
-        }
-
-        /* --- Footer --- */
-        .main-footer {
-            background-color: #020b17;
-            border-top: 1px solid rgba(229, 169, 59, 0.15);
-            padding-top: 80px;
-            font-size: 0.95rem;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-info h3 {
-            font-size: 1.5rem;
-            color: var(--text-bright);
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .footer-info h3 span {
-            color: var(--primary-gold);
-        }
-
-        .footer-links h4 { 
-            color: var(--text-bright); 
-            margin-bottom: 20px; 
-            font-weight: 700; 
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .footer-links h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-gold);
-        }
-
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 12px; }
-        .footer-links ul li a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
-        .footer-links ul li a:hover { color: var(--primary-gold); }
-        
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .footer-contact-item svg {
-            color: var(--primary-gold);
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .footer-bottom {
-            padding: 30px 0;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* --- Responsive Layout Configurations --- */
-        @media (max-width: 991px) {
-            .two-col { grid-template-columns: 1fr; gap: 40px; }
-            .hero-content h1 { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            .navbar { padding: 15px 5%; }
-            .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.3rem; }
-            .stats-bar { flex-direction: column; gap: 30px; text-align: center; }
-            h2 { font-size: 1.8rem; }
+        .tab-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body>
+<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased selection:bg-brand-gold selection:text-brand-darkText">
 
     <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="logo-container">
-            <div class="logo">RAYA <span>SECURITY</span></div>
-            <div class="sublogo">Your Safety, Our Priority</div>
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#05162e]/90 backdrop-blur-md border-b border-brand-gold/15 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Shield Design -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60 group-hover:border-brand-gold transition-colors">
+                    <!-- Golden Shield Emblem -->
+                    <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-extrabold text-lg tracking-wide uppercase leading-tight group-hover:text-brand-gold transition-colors">RAYA SECURITY</span>
+                    <span class="text-[9px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="text-white hover:text-brand-gold transition-colors font-bold">Home</a>
+                <a href="#about" class="text-brand-lightBlue hover:text-white transition-colors">About</a>
+                <a href="#why-choose" class="text-brand-lightBlue hover:text-white transition-colors">Why Us</a>
+                <a href="#services" class="text-brand-lightBlue hover:text-white transition-colors">Services</a>
+                <a href="#compliances" class="text-brand-lightBlue hover:text-white transition-colors">Compliances</a>
+                <a href="#footprint" class="text-brand-lightBlue hover:text-white transition-colors">Footprint</a>
+                <a href="#testimonials" class="text-brand-lightBlue hover:text-white transition-colors">Testimonials</a>
+                <a href="#insights" class="text-brand-lightBlue hover:text-white transition-colors">Insights</a>
+            </nav>
+
+            <!-- Quick Contact Action (Matching image_8195c9.jpg) -->
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Theme Mode">
+                    <i data-lucide="sun" class="w-4 h-4"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-darkText px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-goldHover transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md">
+                    Request to Connect ↗
+                </a>
+            </div>
         </div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#why-choose">Why Us</a>
-            <a href="#services">Services</a>
-            <a href="#certifications">Compliances</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#insights">Insights</a>
-        </nav>
-        <a href="#contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="badge">RAYA SECURITY SERVICES PVT. LTD.</span>
-            <h1>Your Safety, Our Absolute Priority</h1>
-            <p>Providing premier tactical physical guarding, background-verified security parameters, and 24/7 technical monitoring solutions designed to protect your physical premises with high integrity.</p>
-            <div class="hero-actions">
-                <a href="#services" class="btn btn-primary">Our Solutions <i data-lucide="arrow-right"></i></a>
-                <a href="#contact" class="btn btn-secondary">Contact Hub</a>
+    <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
+        <!-- Interactive background container -->
+        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0" style="background-image: url('https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Security+Command+Center+Operations');"></div>
+        <!-- Deep premium overlay for optimal readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/95 via-brand-darkText/80 to-brand-darkText/95 z-10"></div>
+
+        <!-- Social floats (Exactly as shown on the left of image_8195c9.jpg) -->
+        <div class="absolute left-6 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col gap-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-blue-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-[#1877f2] hover:bg-blue-900 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+        </div>
+
+        <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+                
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-4" id="hero-left-col">
+                    <!-- Top Badge Option -->
+                    <div class="glass-badge px-4 py-2 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+                        🛡️ SINCE 1992 · PSARA LICENSED · ISO CERTIFIED
+                    </div>
+
+                    <!-- Category tag -->
+                    <span id="hero-category" class="text-brand-gold font-bold text-sm sm:text-base tracking-wider uppercase mt-2">Training</span>
+
+                    <!-- Main Headline -->
+                    <h1 id="hero-title" class="text-white font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.1] tracking-tight">
+                        Security Academy
+                    </h1>
+
+                    <!-- Stats indicator bubble -->
+                    <div class="glass-panel px-6 py-3 rounded-full flex items-center gap-3 mt-2 border border-brand-gold/20">
+                        <span id="hero-stat" class="text-brand-gold font-extrabold text-lg sm:text-xl">7500+</span>
+                        <span class="text-white text-xs sm:text-sm tracking-wide font-medium">Personnel Trained</span>
+                    </div>
+
+                    <!-- Interactive Progress Dashboard dashes -->
+                    <div class="flex items-center gap-2.5 mt-6 w-full max-w-xs" id="progress-indicator">
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-brand-gold transition-all duration-300"></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Right Content Column (Descriptive Box matching image_8195c9.jpg) -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-6 border-l-0 lg:border-l border-white/10" id="hero-right-col">
+                    <h2 id="hero-right-title" class="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-snug">
+                        Protecting People, Assets & Infrastructure.
+                    </h2>
+                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-sm sm:text-base leading-relaxed font-normal">
+                        Certified training programs building the next generation of security professionals. 200+ hours of training per guard.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 mt-2">
+                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                            Request to Connect ↗
+                        </a>
+                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2.5 transition-all">
+                            Explore Solutions
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Interactive Tab Strip inside Hero Section -->
+        <div class="w-full z-20 bg-brand-darkText/95 border-t border-white/10 backdrop-blur-md">
+            <div class="max-w-[1400px] mx-auto overflow-x-auto">
+                <div class="flex items-center justify-between min-w-[980px] px-6 py-4" id="hero-tabs-container">
+                    
+                    <!-- Tab #01 -->
+                    <button onclick="switchHeroState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-01" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#01</span>
+                        <span id="tab-text-01" class="text-sm font-medium text-white/60 group-hover:text-white">Manned Guarding</span>
+                    </button>
+
+                    <!-- Tab #02 -->
+                    <button onclick="switchHeroState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-02" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
+                        <span id="tab-text-02" class="text-sm font-medium text-white/60 group-hover:text-white">Surveillance</span>
+                    </button>
+
+                    <!-- Tab #03 -->
+                    <button onclick="switchHeroState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-03" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
+                        <span id="tab-text-03" class="text-sm font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
+                    </button>
+
+                    <!-- Tab #04 -->
+                    <button onclick="switchHeroState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-04" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
+                        <span id="tab-text-04" class="text-sm font-medium text-white/60 group-hover:text-white">Command Centre</span>
+                    </button>
+
+                    <!-- Tab #05 -->
+                    <button onclick="switchHeroState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-05" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
+                        <span id="tab-text-05" class="text-sm font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
+                    </button>
+
+                    <!-- Tab #06 (Highlighted/Active by Default in image_8195c9.jpg) -->
+                    <button onclick="switchHeroState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-06" class="text-xs font-semibold text-brand-gold">#06</span>
+                        <span id="tab-text-06" class="text-sm font-bold text-white">Training Academy</span>
+                    </button>
+
+                    <!-- Tab #07 -->
+                    <button onclick="switchHeroState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                        <span id="tab-num-07" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
+                        <span id="tab-text-07" class="text-sm font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
+                    </button>
+
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stat-item">
-            <h3>15,000+</h3>
-            <p>Guards Deployed</p>
-        </div>
-        <div class="stat-item">
-            <h3>250+</h3>
-            <p>Corporate Clients</p>
-        </div>
-        <div class="stat-item">
-            <h3>15+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-            <h3>24/7</h3>
-            <p>Active Support</p>
+    <!-- Stats Ribbon -->
+    <section class="bg-[#05162e] py-12 border-b border-brand-gold/15">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">15,000+</h3>
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Guards Deployed</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">250+</h3>
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Corporate Clients</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">15+</h3>
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Years Experience</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">24/7</h3>
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Active Support</p>
+            </div>
         </div>
     </section>
 
-    <!-- About / Shaping Security Section -->
-    <section class="about-section" id="about">
-        <div class="container two-col">
-            <div class="about-image">
-                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Professional+Security+Deployment" alt="image1">
+    <!-- About Section -->
+    <section class="py-24 bg-[#020b17]" id="about">
+        <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-brand-slate rounded-xl blur opacity-30 group-hover:opacity-55 transition-all"></div>
+                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Professional+Security+Deployment" alt="image1" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full">
             </div>
-            <div class="about-text">
-                <span class="section-tag">ABOUT OUR COMPANY</span>
-                <h2>Shaping Security That Makes India Safer</h2>
-                <p>We leverage advanced coordination networks, standard-setting physical drilling setups, and cutting-edge remote operational support grids to protect logistical hubs, enterprise buildings, and corporate infrastructure.</p>
-                <ul class="features-list">
-                    <li><i data-lucide="shield-check"></i> <div><strong>PASARA Registered:</strong> Completely compliant with government standards.</div></li>
-                    <li><i data-lucide="users"></i> <div><strong>Elite Training Drills:</strong> Background evaluated, disciplined tactical assets.</div></li>
-                    <li><i data-lucide="zap"></i> <div><strong>24/7 Operations Desk:</strong> Constant oversight ensuring seamless communication.</div></li>
+            <div class="flex flex-col items-start gap-4">
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase">ABOUT OUR COMPANY</span>
+                <h2 class="text-white font-extrabold text-3xl sm:text-4xl leading-tight">Shaping Security That Makes India Safer</h2>
+                <p class="text-brand-lightBlue/80 text-sm sm:text-base leading-relaxed font-normal">
+                    Raya Security Services coordinates physical drilling setup, state-of-the-art geo-location checkins, and live field audits to keep warehouses, industrial hubs, and housing complexes protected with maximum integrity.
+                </p>
+                <ul class="flex flex-col gap-4 mt-2">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block text-sm">PASARA Registered</strong>
+                            <span class="text-xs text-brand-lightBlue/70">Completely compliant with government regulatory standards.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block text-sm">Elite Training Drills</strong>
+                            <span class="text-xs text-brand-lightBlue/70">Background-vetted, disciplined, and alert tactical forces.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block text-sm">24/7 Monitoring Desk</strong>
+                            <span class="text-xs text-brand-lightBlue/70">Central support desk ready for swift dispatch coordination.</span>
+                        </div>
+                    </li>
                 </ul>
-                <a href="#services" class="btn btn-primary">Discover More</a>
+                <a href="#services" class="mt-4 bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg transition-colors">
+                    Explore Solutions
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us (Light Alternate Section) -->
-    <section class="why-choose-us" id="why-choose">
-        <div class="container text-center">
-            <span class="section-tag">THE RAYA ADVANTAGE</span>
-            <h2>Why Raya?</h2>
-            <div class="cards-grid three-col">
-                <div class="card clean-card">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2">
-                    <h3>Elite Training Academy</h3>
-                    <p>Every field asset completes professional industrial drilling, physical fitness checkpoints, and crowd control management courses.</p>
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-brand-slate/20 border-t border-b border-brand-gold/15" id="why-choose">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">THE RAYA ADVANTAGE</span>
+            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Why Choose Raya?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <!-- Card 1 -->
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-lg mb-2">Elite Training Academy</h3>
+                        <p class="text-brand-lightBlue/70 text-sm">Every field asset completes industrial training, physical fitness checks, and crowd control techniques.</p>
+                    </div>
                 </div>
-                <div class="card clean-card">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3">
-                    <h3>Smart Tech Integration</h3>
-                    <p>We utilize modern geo-tracking check-ins, allowing instant status alerts and transparent physical patrolling records.</p>
+                <!-- Card 2 -->
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-lg mb-2">Smart Tech Integration</h3>
+                        <p class="text-brand-lightBlue/70 text-sm">Using geotargeting check-ins, transparent patrols, and instant emergency dispatch telemetry.</p>
+                    </div>
                 </div>
-                <div class="card clean-card">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4">
-                    <h3>24/7 Command Control</h3>
-                    <p>Our centralized operational command hubs continuously monitor patrols and manage backup deployment networks.</p>
+                <!-- Card 3 -->
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
+                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-lg mb-2">24/7 Command Control</h3>
+                        <p class="text-brand-lightBlue/70 text-sm">Centrally managed operation hubs checking on status alerts and mobilizing quick action guards.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Grid Section -->
-    <section class="services-section" id="services">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">OUR SERVICES</span>
-                <h2>Sectors Capable of Tailored Security Solutions</h2>
+    <section class="py-24 bg-[#020b17]" id="services">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">OUR SERVICES</span>
+                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Sectors Capable of Tailored Security Solutions</h2>
             </div>
-            <div class="cards-grid three-col">
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="shield"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
                     </div>
-                    <h3>Security Guards</h3>
-                    <p>Static, highly alert manned guarding professionals deployed to protect access control gates, commercial sites, and logistics lines.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">Security Guards</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Alert manned guarding professionals deployed to maintain access points, industrial complexes, and warehouse lines.</p>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="user-check"></i>
+                <!-- Service 2 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="user-check" class="w-6 h-6"></i>
                     </div>
-                    <h3>Event Security</h3>
-                    <p>Comprehensive entry logistical parameters, crowd management architectures, and personal protection details for safe assemblies.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">Event Security</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Systematic entry controls, visitor registries, and structural crowd management for peaceful business programs.</p>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="award"></i>
+                <!-- Service 3 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
-                    <h3>All Types of Security</h3>
-                    <p>Flexible tactical security structures matches directly to risk profiles for complexes, housing setups, and corporate spaces.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">All Security Types</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Adaptable security architectures tailored explicitly to client operations, housing societies, and retail centers.</p>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="monitor"></i>
+                <!-- Service 4 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
                     </div>
-                    <h3>CCTV Surveillance</h3>
-                    <p>Consistent remote video analysis systems highlighting potential perimeter anomalies before physical escalation paths occur.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">CCTV Surveillance</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Persistent off-site visual audits combined with live camera feeds to flag physical perimeter vulnerabilities instantly.</p>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="truck"></i>
+                <!-- Service 5 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
-                    <h3>Cash-in-Transit</h3>
-                    <p>Highly vetted security details conducting armored logistics transportation of funds and high-value physical goods safely.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">Cash-In-Transit</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Highly vetted security convoys handling bank operations, gold assets, and high-value equipment transfers safely.</p>
                 </div>
-                <div class="card service-card">
-                    <div class="service-icon-box">
-                        <i data-lucide="alert-triangle"></i>
+                <!-- Service 6 -->
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
                     </div>
-                    <h3>Comprehensive Audits</h3>
-                    <p>On-site vulnerability audits exposing structural weaknesses, layout risks, and communication issues.</p>
+                    <h3 class="text-white font-bold text-xl mb-3">Vulnerability Audits</h3>
+                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Comprehensive checks isolating entry points, lock mechanisms, and communication gaps inside active sites.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trusted By Industry Leaders (Logos) -->
-    <section class="brands-section">
-        <div class="container text-center">
-            <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Trusted by Industry Leaders</h2>
-            <div class="logo-cloud">
-                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5">
-                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6">
-                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7">
-                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8">
-                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9">
+    <!-- Brands Section -->
+    <section class="py-16 bg-brand-navy border-t border-b border-brand-gold/15">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-gold mb-8">Trusted by Corporate & Industrial Leaders</p>
+            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60">
+                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </section>
 
-    <!-- Certification / Verification Grid -->
-    <section class="certifications-section" id="certifications">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">COMPLIANCE</span>
-                <h2>Certifications & Compliances</h2>
+    <!-- Compliance Section -->
+    <section class="py-24 bg-[#020b17]" id="compliances">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">VERIFICATION</span>
+                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Certifications & Compliances</h2>
             </div>
-            <div class="cards-grid three-col">
-                <div class="card cert-card">
-                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+9001:2015+Certificate" alt="image10">
-                    <h3>ISO 9001:2015</h3>
-                    <p>Demonstrating global standards in quality management protocols and administration process flows.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cert 1 -->
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+9001:2015+Certificate" alt="image10" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <h3 class="text-white font-bold text-lg mb-2">ISO 9001:2015</h3>
+                    <p class="text-brand-lightBlue/60 text-xs">Standard-setting operational frameworks across commercial security administration setups.</p>
                 </div>
-                <div class="card cert-card">
-                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=PASARA+License+Raya" alt="image11">
-                    <h3>PASARA License</h3>
-                    <p>Fully compliant with the Private Security Agencies Regulation Act standards across regions.</p>
+                <!-- Cert 2 -->
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=PASARA+License+Raya" alt="image11" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <h3 class="text-white font-bold text-lg mb-2">PASARA License</h3>
+                    <p class="text-brand-lightBlue/60 text-xs">Fully registered private security agency regulation compliance credentials.</p>
                 </div>
-                <div class="card cert-card">
-                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+45001:2018+Certificate" alt="image12">
-                    <h3>ISO 45001:2018</h3>
-                    <p>Certified operational occupational safety methodologies deployed directly inside site configurations.</p>
+                <!-- Cert 3 -->
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                    <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+45001:2018+Certificate" alt="image12" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <h3 class="text-white font-bold text-lg mb-2">ISO 45001:2018</h3>
+                    <p class="text-brand-lightBlue/60 text-xs">Guaranteed occupational risk elimination and guard personnel safety safeguards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Geographic Footprint -->
-    <section class="map-section">
-        <div class="container text-center">
-            <span class="section-tag">OUR FOOTPRINT</span>
-            <h2>Our Operational Reach</h2>
-            <div class="map-container">
-                <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="map-img">
+    <!-- Footprint Section -->
+    <section class="py-24 bg-brand-navy border-t border-b border-brand-gold/15" id="footprint">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">REGIONAL REACH</span>
+            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Our Operational Reach</h2>
+            
+            <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl">
+                <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="w-full h-auto block filter brightness-95 contrast-105">
+                <div class="absolute bottom-4 right-4 bg-brand-darkText/90 border border-brand-gold/30 px-4 py-2 rounded-lg text-left backdrop-blur-md">
+                    <span class="text-[10px] uppercase font-bold text-brand-gold block tracking-wider">Core Deployment Centers</span>
+                    <span class="text-xs font-semibold text-white">Nagpur HQ & Pune Regional Branch</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container text-center">
-            <span class="section-tag">TESTIMONIALS</span>
-            <h2>Words of Appreciation</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-card">
-                    <i data-lucide="quote" class="quote-icon"></i>
-                    <p class="quote-text">"Raya Security Services completely transformed our logistics center's dynamic in Pune. Their static guard units are exceptionally disciplined, always punctual, and communicate with transparency."</p>
-                    <h4>Shreevardhan Deshmukh</h4>
-                    <span style="color: var(--primary-gold); font-size: 0.9rem; font-weight: 700;">VP of Operations, Maharashtra Logistics Hub</span>
+    <section class="py-24 bg-[#020b17]" id="testimonials">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">TESTIMONIALS</span>
+            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Words of Appreciation</h2>
+
+            <!-- Active Testimonial Card Frame -->
+            <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-8 sm:p-12 relative shadow-2xl">
+                <div class="text-brand-gold flex justify-center mb-6">
+                    <i data-lucide="quote" class="w-12 h-12"></i>
+                </div>
+                <p class="text-white italic text-lg sm:text-xl leading-relaxed mb-6 font-medium">
+                    "Raya Security Services completely transformed our logistics center's dynamic in Pune. Their static guard units are exceptionally disciplined, always punctual, and communicate with transparency."
+                </p>
+                <h4 class="text-white font-extrabold text-base">Shreevardhan Deshmukh</h4>
+                <span class="text-brand-gold text-xs sm:text-sm uppercase font-bold tracking-wider block mt-1">VP of Operations, Maharashtra Logistics Hub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="py-24 bg-brand-slate/20 border-t border-brand-gold/15" id="insights">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">INSIGHTS</span>
+                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Founders Articles & Safety Guides</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Modern+Threat+Controls" alt="image14" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Threat Mitigation • July 10, 2026</div>
+                        <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">Understanding Modern Electronic Threat Control Networks</h3>
+                        <a href="#" class="inline-flex items-center gap-2 text-brand-gold font-bold text-xs uppercase tracking-wider hover:text-white transition-colors">
+                            Read Full Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Post 2 -->
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Corporate+Enterprise+Guarding" alt="image15" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Enterprise Scale • July 05, 2026</div>
+                        <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">How Corporate Enterprise Scalability Shifts Guarding Needs</h3>
+                        <a href="#" class="inline-flex items-center gap-2 text-brand-gold font-bold text-xs uppercase tracking-wider hover:text-white transition-colors">
+                            Read Full Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Post 3 -->
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
+                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Crowd+De-escalation" alt="image16" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Operations • June 28, 2026</div>
+                        <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">De-escalation Mechanics Within High Crowd Environments</h3>
+                        <a href="#" class="inline-flex items-center gap-2 text-brand-gold font-bold text-xs uppercase tracking-wider hover:text-white transition-colors">
+                            Read Full Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- News & Insights Grid -->
-    <section class="insights-section" id="insights">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-tag">INSIGHTS</span>
-                <h2>Founders Articles & Safety Guides</h2>
-            </div>
-            <div class="cards-grid three-col">
-                <div class="card blog-card">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Modern+Threat+Controls" alt="image14">
-                    <div class="blog-meta"><span>July 10, 2026</span> • <span>Threat Mitigation</span></div>
-                    <h3>Understanding Modern Electronic Threat Control Networks</h3>
-                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
-                </div>
-                <div class="card blog-card">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Corporate+Enterprise+Guarding" alt="image15">
-                    <div class="blog-meta"><span>July 05, 2026</span> • <span>Enterprise Scale</span></div>
-                    <h3>How Corporate Enterprise Scalability Shifts Guarding Needs</h3>
-                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
-                </div>
-                <div class="card blog-card">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Crowd+De-escalation" alt="image16">
-                    <div class="blog-meta"><span>June 28, 2026</span> • <span>Operations</span></div>
-                    <h3>De-escalation Mechanics Within High Crowd Environments</h3>
-                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="main-footer" id="contact">
-        <div class="container grid-4">
-            <div class="footer-info">
-                <h3>RAYA <span>SECURITY</span></h3>
-                <p style="margin-bottom: 20px;">Premium modern safety architecture and verified personnel solutions serving corporate structures, logistics grids, and event venues across India.</p>
-                <div style="font-weight: 700; color: var(--primary-gold); font-size: 1.1rem; margin-bottom: 5px;">
-                    Call Support: +91 8624998789
-                </div>
-                <div style="font-weight: 700; color: #25D366; font-size: 1.1rem;">
-                    WhatsApp: +91 9284022701
-                </div>
-            </div>
+    <!-- Footer / Contact Hub -->
+    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20" id="contact">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
             
-            <div class="footer-links">
-                <h4>Core Operations</h4>
-                <ul>
-                    <li><a href="#services">Security Guards</a></li>
-                    <li><a href="#services">Event Security Logistics</a></li>
-                    <li><a href="#services">All Types of Security</a></li>
-                    <li><a href="#services">Vulnerability Audit Sweeps</a></li>
+            <!-- Brand Column -->
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-white font-extrabold text-base tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                        <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
+                    </div>
+                </div>
+                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">
+                    Premium modern safety architecture and verified personnel solutions serving corporate complexes, logistics grids, and event venues across India.
+                </p>
+                <div class="flex flex-col gap-2">
+                    <div class="text-brand-gold font-extrabold text-base flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#25D366]"></i> Call Now: +91 8624998789
+                    </div>
+                    <div class="text-[#25D366] font-extrabold text-base flex items-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp: +91 9284022701
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Links Column -->
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Core Operations
+                </h4>
+                <ul class="flex flex-col gap-3 text-sm">
+                    <li><a href="#services" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Manned Guard Services</a></li>
+                    <li><a href="#services" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Event Logistics Security</a></li>
+                    <li><a href="#services" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Corporate Security Drills</a></li>
+                    <li><a href="#services" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Vulnerability Audit Sweeps</a></li>
                 </ul>
             </div>
 
-            <div class="footer-links">
-                <h4>Branch Addresses</h4>
-                <div class="footer-contact-item">
-                    <i data-lucide="map-pin"></i>
-                    <div>
-                        <strong>Nagpur HO:</strong><br>
-                        B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012
+            <!-- Branch Details Column -->
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Branch Locations
+                </h4>
+                <div class="flex flex-col gap-4 text-xs leading-relaxed">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-white block text-sm mb-0.5">Nagpur Head Office:</strong>
+                            <span class="text-brand-lightBlue/70">B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012</span>
+                        </div>
                     </div>
-                </div>
-                <div class="footer-contact-item">
-                    <i data-lucide="map-pin"></i>
-                    <div>
-                        <strong>Pune Branch:</strong><br>
-                        Shop No. 17 Ellora Shopee Complex, Indrayani Nagar, Bhosari, Pune - 411026
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-white block text-sm mb-0.5">Pune Branch:</strong>
+                            <span class="text-brand-lightBlue/70">Shop No. 17 Ellora Shopee Complex, Indrayani Nagar, Bhosari, Pune - 411026</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-links">
-                <h4>Reach Us</h4>
-                <div class="footer-contact-item">
-                    <i data-lucide="mail"></i>
-                    <div>
-                        info@rayasecurityservices.com<br>
-                        rayasecurityservices7860@gmail.com
+            <!-- Contact Coordinates Column -->
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Direct Contact Desk
+                </h4>
+                <div class="flex flex-col gap-3 text-sm">
+                    <div class="flex items-center gap-3 text-brand-lightBlue/80">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs">info@rayasecurityservices.com</span>
                     </div>
-                </div>
-                <div class="footer-contact-item">
-                    <i data-lucide="globe"></i>
-                    <div>
-                        www.rayasecurityservices.com
+                    <div class="flex items-center gap-3 text-brand-lightBlue/80">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs">rayasecurityservices7860@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-brand-lightBlue/80">
+                        <i data-lucide="globe" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs">www.rayasecurityservices.com</span>
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="footer-bottom text-center">
+
+        <div class="border-t border-white/5 py-8 text-center text-xs text-brand-lightBlue/50 bg-[#020b17]">
             <p>&copy; 2026 Raya Security Services Pvt. Ltd. All Rights Reserved. | Your Safety, Our Priority.</p>
         </div>
     </footer>
 
-    <!-- JavaScript Injection Section -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Interactive states and dynamic script setups
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // Smooth scrolling alignment for navigation triggers
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 85, // Accounts for sticky navbar offset
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+        // Object containing interactive state data modeled on screenshot parameters
+        const heroStateMap = {
+            '01': {
+                category: 'Guarding',
+                title: 'Manned Guarding',
+                stat: '15,000+',
+                statLabel: 'Guards Deployed',
+                rightTitle: 'Static & Mobile Guard Forces.',
+                rightDesc: 'Deploying highly disciplined, PSARA compliant field personnel for access point regulation, high-value asset protection, and corporate premise checks.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Manned+Guarding+Sectors+Setup'
+            },
+            '02': {
+                category: 'Monitoring',
+                title: 'Surveillance Systems',
+                stat: '24/7',
+                statLabel: 'Remote Command Watch',
+                rightTitle: 'AI Analytics & Perimeter Feeds.',
+                rightDesc: 'Pairing expert operators with high-definition CCTV camera frameworks to intercept structural anomalies and unauthorized intrusions instantly.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Surveillance+CCTV+Command+Center'
+            },
+            '03': {
+                category: 'Assessment',
+                title: 'Risk Consulting',
+                stat: '100%',
+                statLabel: 'Vulnerability Resolved',
+                rightTitle: 'Pinpointing Infrastructure Loopholes.',
+                rightDesc: 'Proactive site audits modeling logical infiltration pathways, physical vulnerabilities, and critical response protocols.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Risk+Consulting+Site+Audit'
+            },
+            '04': {
+                category: 'Command',
+                title: 'Command Centre',
+                stat: '0.1s',
+                statLabel: 'Telemetry Dispatch Delay',
+                rightTitle: 'Integrated Telemetry Operations Hub.',
+                rightDesc: 'Synchronizing real-time geo-tracking dashboards, emergency dispatch coordination lines, and visual alerts with mobile backup assets.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+24-7+Telemetry+Command+Center'
+            },
+            '05': {
+                category: 'Coordination',
+                title: 'Facility Mgmt',
+                stat: '300+',
+                statLabel: 'Complexes Supervised',
+                rightTitle: 'Operational Order & Access Integrity.',
+                rightDesc: 'Coordinating visitor registries, vehicle parking configurations, and secure gate protocols to maintain continuous site safety.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Facility+Logistics+Management'
+            },
+            '06': { // Default State active inside image_8195c9.jpg
+                category: 'Training',
+                title: 'Security Academy',
+                stat: '7500+',
+                statLabel: 'Personnel Trained',
+                rightTitle: 'Protecting People, Assets & Infrastructure.',
+                rightDesc: 'Certified training programs building the next generation of security professionals. 200+ hours of training per guard.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Tactical+Physical+Guarding+Operations+Setup'
+            },
+            '07': {
+                category: 'Protection',
+                title: 'Executive Escorts',
+                stat: '50+',
+                statLabel: 'VVIP Details Protected',
+                rightTitle: 'Discreet High-Security Movements.',
+                rightDesc: 'Vetted physical guarding professionals skilled in immediate route mapping, defensive driving tactics, and secure close-quarter defense.',
+                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Executive+Close+Escorts'
+            }
+        };
 
-            // Sticky Navbar transparency dynamic adjustment
-            const navbar = document.querySelector('.navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.style.backgroundColor = 'rgba(5, 22, 46, 0.98)';
-                    navbar.style.padding = '14px 6%';
-                    navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+        // Switch Hero state dynamically based on tab clicks
+        function switchHeroState(stateKey) {
+            const state = heroStateMap[stateKey];
+            if (!state) return;
+
+            // DOM Updates
+            document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
+            document.getElementById('hero-category').innerText = state.category;
+            document.getElementById('hero-title').innerText = state.title;
+            
+            // Updating the stat panel elements smoothly
+            const statBox = document.getElementById('hero-stat');
+            statBox.innerText = state.stat;
+            statBox.nextElementSibling.innerText = state.statLabel;
+
+            // Right block parameters
+            document.getElementById('hero-right-title').innerText = state.rightTitle;
+            document.getElementById('hero-right-desc').innerText = state.rightDesc;
+
+            // Reset and update bottom tabs visual state
+            const stateNum = parseInt(stateKey);
+            for (let i = 1; i <= 7; i++) {
+                const formattedKey = i.toString().padStart(2, '0');
+                const tabNum = document.getElementById(`tab-num-${formattedKey}`);
+                const tabText = document.getElementById(`tab-text-${formattedKey}`);
+                
+                if (i === stateNum) {
+                    tabNum.className = 'text-xs font-semibold text-brand-gold';
+                    tabText.className = 'text-sm font-bold text-white';
                 } else {
-                    navbar.style.backgroundColor = 'rgba(5, 22, 46, 0.96)';
-                    navbar.style.padding = '22px 6%';
-                    navbar.style.boxShadow = 'none';
+                    tabNum.className = 'text-xs font-semibold text-white/40 group-hover:text-brand-gold';
+                    tabText.className = 'text-sm font-medium text-white/60 group-hover:text-white';
+                }
+            }
+
+            // Update progress indicator bar segments
+            const progressDashes = document.getElementById('progress-indicator').children;
+            for (let j = 0; j < progressDashes.length; j++) {
+                if (j === stateNum - 1) {
+                    progressDashes[j].className = 'h-1 flex-grow rounded-full bg-brand-gold transition-all duration-300';
+                } else {
+                    progressDashes[j].className = 'h-1 flex-grow rounded-full bg-white/20 transition-all duration-300';
+                }
+            }
+        }
+
+        // DOM Setup on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default highlighted state (#06 Academy) on page load
+            switchHeroState('06');
+
+            // Responsive scroll tracking for navbar transparency
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('py-3', 'shadow-2xl', 'bg-[#05162e]');
+                    header.classList.remove('bg-[#05162e]/90');
+                } else {
+                    header.classList.remove('py-3', 'shadow-2xl', 'bg-[#05162e]');
+                    header.classList.add('bg-[#05162e]/90');
                 }
             });
         });
