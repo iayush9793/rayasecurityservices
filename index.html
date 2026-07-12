@@ -6,7 +6,7 @@
     <title>Raya Security Services Pvt. Ltd. - Your Safety, Our Priority</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for premium typography -->
+    <!-- Google Fonts - Inter for high quality corporate look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -34,7 +34,7 @@
     </script>
 
     <style>
-        /* Webkit scrollbars */
+        /* Webkit scrollbars styling */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -49,9 +49,9 @@
             background: #e5a93b;
         }
         
-        /* Premium glass panels styled exactly like image_8195c9.jpg */
+        /* Premium glass panels modeled from image_8195c9.jpg */
         .glass-panel {
-            background: rgba(5, 22, 46, 0.4);
+            background: rgba(5, 22, 46, 0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(229, 169, 59, 0.15);
@@ -61,6 +61,11 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(229, 169, 59, 0.25);
+        }
+
+        /* Smooth transition class for the slider text content */
+        .fade-transition {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }
 
         .tab-transition {
@@ -76,7 +81,6 @@
             <!-- Brand Logo & Shield Design -->
             <a href="#home" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60 group-hover:border-brand-gold transition-colors">
-                    <!-- Golden Shield Emblem -->
                     <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
@@ -87,7 +91,7 @@
                 </div>
             </a>
 
-            <!-- Navigation Links -->
+            <!-- Desktop Navigation Links -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
                 <a href="#home" class="text-white hover:text-brand-gold transition-colors font-bold">Home</a>
                 <a href="#about" class="text-brand-lightBlue hover:text-white transition-colors">About</a>
@@ -99,7 +103,7 @@
                 <a href="#insights" class="text-brand-lightBlue hover:text-white transition-colors">Insights</a>
             </nav>
 
-            <!-- Quick Contact Action (Matching image_8195c9.jpg) -->
+            <!-- Quick Contact Actions + Hamburger trigger -->
             <div class="flex items-center gap-4">
                 <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Theme Mode">
                     <i data-lucide="sun" class="w-4 h-4"></i>
@@ -107,18 +111,44 @@
                 <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-darkText px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-goldHover transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md">
                     Request to Connect ↗
                 </a>
+                
+                <!-- Modern Hamburger menu button (Visible only on Mobile/Tablet) -->
+                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white hover:text-brand-gold focus:outline-none transition-all">
+                    <i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i>
+                </button>
             </div>
         </div>
     </header>
 
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 top-20 bg-[#05162e] z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden border-t border-white/5 flex flex-col justify-between p-6">
+        <nav class="flex flex-col gap-5 text-lg font-semibold pt-4">
+            <a href="#home" class="mobile-link text-white hover:text-brand-gold border-b border-white/5 pb-2">Home</a>
+            <a href="#about" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">About</a>
+            <a href="#why-choose" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Why Us</a>
+            <a href="#services" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Services</a>
+            <a href="#compliances" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Compliances</a>
+            <a href="#footprint" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Footprint</a>
+            <a href="#testimonials" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Testimonials</a>
+            <a href="#insights" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Insights</a>
+        </nav>
+        <div class="flex flex-col gap-4 pb-8">
+            <a href="#contact" class="mobile-link w-full text-center bg-brand-gold text-brand-darkText py-3 rounded-lg font-bold uppercase tracking-wider text-sm shadow-md">
+                Request to Connect ↗
+            </a>
+            <div class="text-xs text-center text-brand-lightBlue/60">
+                📞 Call Hub: +91 8624998789
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
-        <!-- Interactive background container -->
+        <!-- Dynamic background element updated by slider transitions -->
         <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0" style="background-image: url('https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Security+Command+Center+Operations');"></div>
-        <!-- Deep premium overlay for optimal readability -->
         <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/95 via-brand-darkText/80 to-brand-darkText/95 z-10"></div>
 
-        <!-- Social floats (Exactly as shown on the left of image_8195c9.jpg) -->
+        <!-- Social Media Floating Bar exactly as pictured on the left side of image_8195c9.jpg -->
         <div class="absolute left-6 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col gap-4">
             <a href="#" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-blue-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
                 <i data-lucide="linkedin" class="w-5 h-5"></i>
@@ -131,26 +161,23 @@
             </a>
         </div>
 
+        <!-- Central Hero Content Grid -->
         <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
                 
                 <!-- Left Content Column -->
-                <div class="lg:col-span-7 flex flex-col items-start gap-4" id="hero-left-col">
-                    <!-- Top Badge Option -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-4 fade-transition" id="hero-left-col">
                     <div class="glass-badge px-4 py-2 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
                         🛡️ SINCE 1992 · PSARA LICENSED · ISO CERTIFIED
                     </div>
 
-                    <!-- Category tag -->
                     <span id="hero-category" class="text-brand-gold font-bold text-sm sm:text-base tracking-wider uppercase mt-2">Training</span>
 
-                    <!-- Main Headline -->
                     <h1 id="hero-title" class="text-white font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.1] tracking-tight">
                         Security Academy
                     </h1>
 
-                    <!-- Stats indicator bubble -->
                     <div class="glass-panel px-6 py-3 rounded-full flex items-center gap-3 mt-2 border border-brand-gold/20">
                         <span id="hero-stat" class="text-brand-gold font-extrabold text-lg sm:text-xl">7500+</span>
                         <span class="text-white text-xs sm:text-sm tracking-wide font-medium">Personnel Trained</span>
@@ -168,8 +195,8 @@
                     </div>
                 </div>
 
-                <!-- Right Content Column (Descriptive Box matching image_8195c9.jpg) -->
-                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-6 border-l-0 lg:border-l border-white/10" id="hero-right-col">
+                <!-- Right Content Column -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-6 border-l-0 lg:border-l border-white/10 fade-transition" id="hero-right-col">
                     <h2 id="hero-right-title" class="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-snug">
                         Protecting People, Assets & Infrastructure.
                     </h2>
@@ -189,49 +216,42 @@
             </div>
         </div>
 
-        <!-- Interactive Tab Strip inside Hero Section -->
+        <!-- Interactive Tab Strip matching the layout of image_8195c9.jpg -->
         <div class="w-full z-20 bg-brand-darkText/95 border-t border-white/10 backdrop-blur-md">
             <div class="max-w-[1400px] mx-auto overflow-x-auto">
                 <div class="flex items-center justify-between min-w-[980px] px-6 py-4" id="hero-tabs-container">
                     
-                    <!-- Tab #01 -->
-                    <button onclick="switchHeroState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-01" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#01</span>
                         <span id="tab-text-01" class="text-sm font-medium text-white/60 group-hover:text-white">Manned Guarding</span>
                     </button>
 
-                    <!-- Tab #02 -->
-                    <button onclick="switchHeroState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-02" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
                         <span id="tab-text-02" class="text-sm font-medium text-white/60 group-hover:text-white">Surveillance</span>
                     </button>
 
-                    <!-- Tab #03 -->
-                    <button onclick="switchHeroState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-03" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
                         <span id="tab-text-03" class="text-sm font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
                     </button>
 
-                    <!-- Tab #04 -->
-                    <button onclick="switchHeroState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-04" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
                         <span id="tab-text-04" class="text-sm font-medium text-white/60 group-hover:text-white">Command Centre</span>
                     </button>
 
-                    <!-- Tab #05 -->
-                    <button onclick="switchHeroState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-05" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
                         <span id="tab-text-05" class="text-sm font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
                     </button>
 
-                    <!-- Tab #06 (Highlighted/Active by Default in image_8195c9.jpg) -->
-                    <button onclick="switchHeroState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-06" class="text-xs font-semibold text-brand-gold">#06</span>
                         <span id="tab-text-06" class="text-sm font-bold text-white">Training Academy</span>
                     </button>
 
-                    <!-- Tab #07 -->
-                    <button onclick="switchHeroState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
+                    <button onclick="userSelectState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-07" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
                         <span id="tab-text-07" class="text-sm font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
                     </button>
@@ -313,7 +333,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-24 bg-brand-slate/20 border-t border-b border-brand-gold/15" id="why-choose">
+    <section class="py-24 bg-[#05162e]/40 border-t border-b border-brand-gold/15" id="why-choose">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">THE RAYA ADVANTAGE</span>
             <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Why Choose Raya?</h2>
@@ -630,10 +650,10 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
+        // Initialize Lucide Icons vector drawings
         lucide.createIcons();
 
-        // Object containing interactive state data modeled on screenshot parameters
+        // Mapping hero states to their respective data panels
         const heroStateMap = {
             '01': {
                 category: 'Guarding',
@@ -680,7 +700,7 @@
                 rightDesc: 'Coordinating visitor registries, vehicle parking configurations, and secure gate protocols to maintain continuous site safety.',
                 bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Facility+Logistics+Management'
             },
-            '06': { // Default State active inside image_8195c9.jpg
+            '06': { // Active default state in image_8195c9.jpg
                 category: 'Training',
                 title: 'Security Academy',
                 stat: '7500+',
@@ -700,26 +720,50 @@
             }
         };
 
-        // Switch Hero state dynamically based on tab clicks
+        // Track currently selected slider state index key
+        let currentActiveKey = '06';
+        let autoPlayTimer = null;
+        const autoPlayIntervalDuration = 5000; // 5 seconds slider interval
+
+        // Trigger dynamic layout update with animation transitions
         function switchHeroState(stateKey) {
             const state = heroStateMap[stateKey];
             if (!state) return;
 
-            // DOM Updates
-            document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
-            document.getElementById('hero-category').innerText = state.category;
-            document.getElementById('hero-title').innerText = state.title;
-            
-            // Updating the stat panel elements smoothly
-            const statBox = document.getElementById('hero-stat');
-            statBox.innerText = state.stat;
-            statBox.nextElementSibling.innerText = state.statLabel;
+            currentActiveKey = stateKey;
 
-            // Right block parameters
-            document.getElementById('hero-right-title').innerText = state.rightTitle;
-            document.getElementById('hero-right-desc').innerText = state.rightDesc;
+            const leftCol = document.getElementById('hero-left-col');
+            const rightCol = document.getElementById('hero-right-col');
 
-            // Reset and update bottom tabs visual state
+            // Apply smooth fade out class
+            leftCol.style.opacity = '0';
+            leftCol.style.transform = 'translateY(10px)';
+            rightCol.style.opacity = '0';
+            rightCol.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                // DOM Updates
+                document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
+                document.getElementById('hero-category').innerText = state.category;
+                document.getElementById('hero-title').innerText = state.title;
+                
+                // Updating stats content
+                const statBox = document.getElementById('hero-stat');
+                statBox.innerText = state.stat;
+                statBox.nextElementSibling.innerText = state.statLabel;
+
+                // Right block descriptors
+                document.getElementById('hero-right-title').innerText = state.rightTitle;
+                document.getElementById('hero-right-desc').innerText = state.rightDesc;
+
+                // Trigger smooth fade in animations
+                leftCol.style.opacity = '1';
+                leftCol.style.transform = 'translateY(0)';
+                rightCol.style.opacity = '1';
+                rightCol.style.transform = 'translateY(0)';
+            }, 300);
+
+            // Synchronize and update bottom tab buttons active highlights
             const stateNum = parseInt(stateKey);
             for (let i = 1; i <= 7; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
@@ -735,7 +779,7 @@
                 }
             }
 
-            // Update progress indicator bar segments
+            // Sync dash progress markers
             const progressDashes = document.getElementById('progress-indicator').children;
             for (let j = 0; j < progressDashes.length; j++) {
                 if (j === stateNum - 1) {
@@ -746,12 +790,70 @@
             }
         }
 
-        // DOM Setup on load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set default highlighted state (#06 Academy) on page load
-            switchHeroState('06');
+        // Automatic slider timer setup
+        function startAutoSlider() {
+            autoPlayTimer = setInterval(() => {
+                let currentNum = parseInt(currentActiveKey);
+                let nextNum = currentNum + 1;
+                if (nextNum > 7) {
+                    nextNum = 1;
+                }
+                const nextKey = nextNum.toString().padStart(2, '0');
+                switchHeroState(nextKey);
+            }, autoPlayIntervalDuration);
+        }
 
-            // Responsive scroll tracking for navbar transparency
+        // Reset the auto-play timer when a user interacts manually
+        function userSelectState(stateKey) {
+            clearInterval(autoPlayTimer);
+            switchHeroState(stateKey);
+            startAutoSlider(); // Restart interval timer
+        }
+
+        // DOM Setup on initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup mobile hamburger toggles
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            hamburgerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = !mobileMenu.classList.contains('translate-x-full');
+                if (isOpen) {
+                    mobileMenu.classList.add('translate-x-full');
+                    hamburgerIcon.setAttribute('data-lucide', 'menu');
+                } else {
+                    mobileMenu.classList.remove('translate-x-full');
+                    hamburgerIcon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons(); // Redraw Lucide icon elements
+            });
+
+            // Close mobile navigation drawer when clicking any link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    hamburgerIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                });
+            });
+
+            // Close drawer if clicking outside the sidebar area
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                    mobileMenu.classList.add('translate-x-full');
+                    hamburgerIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
+
+            // Initialize default active slide and kick-off automatic transitions
+            switchHeroState('06');
+            startAutoSlider();
+
+            // Responsive scroll effects on sticky header transparency
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 40) {
