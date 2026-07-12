@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant Guards - Premium Security Services</title>
+    <!-- Lucide Icons CDN for clean icon representations -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* --- Global Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-dark: #0b0c10;
+            --bg-card: #1f2833;
+            --text-light: #c5c6c7;
+            --text-bright: #ffffff;
+            --primary-gold: #c5a880;
+            --primary-gold-hover: #b39268;
+            --light-accent: #f4f6f9;
+            --text-dark: #1f2833;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .section-tag {
+            color: var(--primary-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--text-bright);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(11, 12, 16, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        /* --- Buttons --- */
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-gold);
+            color: #000;
+        }
+
+        .btn-primary:hover { background-color: var(--primary-gold-hover); }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-bright);
+            border: 2px solid var(--text-light);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-bright);
+            color: var(--bg-dark);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Security+Operations+Background') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(11,12,16,0.85), rgba(11,12,16,0.95));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-bright);
+            margin: 15px 0 25px 0;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            border: 1px solid var(--primary-gold);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            color: var(--primary-gold);
+        }
+
+        /* --- Stats Bar --- */
+        .stats-bar {
+            background-color: rgba(197, 168, 128, 0.05);
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 5%;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-gold);
+        }
+
+        /* --- Common Layout Grids --- */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .three-col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+        /* --- About Section --- */
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0 30px 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li svg {
+            color: var(--primary-gold);
+            margin-right: 12px;
+        }
+
+        /* --- Why Choose Us (Light Theme Accent) --- */
+        .why-choose-us {
+            background-color: var(--light-accent);
+            color: var(--text-dark);
+        }
+
+        .why-choose-us h2 { color: var(--text-dark); }
+
+        .clean-card {
+            background: var(--text-bright);
+            border-radius: 8px;
+            overflow: hidden;
+            padding-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .clean-card img { width: 100%; height: 200px; object-fit: cover; }
+        .clean-card h3 { margin: 15px; color: var(--text-dark); }
+        .clean-card p { margin: 0 15px; font-size: 0.95rem; color: #555; }
+
+        /* --- Services (Dark Cards Grid) --- */
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .service-card svg {
+            width: 40px; height: 40px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--text-bright);
+            margin-bottom: 10px;
+        }
+
+        /* --- Brands --- */
+        .logo-cloud {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        /* --- Certifications --- */
+        .cert-card {
+            background: transparent;
+            text-align: center;
+        }
+
+        .cert-card img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Map --- */
+        .map-img {
+            width: 100%;
+            max-width: 900px;
+            opacity: 0.7;
+        }
+
+        /* --- Testimonials --- */
+        .testimonial-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.02);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .quote-icon {
+            width: 40px; height: 40px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-bright);
+            margin-bottom: 20px;
+        }
+
+        /* --- Insights / Blogs --- */
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .blog-card img { width: 100%; height: 220px; object-fit: cover; }
+        .blog-meta { padding: 15px 20px 5px 20px; font-size: 0.8rem; color: var(--primary-gold); }
+        .blog-card h3 { padding: 0 20px 20px 20px; color: var(--text-bright); font-size: 1.2rem; }
+        .read-more {
+            display: flex;
+            align-items: center;
+            padding: 0 20px 20px 20px;
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: #050608;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links h4 { color: var(--text-bright); margin-bottom: 15px; }
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 8px; }
+        .footer-links ul li a { color: var(--text-light); text-decoration: none; }
+        .footer-links ul li a:hover { color: var(--primary-gold); }
+        
+        .footer-bottom {
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- Responsive Layout Configurations --- */
+        @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; }
+            .navbar { padding: 15px 5%; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.3rem; }
+            .stats-bar { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Radiant Guards</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#insights">Insights</a>
+        </nav>
+        <button class="btn btn-primary">Contact Us</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">TRUSTED SECURITY PARTNER</span>
+            <h1>Security Excellence Anywhere, Anytime</h1>
+            <p>Providing premier, highly trained tactical and guarding solutions across the region with uncompromised integrity.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary">Explore Services</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item"><h3>15,000+</h3><p>Guards Deployed</p></div>
+        <div class="stat-item"><h3>250+</h3><p>Corporate Clients</p></div>
+        <div class="stat-item"><h3>15+</h3><p>Years Experience</p></div>
+        <div class="stat-item"><h3>24/7</h3><p>Active Monitoring</p></div>
+    </section>
+
+    <!-- About / Shaping Security Section -->
+    <section class="about-section" id="about">
+        <div class="container two-col">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/600x400" alt="image1">
+            </div>
+            <div class="about-text">
+                <span class="section-tag">ABOUT OUR COMPANY</span>
+                <h2>Shaping Security That Makes India Safer</h2>
+                <p>We leverage advanced logistics, standard-setting training, and cutting-edge remote operational support to stay steps ahead of standard threat definitions.</p>
+                <ul class="features-list">
+                    <li><i data-lucide="shield-check"></i> <strong>Rigorous Background Clearance:</strong> Verified personnel only.</li>
+                    <li><i data-lucide="users"></i> <strong>Tailored Sector Focus:</strong> Custom strategies for retail, tech, & events.</li>
+                    <li><i data-lucide="zap"></i> <strong>Rapid Crisis Response:</strong> Real-time operations desk.</li>
+                </ul>
+                <button class="btn btn-primary">Discover More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Light Alternate Section) -->
+    <section class="why-choose-us">
+        <div class="container text-center">
+            <span class="section-tag">WHY RADIANT?</span>
+            <h2>Why Radiant?</h2>
+            <div class="cards-grid three-col">
+                <div class="card clean-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image2">
+                    <h3>Elite Training Academy</h3>
+                    <p>Every guard goes through physical, mental, and de-escalation training regimes.</p>
+                </div>
+                <div class="card clean-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image3">
+                    <h3>Smart Tech Integration</h3>
+                    <p>Live geo-tracking, reporting infrastructure, and instantly accessible logs.</p>
+                </div>
+                <div class="card clean-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image4">
+                    <h3>24/7 Operational Control</h3>
+                    <p>Our centralized management control room maintains persistent contact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">OUR SERVICES</span>
+                <h2>Sectors capable tailored security solutions</h2>
+            </div>
+            <div class="cards-grid three-col">
+                <div class="card service-card">
+                    <i data-lucide="shield" class="service-icon"></i>
+                    <h3>Manned Guarding</h3>
+                    <p>Professional static guard infrastructure deployed across your key physical premises.</p>
+                </div>
+                <div class="card service-card">
+                    <i data-lucide="user-check"></i>
+                    <h3>Executive Protection</h3>
+                    <p>Low-profile or high-visibility protection details for high-net-worth clients.</p>
+                </div>
+                <div class="card service-card">
+                    <i data-lucide="activity"></i>
+                    <h3>Event Security Logistics</h3>
+                    <p>Crowd control, entry logistics, and secure perimeter design for gatherings.</p>
+                </div>
+                <div class="card service-card">
+                    <i data-lucide="monitor"></i>
+                    <h3>CCTV Remote Surveillance</h3>
+                    <p>Continuous off-site analytics feed monitoring to prevent incidents before they escalate.</p>
+                </div>
+                <div class="card service-card">
+                    <i data-lucide="truck"></i>
+                    <h3>Cash-in-Transit</h3>
+                    <p>Armored secure logistics lines utilizing military-grade armored moving assets.</p>
+                </div>
+                <div class="card service-card">
+                    <i data-lucide="alert-triangle"></i>
+                    <h3>Risk Management</h3>
+                    <p>Full risk analysis matrix sweeps to discover physical facility structural gaps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Industry Leaders (Logos) -->
+    <section class="brands-section" id="industries">
+        <div class="container text-center">
+            <h2>Trusted by Industry Leaders</h2>
+            <div class="logo-cloud">
+                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5">
+                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6">
+                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7">
+                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8">
+                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9">
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification / Verification Grid -->
+    <section class="certifications-section">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">COMPLIANCE</span>
+                <h2>Certifications & Compliances</h2>
+            </div>
+            <div class="cards-grid three-col">
+                <div class="card cert-card">
+                    <img src="https://via.placeholder.com/300x400" alt="image10">
+                    <h3>ISO 9001:2015</h3>
+                    <p>Certified Quality Management Systems execution protocols.</p>
+                </div>
+                <div class="card cert-card">
+                    <img src="https://via.placeholder.com/300x400" alt="image11">
+                    <h3>PASARA License</h3>
+                    <p>Fully compliant with Private Security Agencies Regulation Act standards.</p>
+                </div>
+                <div class="card cert-card">
+                    <img src="https://via.placeholder.com/300x400" alt="image12">
+                    <h3>ISO 45001:2018</h3>
+                    <p>Top-tier occupational health & safety management validation standard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Geographic Footprint -->
+    <section class="map-section">
+        <div class="container text-center">
+            <span class="section-tag">FOOTPRINT</span>
+            <h2>Our Operational Reach</h2>
+            <div class="map-container">
+                <img src="https://via.placeholder.com/800x400?text=Operational+Geographic+Map+Representation" alt="image13" class="map-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container text-center">
+            <span class="section-tag">TESTIMONIALS</span>
+            <h2>Words of Appreciation</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <p class="quote-text">"Radiant Guards completely transformed our logistics center's dynamic. Their swift operational setup and flawless technical asset compliance are completely unrivaled."</p>
+                    <h4>Vikram Malhotra</h4>
+                    <span>COO, National Logistics Corp</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Insights Grid -->
+    <section class="insights-section" id="insights">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">INSIGHTS</span>
+                <h2>Founders Articles As City Guides</h2>
+            </div>
+            <div class="cards-grid three-col">
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image14">
+                    <div class="blog-meta"><span>July 10, 2026</span> • <span>Security Management</span></div>
+                    <h3>Understanding Modern Electronic Threat Control Networks</h3>
+                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image15">
+                    <div class="blog-meta"><span>July 05, 2026</span> • <span>Safety Protocols</span></div>
+                    <h3>How Corporate Enterprise Scalability Shifts Guarding Needs</h3>
+                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/400x250" alt="image16">
+                    <div class="blog-meta"><span>June 28, 2026</span> • <span>Operations</span></div>
+                    <h3>De-escalation Mechanics Within High Crowd Environments</h3>
+                    <a href="#" class="read-more">Read Full Post <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container grid-4">
+            <div class="footer-info">
+                <h3>Radiant Guards</h3>
+                <p>Premium modern security architecture engineering platforms serving businesses nationwide.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Core Operations</h4>
+                <ul>
+                    <li><a href="#">Manned Guard Detail</a></li>
+                    <li><a href="#">Asset Tracking</a></li>
+                    <li><a href="#">Corporate Consultations</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal & Compliances</h4>
+                <ul>
+                    <li><a href="#">PASARA Registry</a></li>
+                    <li><a href="#">Privacy Framework</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Reach Us</h4>
+                <p>Corporate Hub, Sector 62,<br>Noida, India</p>
+                <p>Email: desk@radiantguards.io</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Radiant Guards Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Injection Section -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple interaction scripts for modern UX components 
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Smooth scrolling alignment for navigation triggers
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Accounts for sticky navbar height offset
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Sticky Navbar transparency dynamic configuration adjustment
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = 'rgba(11, 12, 16, 0.98)';
+                    navbar.style.padding = '12px 5%';
+                } else {
+                    navbar.style.backgroundColor = 'rgba(11, 12, 16, 0.95)';
+                    navbar.style.padding = '20px 5%';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
