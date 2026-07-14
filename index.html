@@ -17,9 +17,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#05162e',       /* Deep corporate navy from Media.jpg */
+                            navy: '#05162e',       /* Deep corporate navy */
                             slate: '#0b2545',      /* Slate blue card background */
-                            gold: '#e5a93b',       /* Dynamic brand gold accent from Media.jpg */
+                            gold: '#e5a93b',       /* Dynamic brand gold accent */
                             goldHover: '#c9922b',  /* Gold hover state */
                             lightBlue: '#d5e1f0',  /* Premium soft light text contrast */
                             darkText: '#020b17',   /* Ultra dark gray for deep elements */
@@ -34,7 +34,7 @@
     </script>
 
     <style>
-        /* Custom premium scrollbar styling matching image_8a7ba3.jpg */
+        /* Custom premium scrollbar styling */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -51,7 +51,7 @@
             background: #e5a93b;
         }
         
-        /* Glass-morphic panels modeled after image_8a7ba3.jpg */
+        /* Glass-morphic panels */
         .glass-panel {
             background: rgba(5, 22, 46, 0.45);
             backdrop-filter: blur(16px);
@@ -89,69 +89,65 @@
 </head>
 <body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
 
-    <!-- Header / Sticky Navigation Bar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-[#05162e]/90 backdrop-blur-md border-b border-brand-gold/15 transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- Header / Sticky Navigation Bar - Light Variant for Dark Logo Contrast -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-brand-navy/10 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             
-            <!-- Company Shield Brand Logo -->
+            <!-- Company Shield Brand Logo Integration -->
             <a href="#home" class="flex items-center gap-3 group" aria-label="Raya Security Services Logo Home">
-                <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60 group-hover:border-brand-gold transition-all duration-300 transform group-hover:scale-105">
-                    <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-white font-extrabold text-base tracking-wide uppercase leading-tight group-hover:text-brand-gold transition-colors">RAYA SECURITY</span>
-                    <span class="text-[9px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
+                <img src="logo.png" alt="Raya Security Services Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="flex flex-col hidden sm:flex">
+                    <span class="text-brand-navy font-black text-sm tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                    <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-bold leading-none">SERVICES PVT. LTD.</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation Menu Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
-                <a href="#home" class="text-white hover:text-brand-gold transition-colors font-extrabold">Home</a>
-                <a href="#about" class="text-brand-lightBlue hover:text-white transition-colors">About</a>
-                <a href="#why-choose" class="text-brand-lightBlue hover:text-white transition-colors">Why Us</a>
-                <a href="#services" class="text-brand-lightBlue hover:text-white transition-colors">Services</a>
-                <a href="#compliances" class="text-brand-lightBlue hover:text-white transition-colors">Compliances</a>
-                <a href="#footprint" class="text-brand-lightBlue hover:text-white transition-colors">Footprint</a>
-                <a href="#testimonials" class="text-brand-lightBlue hover:text-white transition-colors">Testimonials</a>
-                <a href="#insights" class="text-brand-lightBlue hover:text-white transition-colors">Insights</a>
+            <!-- Desktop Navigation Menu Links (Hidden on mobile/tablets) -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="#home" class="text-brand-navy hover:text-brand-gold transition-colors">Home</a>
+                <a href="#about" class="text-brand-navy/80 hover:text-brand-navy transition-colors">About</a>
+                <a href="#why-choose" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Why Us</a>
+                <a href="#services" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Services</a>
+                <a href="#compliances" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Compliances</a>
+                <a href="#footprint" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Footprint</a>
+                <a href="#testimonials" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Testimonials</a>
+                <a href="#insights" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Insights</a>
             </nav>
 
-            <!-- Quick Action Action Hooks -->
-            <div class="flex items-center gap-4">
-                <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Toggle Theme Mode">
+            <!-- Quick Action Hooks -->
+            <div class="flex items-center gap-3">
+                <button class="w-10 h-10 rounded-full border border-brand-navy/10 flex items-center justify-center text-brand-navy hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Toggle Theme Mode">
                     <i data-lucide="sun" class="w-4 h-4"></i>
                 </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-darkText px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-goldHover transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md">
-                    Request to Connect ↗
+                <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-gold hover:text-brand-darkText transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md">
+                    Connect ↗
                 </a>
                 
                 <!-- Hamburger menu toggle button for mobile/tablets -->
-                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white hover:text-brand-gold focus:outline-none transition-all" aria-label="Open Mobile Menu">
+                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-brand-navy/10 flex items-center justify-center text-brand-navy hover:text-brand-gold focus:outline-none transition-all" aria-label="Open Mobile Menu">
                     <i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation Panel -->
-    <div id="mobile-menu" class="fixed inset-0 top-20 bg-[#05162e] z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden border-t border-white/5 flex flex-col justify-between p-6">
-        <nav class="flex flex-col gap-5 text-lg font-semibold pt-4">
-            <a href="#home" class="mobile-link text-white hover:text-brand-gold border-b border-white/5 pb-2">Home</a>
-            <a href="#about" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">About</a>
-            <a href="#why-choose" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Why Us</a>
-            <a href="#services" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Services</a>
-            <a href="#compliances" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Compliances</a>
-            <a href="#footprint" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Footprint</a>
-            <a href="#testimonials" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Testimonials</a>
-            <a href="#insights" class="mobile-link text-brand-lightBlue hover:text-brand-gold border-b border-white/5 pb-2">Insights</a>
+    <!-- Mobile Navigation Panel (Light background alignment) -->
+    <div id="mobile-menu" class="fixed inset-0 top-20 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden border-t border-brand-navy/5 flex flex-col justify-between p-6 shadow-xl">
+        <nav class="flex flex-col gap-4 text-base font-bold pt-4">
+            <a href="#home" class="mobile-link text-brand-navy hover:text-brand-gold border-b border-brand-navy/5 pb-2">Home</a>
+            <a href="#about" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">About</a>
+            <a href="#why-choose" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Why Us</a>
+            <a href="#services" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Services</a>
+            <a href="#compliances" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Compliances</a>
+            <a href="#footprint" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Footprint</a>
+            <a href="#testimonials" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Testimonials</a>
+            <a href="#insights" class="mobile-link text-brand-navy/80 hover:text-brand-gold border-b border-brand-navy/5 pb-2">Insights</a>
         </nav>
         <div class="flex flex-col gap-4 pb-8">
-            <a href="#contact" class="mobile-link w-full text-center bg-brand-gold text-brand-darkText py-3 rounded-lg font-bold uppercase tracking-wider text-sm shadow-md">
+            <a href="#contact" class="mobile-link w-full text-center bg-brand-navy text-white py-3 rounded-lg font-bold uppercase tracking-wider text-xs shadow-md hover:bg-brand-gold hover:text-brand-darkText transition-colors">
                 Request to Connect ↗
             </a>
-            <div class="text-xs text-center text-brand-lightBlue/60">
+            <div class="text-xs text-center text-brand-navy/70 font-medium">
                 📞 Call Hub: +91 8624998789
             </div>
         </div>
@@ -159,13 +155,13 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
-        <!-- Main dynamic background container -->
+        <!-- Main dynamic background container - Keep localized slider assets intact -->
         <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0 scale-100" style="background-image: url('img1.png');"></div>
         
-        <!-- Premium transparent overlay matching image_8a7ba3.jpg - keeping image beautifully visible yet supporting readable text -->
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/80 via-brand-darkText/45 to-brand-darkText/75 z-10"></div>
+        <!-- Premium transparent overlay supporting readable text -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/90 via-brand-darkText/50 to-brand-darkText/80 z-10"></div>
 
-        <!-- Left floating social capsule bar matching image_8bd866.png -->
+        <!-- Left floating social capsule bar -->
         <div class="absolute left-6 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col items-center gap-4 bg-black/60 backdrop-blur-md px-3.5 py-6 rounded-full border border-white/10 shadow-2xl">
             <a href="#" class="w-10 h-10 rounded-[10px] bg-[#0077b5] flex items-center justify-center text-white transition-all hover:scale-110 shadow-md" aria-label="Raya LinkedIn Link">
                 <i data-lucide="linkedin" class="w-5 h-5"></i>
@@ -178,18 +174,18 @@
             </a>
         </div>
 
-        <!-- Dynamic Content Layout with professional smaller font scale -->
-        <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+        <!-- Dynamic Content Layout -->
+        <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
                 
-                <!-- Left dynamic text column - beautifully sized slightly smaller as requested -->
-                <div class="lg:col-span-7 flex flex-col items-start gap-3.5 fade-transition transform translate-y-0" id="hero-left-col">
+                <!-- Left dynamic text column -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-4 fade-transition transform translate-y-0" id="hero-left-col">
                     <div class="glass-badge px-3.5 py-1.5 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
                         🛡️ SINCE 1992 · PSARA LICENSED · ISO CERTIFIED
                     </div>
 
-                    <span id="hero-category" class="text-brand-gold font-bold text-xs sm:text-xs tracking-wider uppercase mt-1">Integrated Security</span>
+                    <span id="hero-category" class="text-brand-gold font-bold text-xs tracking-wider uppercase mt-1">Integrated Security</span>
 
                     <h1 id="hero-title" class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight max-w-lg">
                         Next-Generation Security Solutions
@@ -200,52 +196,31 @@
                         <span class="text-white text-[10px] sm:text-[11px] tracking-wide font-medium">Employees</span>
                     </div>
 
-                    <!-- Dynamic Progress Loading Indicators exactly as requested -->
+                    <!-- Dynamic Progress Loading Indicators -->
                     <div class="flex items-center gap-2 mt-4 w-full max-w-sm" id="progress-indicator">
-                        <!-- Progress Dash #01 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-01" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #02 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-02" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #03 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-03" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #04 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-04" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #05 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-05" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #06 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-06" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
-                        <!-- Progress Dash #07 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
-                            <div id="progress-bar-07" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
-                        </div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-01" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-02" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-03" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-04" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-05" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-06" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative"><div id="progress-bar-07" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div></div>
                     </div>
                 </div>
 
-                <!-- Right Dynamic content column with professional smaller text layout -->
-                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-4.5 border-l-0 lg:border-l border-white/10 fade-transition transform translate-y-0" id="hero-right-col">
+                <!-- Right Dynamic content column -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-4 border-l-0 lg:border-l border-white/10 fade-transition transform translate-y-0" id="hero-right-col">
                     <h2 id="hero-right-title" class="text-white font-bold text-lg sm:text-xl md:text-2xl leading-snug">
                         Protecting People, Assets & Infrastructure.
                     </h2>
-                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-[11px] sm:text-xs md:text-xs leading-relaxed font-normal max-w-sm">
+                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-xs leading-relaxed font-normal max-w-sm">
                         Combining trained security personnel, AI-enabled surveillance, and strategic risk advisory to protect modern enterprises across 20+ industries.
                     </p>
-                    <div class="flex flex-wrap items-center gap-3.5 mt-1">
-                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-[11px] sm:text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    <div class="flex flex-wrap items-center gap-3 mt-1">
+                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                             Request to Connect ↗
                         </a>
-                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-[11px] sm:text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
+                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
                             Explore Solutions
                         </a>
                     </div>
@@ -254,46 +229,38 @@
             </div>
         </div>
 
-        <!-- Interactive Horizontal Selector Strip with clean compact sizing -->
+        <!-- Interactive Horizontal Selector Strip -->
         <div class="w-full z-20 bg-brand-darkText/95 border-t border-white/10 backdrop-blur-md">
             <div class="max-w-[1400px] mx-auto overflow-x-auto">
                 <div class="flex items-center justify-between min-w-[980px] px-6 py-4" id="hero-tabs-container">
-                    
                     <button onclick="userSelectState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-01" class="text-[10px] font-semibold text-brand-gold">#01</span>
                         <span id="tab-text-01" class="text-xs font-bold text-white">Manned Guarding</span>
                     </button>
-
                     <button onclick="userSelectState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-02" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
                         <span id="tab-text-02" class="text-xs font-medium text-white/60 group-hover:text-white">Surveillance</span>
                     </button>
-
                     <button onclick="userSelectState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-03" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
                         <span id="tab-text-03" class="text-xs font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
                     </button>
-
                     <button onclick="userSelectState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-04" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
                         <span id="tab-text-04" class="text-xs font-medium text-white/60 group-hover:text-white">Command Centre</span>
                     </button>
-
                     <button onclick="userSelectState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-05" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
                         <span id="tab-text-05" class="text-xs font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
                     </button>
-
                     <button onclick="userSelectState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-06" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#06</span>
                         <span id="tab-text-06" class="text-xs font-medium text-white/60 group-hover:text-white">Training Academy</span>
                     </button>
-
                     <button onclick="userSelectState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-07" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
                         <span id="tab-text-07" class="text-xs font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
                     </button>
-
                 </div>
             </div>
         </div>
@@ -326,7 +293,8 @@
         <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="relative group">
                 <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-brand-slate rounded-xl blur opacity-35 group-hover:opacity-60 transition-all duration-500"></div>
-                <img src="img2.png" alt="image1" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full transform group-hover:scale-[1.02] transition-transform duration-500">
+                <!-- Updated with stable premium corporate placeholder image -->
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Raya Security Operations Hub" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full h-80 sm:h-96 transform group-hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="flex flex-col items-start gap-4">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase">ABOUT OUR COMPANY</span>
@@ -380,7 +348,7 @@
                 <!-- Card 1 -->
                 <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img3.png" alt="image2" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Training Academy" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Elite Training Academy</h3>
@@ -390,7 +358,7 @@
                 <!-- Card 2 -->
                 <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img4.png" alt="image3" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Tech Integration" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Smart Tech Integration</h3>
@@ -400,7 +368,7 @@
                 <!-- Card 3 -->
                 <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img5.png" alt="image4" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Command Control" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">24/7 Command Control</h3>
@@ -421,7 +389,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="shield" class="w-6 h-6"></i>
                     </div>
@@ -429,7 +397,7 @@
                     <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Alert manned guarding professionals deployed to maintain access points, industrial complexes, and warehouse lines.</p>
                 </div>
                 <!-- Service 2 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="user-check" class="w-6 h-6"></i>
                     </div>
@@ -437,7 +405,7 @@
                     <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Systematic entry controls, visitor registries, and structural crowd management for peaceful business programs.</p>
                 </div>
                 <!-- Service 3 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
@@ -445,7 +413,7 @@
                     <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Adaptable security architectures tailored explicitly to client operations, housing societies, and retail centers.</p>
                 </div>
                 <!-- Service 4 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="monitor" class="w-6 h-6"></i>
                     </div>
@@ -453,7 +421,7 @@
                     <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Persistent off-site visual audits combined with live camera feeds to flag physical perimeter vulnerabilities instantly.</p>
                 </div>
                 <!-- Service 5 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
@@ -461,7 +429,7 @@
                     <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Highly vetted security convoys handling bank operations, gold assets, and high-value equipment transfers safely.</p>
                 </div>
                 <!-- Service 6 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-6 sm:p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="alert-triangle" class="w-6 h-6"></i>
                     </div>
@@ -476,12 +444,11 @@
     <section class="py-16 bg-brand-navy border-t border-b border-brand-gold/15">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-gold mb-8 animate-pulse">Trusted by Corporate & Industrial Leaders</p>
-            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-65">
-                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
-                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
-                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
-                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
-                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-65">
+                <span class="text-white font-black tracking-widest text-lg sm:text-xl">MAHINDRA GRIDS</span>
+                <span class="text-white font-black tracking-widest text-lg sm:text-xl">TATA ENTERPRISES</span>
+                <span class="text-white font-black tracking-widest text-lg sm:text-xl">RELIANCE LOGISTICS</span>
+                <span class="text-white font-black tracking-widest text-lg sm:text-xl">ADANI PORTS</span>
             </div>
         </div>
     </section>
@@ -497,19 +464,19 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Cert 1 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <img src="img6.png" alt="image10" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80" alt="ISO Certification Standard" class="w-full max-w-[240px] h-40 object-cover mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">ISO 9001:2015</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Standard-setting operational frameworks across commercial security administration setups.</p>
                 </div>
                 <!-- Cert 2 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <img src="img7.png" alt="image11" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80" alt="PASARA License Standard" class="w-full max-w-[240px] h-40 object-cover mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">PASARA License</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Fully registered private security agency regulation compliance credentials.</p>
                 </div>
                 <!-- Cert 3 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <img src="img8.png" alt="image12" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=400&q=80" alt="ISO Risk Safety Standard" class="w-full max-w-[240px] h-40 object-cover mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">ISO 45001:2018</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Guaranteed occupational risk elimination and guard personnel safety safeguards.</p>
                 </div>
@@ -524,7 +491,7 @@
             <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Our Operational Reach</h2>
             
             <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl group">
-                <img src="img9.png" alt="image13" class="w-full h-auto block filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-700">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80" alt="India Operational Map Visualization" class="w-full h-auto block filter brightness-75 contrast-105 group-hover:scale-[1.01] transition-transform duration-700">
                 <div class="absolute bottom-4 right-4 bg-brand-darkText/90 border border-brand-gold/30 px-4 py-2 rounded-lg text-left backdrop-blur-md">
                     <span class="text-[10px] uppercase font-bold text-brand-gold block tracking-wider">Core Deployment Centers</span>
                     <span class="text-xs font-semibold text-white">Nagpur HQ & Pune Regional Branch</span>
@@ -539,12 +506,11 @@
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">TESTIMONIALS</span>
             <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Words of Appreciation</h2>
 
-            <!-- Testimonial Frame with glowing gradient shadows -->
-            <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-8 sm:p-12 relative shadow-2xl hover:border-brand-gold/40 transition-colors duration-300">
+            <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-6 sm:p-12 relative shadow-2xl hover:border-brand-gold/40 transition-colors duration-300">
                 <div class="text-brand-gold flex justify-center mb-6">
                     <i data-lucide="quote" class="w-12 h-12"></i>
                 </div>
-                <p class="text-white italic text-base sm:text-lg leading-relaxed mb-6 font-medium">
+                <p class="text-white italic text-sm sm:text-lg leading-relaxed mb-6 font-medium">
                     "Raya Security Services completely transformed our logistics center's dynamic in Pune. Their static guard units are exceptionally disciplined, always punctual, and communicate with transparency."
                 </p>
                 <h4 class="text-white font-extrabold text-base">Shreevardhan Deshmukh</h4>
@@ -565,7 +531,7 @@
                 <!-- Post 1 -->
                 <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
                     <div class="overflow-hidden">
-                        <img src="img10.png" alt="image14" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Threat Control Networks" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Threat Mitigation • July 10, 2026</div>
@@ -578,7 +544,7 @@
                 <!-- Post 2 -->
                 <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
                     <div class="overflow-hidden">
-                        <img src="img11.png" alt="image15" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Enterprise Security Scaling" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Enterprise Scale • July 05, 2026</div>
@@ -591,7 +557,7 @@
                 <!-- Post 3 -->
                 <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
                     <div class="overflow-hidden">
-                        <img src="img12.png" alt="image16" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="De-escalation Mechanics" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Operations • June 28, 2026</div>
@@ -607,16 +573,12 @@
 
     <!-- Footer / Contact Hub -->
     <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20" id="contact">
-        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
             
             <!-- Brand Column -->
             <div class="flex flex-col gap-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60">
-                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
+                    <img src="logo.png" alt="Raya Footer Logo" class="h-10 w-auto object-contain bg-white/10 p-1 rounded">
                     <div class="flex flex-col">
                         <span class="text-white font-extrabold text-base tracking-wide uppercase leading-tight">RAYA SECURITY</span>
                         <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
@@ -626,10 +588,10 @@
                     Premium modern safety architecture and verified personnel solutions serving corporate complexes, logistics grids, and event venues across India.
                 </p>
                 <div class="flex flex-col gap-2">
-                    <div class="text-brand-gold font-extrabold text-base flex items-center gap-2">
+                    <div class="text-brand-gold font-extrabold text-sm sm:text-base flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4 text-[#25D366]"></i> Call Now: +91 8624998789
                     </div>
-                    <div class="text-[#25D366] font-extrabold text-base flex items-center gap-2">
+                    <div class="text-[#25D366] font-extrabold text-sm sm:text-base flex items-center gap-2">
                         <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp: +91 9284022701
                     </div>
                 </div>
@@ -648,7 +610,7 @@
                 </ul>
             </div>
 
-            <!-- Branch Details Column (Verified from Media.jpg) -->
+            <!-- Branch Details Column -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
                     Branch Locations
@@ -671,7 +633,7 @@
                 </div>
             </div>
 
-            <!-- Contact Coordinates Column (Verified from Media.jpg) -->
+            <!-- Contact Coordinates Column -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
                     Direct Contact Desk
@@ -704,9 +666,9 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Object containing interactive state details matching image_8a7ba3.jpg with specific background local assets
+        // 7-slide local state maps preserved untouched structurally
         const heroStateMap = {
-            '01': { // Match exactly to image_8a7ba3.jpg active state
+            '01': {
                 category: 'Integrated Security',
                 title: 'Next-Generation Security Solutions',
                 stat: '7500+',
@@ -771,13 +733,12 @@
             }
         };
 
-        let currentActiveKey = '01'; // Default on load set to Manned Guarding from screenshot
+        let currentActiveKey = '01';
         let progress = 0;
         let progressInterval = null;
-        const autoDuration = 5000; // 5 seconds per slide
-        const tickRate = 30; // update frequency in ms
+        const autoDuration = 5000;
+        const tickRate = 30;
 
-        // Smooth state change switcher
         function switchHeroState(stateKey) {
             const state = heroStateMap[stateKey];
             if (!state) return;
@@ -787,14 +748,12 @@
             const leftCol = document.getElementById('hero-left-col');
             const rightCol = document.getElementById('hero-right-col');
 
-            // Apply fade-out animations smoothly
             leftCol.style.opacity = '0';
             leftCol.style.transform = 'translateY(10px)';
             rightCol.style.opacity = '0';
             rightCol.style.transform = 'translateY(10px)';
 
             setTimeout(() => {
-                // Update DOM elements on finish fade
                 document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
                 document.getElementById('hero-category').innerText = state.category;
                 document.getElementById('hero-title').innerText = state.title;
@@ -806,14 +765,12 @@
                 document.getElementById('hero-right-title').innerText = state.rightTitle;
                 document.getElementById('hero-right-desc').innerText = state.rightDesc;
 
-                // Recover layout with smooth fade-in transform
                 leftCol.style.opacity = '1';
                 leftCol.style.transform = 'translateY(0)';
                 rightCol.style.opacity = '1';
                 rightCol.style.transform = 'translateY(0)';
             }, 300);
 
-            // Synchronize highlights on bottom tab buttons
             const stateNum = parseInt(stateKey);
             for (let i = 1; i <= 7; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
@@ -830,7 +787,6 @@
             }
         }
 
-        // Auto-progress loops with smooth incremental CSS updates
         function startProgressLoop() {
             if (progressInterval) clearInterval(progressInterval);
 
@@ -841,9 +797,7 @@
                     progress = 0;
                     let currentNum = parseInt(currentActiveKey);
                     let nextNum = currentNum + 1;
-                    if (nextNum > 7) {
-                        nextNum = 1;
-                    }
+                    if (nextNum > 7) nextNum = 1;
                     const nextKey = nextNum.toString().padStart(2, '0');
                     switchHeroState(nextKey);
                 } else {
@@ -852,7 +806,6 @@
             }, tickRate);
         }
 
-        // Update single bar loading status based on active slide key
         function updateProgressBarUI() {
             for (let i = 1; i <= 7; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
@@ -861,13 +814,11 @@
                 if (formattedKey === currentActiveKey) {
                     progressBar.style.width = `${progress}%`;
                 } else {
-                    // Reset inactive bars back to clean 0% immediately
                     progressBar.style.width = '0%';
                 }
             }
         }
 
-        // Reset and restart animation if the user triggers a slide manually
         function userSelectState(stateKey) {
             progress = 0;
             updateProgressBarUI();
@@ -876,7 +827,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Setup Mobile hamburger navigation triggers
             const hamburgerBtn = document.getElementById('hamburger-btn');
             const hamburgerIcon = document.getElementById('hamburger-icon');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -892,10 +842,9 @@
                     mobileMenu.classList.remove('translate-x-full');
                     hamburgerIcon.setAttribute('data-lucide', 'x');
                 }
-                lucide.createIcons(); // Re-render Lucide icons
+                lucide.createIcons();
             });
 
-            // Clean exit layout on clicks anywhere outside or on links
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
@@ -912,38 +861,27 @@
                 }
             });
 
-            // Initialize default active slide (01 - Manned Guarding with background img1.png)
             switchHeroState('01');
             startProgressLoop();
 
-            // Set up scroll reveal hooks using Intersection Observer API
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Trigger only once for a smooth visual flow
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            const revealElements = document.querySelectorAll('.scroll-reveal');
-            revealElements.forEach(el => revealObserver.observe(el));
+            document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
 
-            // Dynamic header scroll states
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 40) {
-                    header.classList.add('py-3', 'shadow-2xl', 'bg-[#05162e]');
-                    header.classList.remove('bg-[#05162e]/90');
+                    header.classList.add('py-2', 'shadow-md');
                 } else {
-                    header.classList.remove('py-3', 'shadow-2xl', 'bg-[#05162e]');
-                    header.classList.add('bg-[#05162e]/90');
+                    header.classList.remove('py-2', 'shadow-md');
                 }
             });
         });
