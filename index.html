@@ -37,7 +37,7 @@
 
     <!-- STREAMING_CHUNK: Defining smooth animations, scroll transitions, and custom loading keyframes in CSS -->
     <style>
-        /* Custom premium scrollbar styling matching image_8a70c1.jpg */
+        /* Custom premium scrollbar styling matching image_8a7ba3.jpg */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -54,7 +54,7 @@
             background: #e5a93b;
         }
         
-        /* Glass-morphic panels modeled after image_8a70c1.jpg */
+        /* Glass-morphic panels modeled after image_8a7ba3.jpg */
         .glass-panel {
             background: rgba(5, 22, 46, 0.45);
             backdrop-filter: blur(16px);
@@ -166,10 +166,12 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
         <!-- Main dynamic background container -->
-        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0 scale-105" style="background-image: url('img1.png');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/95 via-brand-darkText/80 to-brand-darkText/95 z-10"></div>
+        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0 scale-100" style="background-image: url('img1.png');"></div>
+        
+        <!-- Premium transparent overlay matching image_8a7ba3.jpg - keeping image beautifully visible yet supporting readable text -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/85 via-brand-darkText/50 to-brand-darkText/80 z-10"></div>
 
-        <!-- Left floating social bar modeled on image_8a70c1.jpg -->
+        <!-- Left floating social bar modeled on image_8a7ba3.jpg -->
         <div class="absolute left-6 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col gap-4">
             <a href="#" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-blue-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg" aria-label="Raya LinkedIn Link">
                 <i data-lucide="linkedin" class="w-5 h-5"></i>
@@ -186,71 +188,71 @@
         <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
                 
-                <!-- Left dynamic text column -->
-                <div class="lg:col-span-7 flex flex-col items-start gap-4 fade-transition transform translate-y-0" id="hero-left-col">
-                    <div class="glass-badge px-4 py-2 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
+                <!-- Left dynamic text column - beautifully sized slightly smaller as requested -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-3.5 fade-transition transform translate-y-0" id="hero-left-col">
+                    <div class="glass-badge px-3.5 py-1.5 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
                         🛡️ SINCE 1992 · PSARA LICENSED · ISO CERTIFIED
                     </div>
 
-                    <span id="hero-category" class="text-brand-gold font-bold text-xs sm:text-sm tracking-wider uppercase mt-1">Integrated Security</span>
+                    <span id="hero-category" class="text-brand-gold font-bold text-xs sm:text-xs tracking-wider uppercase mt-1">Integrated Security</span>
 
-                    <h1 id="hero-title" class="text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight max-w-xl">
+                    <h1 id="hero-title" class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight max-w-lg">
                         Next-Generation Security Solutions
                     </h1>
 
-                    <div class="glass-panel px-5 py-2.5 rounded-full flex items-center gap-3 mt-1 border border-brand-gold/20">
-                        <span id="hero-stat" class="text-brand-gold font-extrabold text-base sm:text-lg">7500+</span>
-                        <span class="text-white text-[11px] sm:text-xs tracking-wide font-medium">Employees</span>
+                    <div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2.5 mt-1 border border-brand-gold/20">
+                        <span id="hero-stat" class="text-brand-gold font-extrabold text-sm sm:text-base">7500+</span>
+                        <span class="text-white text-[10px] sm:text-[11px] tracking-wide font-medium">Employees</span>
                     </div>
 
                     <!-- STREAMING_CHUNK: Designing the loading progress dash lines with dynamic timeline animation -->
                     <!-- Dynamic Progress Loading Indicators exactly as requested -->
-                    <div class="flex items-center gap-2.5 mt-5 w-full max-w-sm" id="progress-indicator">
+                    <div class="flex items-center gap-2 mt-4 w-full max-w-sm" id="progress-indicator">
                         <!-- Progress Dash #01 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-01" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #02 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-02" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #03 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-03" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #04 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-04" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #05 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-05" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #06 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-06" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                         <!-- Progress Dash #07 -->
-                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                        <div class="h-1 flex-grow rounded-full bg-white/15 overflow-hidden relative">
                             <div id="progress-bar-07" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Dynamic content column with professional scale -->
-                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-5 border-l-0 lg:border-l border-white/10 fade-transition transform translate-y-0" id="hero-right-col">
-                    <h2 id="hero-right-title" class="text-white font-bold text-xl sm:text-2xl md:text-3xl leading-snug">
+                <!-- Right Dynamic content column with professional smaller text layout -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-4.5 border-l-0 lg:border-l border-white/10 fade-transition transform translate-y-0" id="hero-right-col">
+                    <h2 id="hero-right-title" class="text-white font-bold text-lg sm:text-xl md:text-2xl leading-snug">
                         Protecting People, Assets & Infrastructure.
                     </h2>
-                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-xs sm:text-sm leading-relaxed font-normal">
+                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-[11px] sm:text-xs md:text-xs leading-relaxed font-normal max-w-sm">
                         Combining trained security personnel, AI-enabled surveillance, and strategic risk advisory to protect modern enterprises across 20+ industries.
                     </p>
-                    <div class="flex flex-wrap items-center gap-4 mt-1">
-                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    <div class="flex flex-wrap items-center gap-3.5 mt-1">
+                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-[11px] sm:text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                             Request to Connect ↗
                         </a>
-                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
+                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-[11px] sm:text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
                             Explore Solutions
                         </a>
                     </div>
@@ -267,37 +269,37 @@
                     
                     <button onclick="userSelectState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-01" class="text-[10px] font-semibold text-brand-gold">#01</span>
-                        <span id="tab-text-01" class="text-xs md:text-sm font-bold text-white">Manned Guarding</span>
+                        <span id="tab-text-01" class="text-xs font-bold text-white">Manned Guarding</span>
                     </button>
 
                     <button onclick="userSelectState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-02" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
-                        <span id="tab-text-02" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Surveillance</span>
+                        <span id="tab-text-02" class="text-xs font-medium text-white/60 group-hover:text-white">Surveillance</span>
                     </button>
 
                     <button onclick="userSelectState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-03" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
-                        <span id="tab-text-03" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
+                        <span id="tab-text-03" class="text-xs font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
                     </button>
 
                     <button onclick="userSelectState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-04" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
-                        <span id="tab-text-04" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Command Centre</span>
+                        <span id="tab-text-04" class="text-xs font-medium text-white/60 group-hover:text-white">Command Centre</span>
                     </button>
 
                     <button onclick="userSelectState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-05" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
-                        <span id="tab-text-05" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
+                        <span id="tab-text-05" class="text-xs font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
                     </button>
 
                     <button onclick="userSelectState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-06" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#06</span>
-                        <span id="tab-text-06" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Training Academy</span>
+                        <span id="tab-text-06" class="text-xs font-medium text-white/60 group-hover:text-white">Training Academy</span>
                     </button>
 
                     <button onclick="userSelectState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
                         <span id="tab-num-07" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
-                        <span id="tab-text-07" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
+                        <span id="tab-text-07" class="text-xs font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
                     </button>
 
                 </div>
@@ -338,8 +340,8 @@
             </div>
             <div class="flex flex-col items-start gap-4">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase">ABOUT OUR COMPANY</span>
-                <h2 class="text-white font-extrabold text-3xl sm:text-4xl leading-tight">Shaping Security That Makes India Safer</h2>
-                <p class="text-brand-lightBlue/80 text-sm sm:text-base leading-relaxed font-normal">
+                <h2 class="text-white font-extrabold text-2xl sm:text-3xl leading-tight">Shaping Security That Makes India Safer</h2>
+                <p class="text-brand-lightBlue/80 text-xs sm:text-sm leading-relaxed font-normal">
                     Raya Security Services coordinates physical drilling setup, state-of-the-art geo-location checkins, and live field audits to keep warehouses, industrial hubs, and housing complexes protected with maximum integrity.
                 </p>
                 <ul class="flex flex-col gap-4 mt-2 w-full">
@@ -383,7 +385,7 @@
     <section class="py-24 bg-[#05162e]/45 border-t border-b border-brand-gold/15 scroll-reveal" id="why-choose">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">THE RAYA ADVANTAGE</span>
-            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Why Choose Raya?</h2>
+            <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Why Choose Raya?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- Card 1 -->
@@ -392,8 +394,8 @@
                         <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">Elite Training Academy</h3>
-                        <p class="text-brand-lightBlue/70 text-sm">Every field asset completes industrial training, physical fitness checks, and crowd control techniques.</p>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Elite Training Academy</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Every field asset completes industrial training, physical fitness checks, and crowd control techniques.</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -402,8 +404,8 @@
                         <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">Smart Tech Integration</h3>
-                        <p class="text-brand-lightBlue/70 text-sm">Using geotargeting check-ins, transparent patrols, and instant emergency dispatch telemetry.</p>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Smart Tech Integration</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Using geotargeting check-ins, transparent patrols, and instant emergency dispatch telemetry.</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -412,8 +414,8 @@
                         <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">24/7 Command Control</h3>
-                        <p class="text-brand-lightBlue/70 text-sm">Centrally managed operation hubs checking on status alerts and mobilizing quick action guards.</p>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">24/7 Command Control</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Centrally managed operation hubs checking on status alerts and mobilizing quick action guards.</p>
                     </div>
                 </div>
             </div>
@@ -426,7 +428,7 @@
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">OUR SERVICES</span>
-                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Sectors Capable of Tailored Security Solutions</h2>
+                <h2 class="text-white font-extrabold text-2xl sm:text-3xl">Sectors Capable of Tailored Security Solutions</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -435,48 +437,48 @@
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="shield" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Security Guards</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Alert manned guarding professionals deployed to maintain access points, industrial complexes, and warehouse lines.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">Security Guards</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Alert manned guarding professionals deployed to maintain access points, industrial complexes, and warehouse lines.</p>
                 </div>
                 <!-- Service 2 -->
                 <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="user-check" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Event Security</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Systematic entry controls, visitor registries, and structural crowd management for peaceful business programs.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">Event Security</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Systematic entry controls, visitor registries, and structural crowd management for peaceful business programs.</p>
                 </div>
                 <!-- Service 3 -->
                 <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">All Security Types</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Adaptable security architectures tailored explicitly to client operations, housing societies, and retail centers.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">All Security Types</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Adaptable security architectures tailored explicitly to client operations, housing societies, and retail centers.</p>
                 </div>
                 <!-- Service 4 -->
                 <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="monitor" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">CCTV Surveillance</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Persistent off-site visual audits combined with live camera feeds to flag physical perimeter vulnerabilities instantly.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">CCTV Surveillance</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Persistent off-site visual audits combined with live camera feeds to flag physical perimeter vulnerabilities instantly.</p>
                 </div>
                 <!-- Service 5 -->
                 <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Cash-In-Transit</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Highly vetted security convoys handling bank operations, gold assets, and high-value equipment transfers safely.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">Cash-In-Transit</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Highly vetted security convoys handling bank operations, gold assets, and high-value equipment transfers safely.</p>
                 </div>
                 <!-- Service 6 -->
                 <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="alert-triangle" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Vulnerability Audits</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Comprehensive checks isolating entry points, lock mechanisms, and communication gaps inside active sites.</p>
+                    <h3 class="text-white font-bold text-lg mb-3">Vulnerability Audits</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed">Comprehensive checks isolating entry points, lock mechanisms, and communication gaps inside active sites.</p>
                 </div>
             </div>
         </div>
@@ -503,7 +505,7 @@
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">VERIFICATION</span>
-                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Certifications & Compliances</h2>
+                <h2 class="text-white font-extrabold text-2xl sm:text-3xl">Certifications & Compliances</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -534,7 +536,7 @@
     <section class="py-24 bg-brand-navy border-t border-b border-brand-gold/15 scroll-reveal" id="footprint">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">REGIONAL REACH</span>
-            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Our Operational Reach</h2>
+            <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Our Operational Reach</h2>
             
             <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl group">
                 <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="w-full h-auto block filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-700">
@@ -551,14 +553,14 @@
     <section class="py-24 bg-[#020b17] scroll-reveal" id="testimonials">
         <div class="max-w-[1000px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">TESTIMONIALS</span>
-            <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Words of Appreciation</h2>
+            <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Words of Appreciation</h2>
 
             <!-- Testimonial Frame with glowing gradient shadows -->
             <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-8 sm:p-12 relative shadow-2xl hover:border-brand-gold/40 transition-colors duration-300">
                 <div class="text-brand-gold flex justify-center mb-6">
                     <i data-lucide="quote" class="w-12 h-12"></i>
                 </div>
-                <p class="text-white italic text-lg sm:text-xl leading-relaxed mb-6 font-medium">
+                <p class="text-white italic text-base sm:text-lg leading-relaxed mb-6 font-medium">
                     "Raya Security Services completely transformed our logistics center's dynamic in Pune. Their static guard units are exceptionally disciplined, always punctual, and communicate with transparency."
                 </p>
                 <h4 class="text-white font-extrabold text-base">Shreevardhan Deshmukh</h4>
@@ -573,7 +575,7 @@
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">INSIGHTS</span>
-                <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Founders Articles & Safety Guides</h2>
+                <h2 class="text-white font-extrabold text-2xl sm:text-3xl">Founders Articles & Safety Guides</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -721,9 +723,9 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Object containing interactive state details matching image_8a70c1.jpg
+        // Object containing interactive state details matching image_8a7ba3.jpg
         const heroStateMap = {
-            '01': { // Match exactly to image_8a70c1.jpg active state
+            '01': { // Match exactly to image_8a7ba3.jpg active state
                 category: 'Integrated Security',
                 title: 'Next-Generation Security Solutions',
                 stat: '7500+',
@@ -806,9 +808,9 @@
 
             // Apply fade-out animations smoothly
             leftCol.style.opacity = '0';
-            leftCol.style.transform = 'translateY(12px)';
+            leftCol.style.transform = 'translateY(10px)';
             rightCol.style.opacity = '0';
-            rightCol.style.transform = 'translateY(12px)';
+            rightCol.style.transform = 'translateY(10px)';
 
             setTimeout(() => {
                 // Update DOM elements on finish fade
