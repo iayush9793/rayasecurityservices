@@ -89,9 +89,55 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Ambient Pulsing Golden Effect for Preloader */
+        @keyframes goldGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(229, 169, 59, 0.2); }
+            50% { box-shadow: 0 0 50px rgba(229, 169, 59, 0.5); }
+        }
+        .preloader-glow {
+            animation: goldGlow 3s infinite ease-in-out;
+        }
+
+        /* Custom Interactive Cursor Element */
+        .custom-cursor-glow {
+            width: 32px;
+            height: 32px;
+            background: rgba(229, 169, 59, 0.08);
+            border: 1px solid rgba(229, 169, 59, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(229, 169, 59, 0.25);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            display: none; /* Auto revealed on desktop via script */
+        }
     </style>
 </head>
 <body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
+
+    <!-- Premium Preloader Wrapper -->
+    <div id="preloader" class="fixed inset-0 bg-[#020b17] z-[999999] flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
+        <div class="flex flex-col items-center gap-6">
+            <!-- Centered Shield Brand Logo Container with Glowing Aura Effect -->
+            <div class="w-24 h-24 rounded-2xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center p-3 preloader-glow">
+                <img src="logo.png" alt="Raya Security Loading..." class="w-full h-full object-contain animate-pulse">
+            </div>
+            
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-white font-extrabold text-xs tracking-[0.25em] uppercase">RAYA SECURITY</span>
+                <!-- Golden Line Progress Bar Animation Holder -->
+                <div class="w-48 h-[3px] bg-white/10 rounded-full overflow-hidden relative mt-1">
+                    <div id="preloader-bar" class="h-full bg-brand-gold w-0 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Custom Cursor Shadow Shell (Desktop Only) -->
+    <div id="custom-cursor" class="custom-cursor-glow"></div>
 
     <!-- Header / Sticky Navigation Bar - Light Variant for Dark Logo Contrast -->
     <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-brand-navy/10 transition-all duration-300">
@@ -292,7 +338,6 @@
                 <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Years Experience</p>
             </div>
             <div class="flex flex-col items-center">
-                <!-- Static rendering for complex strings like 24/7 matching standard image behaviors -->
                 <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">24/7</h3>
                 <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Active Support</p>
             </div>
@@ -305,7 +350,7 @@
             <div class="relative group">
                 <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-brand-slate rounded-xl blur opacity-35 group-hover:opacity-60 transition-all duration-500"></div>
                 <!-- Premium Indian Corporate Guard Asset Integration -->
-                <img src="main.png" alt="Raya Security Indian Guards Lineup" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full h-80 sm:h-96 transform group-hover:scale-[1.02] transition-transform duration-500">
+                <img src="https://images.unsplash.com/photo-1628157582853-a796fa650a6a?auto=format&fit=crop&w=800&q=80" alt="Raya Security Indian Guards Lineup" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full h-80 sm:h-96 transform group-hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="flex flex-col items-start gap-4">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase">ABOUT OUR COMPANY</span>
@@ -849,7 +894,6 @@
                         const targetValue = parseInt(targetEl.getAttribute('data-target'), 10);
                         let startValue = 0;
                         
-                        // Scale increments naturally relative to speed matching premium layouts
                         const duration = 2000; 
                         const frameRate = 1000 / 60; 
                         const totalFrames = Math.round(duration / frameRate);
@@ -857,13 +901,11 @@
 
                         const countRunner = setInterval(() => {
                             currentFrame++;
-                            // Premium progressive deceleration count equation
                             const progressRatio = currentFrame / totalFrames;
                             const easeOutQuad = progressRatio * (2 - progressRatio);
                             const currentCountValue = Math.round(targetValue * easeOutQuad);
 
                             if (targetValue >= 1000) {
-                                // Formatting with localized commas for large numbers
                                 targetEl.innerText = currentCountValue.toLocaleString('en-IN');
                             } else {
                                 targetEl.innerText = currentCountValue;
@@ -883,7 +925,67 @@
             counterElements.forEach(el => countingObserver.observe(el));
         }
 
+        // Preloader Loading Simulation Engine
+        function handlePreloaderSystem() {
+            const preloader = document.getElementById('preloader');
+            const bar = document.getElementById('preloader-bar');
+            let progress = 0;
+
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    progress = 100;
+                    bar.style.width = '100%';
+                    clearInterval(progressInterval);
+                    
+                    setTimeout(() => {
+                        preloader.style.opacity = '0';
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                        }, 700);
+                    }, 400);
+                } else {
+                    bar.style.width = `${progress}%`;
+                }
+            }, 80);
+        }
+
+        // Custom Cursor Shadow Automation Engine
+        function initCursorTracking() {
+            const cursor = document.getElementById('custom-cursor');
+            
+            // Disable custom cursor tracking for tactile touch screen hardware to optimize mobile processing
+            if (window.matchMedia('(pointer: coarse)').matches) {
+                return;
+            }
+            
+            cursor.style.display = 'block';
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+
+            // Expand shadow effect scale seamlessly upon micro-interaction anchors
+            const dynamicTargets = document.querySelectorAll('a, button, [onclick]');
+            dynamicTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => {
+                    cursor.style.width = '48px';
+                    cursor.style.height = '48px';
+                    cursor.style.backgroundColor = 'rgba(229, 169, 59, 0.15)';
+                });
+                target.addEventListener('mouseleave', () => {
+                    cursor.style.width = '32px';
+                    cursor.style.height = '32px';
+                    cursor.style.backgroundColor = 'rgba(229, 169, 59, 0.08)';
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            handlePreloaderSystem();
+            initCursorTracking();
+
             const hamburgerBtn = document.getElementById('hamburger-btn');
             const hamburgerIcon = document.getElementById('hamburger-icon');
             const mobileMenu = document.getElementById('mobile-menu');
