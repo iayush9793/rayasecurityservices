@@ -99,27 +99,29 @@
             animation: goldGlow 3s infinite ease-in-out;
         }
 
-        /* Custom Interactive Cursor Element */
+        /* Hardware Accelerated Liquid Golden Cursor Element */
         .custom-cursor-glow {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             background: rgba(229, 169, 59, 0.08);
-            border: 1px solid rgba(229, 169, 59, 0.3);
+            border: 1px solid rgba(229, 169, 59, 0.4);
             border-radius: 50%;
             position: fixed;
+            top: 0;
+            left: 0;
             pointer-events: none;
-            z-index: 99999;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(229, 169, 59, 0.25);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-            display: none; /* Auto revealed on desktop via script */
+            z-index: 999999;
+            will-change: transform;
+            box-shadow: 0 0 15px rgba(229, 169, 59, 0.3);
+            transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+            display: none;
         }
     </style>
 </head>
 <body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
 
     <!-- Premium Preloader Wrapper -->
-    <div id="preloader" class="fixed inset-0 bg-[#020b17] z-[999999] flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
+    <div id="preloader" class="fixed inset-0 bg-[#020b17] z-[9999999] flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
         <div class="flex flex-col items-center gap-6">
             <!-- Centered Shield Brand Logo Container with Glowing Aura Effect -->
             <div class="w-24 h-24 rounded-2xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center p-3 preloader-glow">
@@ -130,13 +132,13 @@
                 <span class="text-white font-extrabold text-xs tracking-[0.25em] uppercase">RAYA SECURITY</span>
                 <!-- Golden Line Progress Bar Animation Holder -->
                 <div class="w-48 h-[3px] bg-white/10 rounded-full overflow-hidden relative mt-1">
-                    <div id="preloader-bar" class="h-full bg-brand-gold w-0 transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1)"></div>
+                    <div id="preloader-bar" class="h-full bg-brand-gold w-0 transition-all duration-300 ease-out"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Interactive Custom Cursor Shadow Shell (Desktop Only) -->
+    <!-- Isolated Interactive Custom Cursor Shadow Element -->
     <div id="custom-cursor" class="custom-cursor-glow"></div>
 
     <!-- Header / Sticky Navigation Bar - Light Variant for Dark Logo Contrast -->
@@ -929,12 +931,12 @@
         function handlePreloaderSystem() {
             const preloader = document.getElementById('preloader');
             const bar = document.getElementById('preloader-bar');
-            let progress = 0;
+            let loaderProgress = 0;
 
             const progressInterval = setInterval(() => {
-                progress += Math.random() * 15;
-                if (progress >= 100) {
-                    progress = 100;
+                loaderProgress += Math.random() * 12 + 4;
+                if (loaderProgress >= 100) {
+                    loaderProgress = 100;
                     bar.style.width = '100%';
                     clearInterval(progressInterval);
                     
@@ -943,41 +945,49 @@
                         setTimeout(() => {
                             preloader.style.display = 'none';
                         }, 700);
-                    }, 400);
+                    }, 300);
                 } else {
-                    bar.style.width = `${progress}%`;
+                    bar.style.width = `${loaderProgress}%`;
                 }
-            }, 80);
+            }, 60);
         }
 
-        // Custom Cursor Shadow Automation Engine
+        // High-Performance Hardware-Accelerated Custom Cursor Engine
         function initCursorTracking() {
             const cursor = document.getElementById('custom-cursor');
             
-            // Disable custom cursor tracking for tactile touch screen hardware to optimize mobile processing
+            // Immediately disable logic for hardware touchscreens to optimize rendering
             if (window.matchMedia('(pointer: coarse)').matches) {
                 return;
             }
             
             cursor.style.display = 'block';
 
+            // Use requestAnimationFrame layout alignment to completely eliminate string selector dumps
+            let mouseX = 0, mouseY = 0;
+            
             document.addEventListener('mousemove', (e) => {
-                cursor.style.left = `${e.clientX}px`;
-                cursor.style.top = `${e.clientY}px`;
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.transform = `translate3d(${mouseX - 12}px, ${mouseY - 12}px, 0)`;
             });
 
-            // Expand shadow effect scale seamlessly upon micro-interaction anchors
-            const dynamicTargets = document.querySelectorAll('a, button, [onclick]');
-            dynamicTargets.forEach(target => {
-                target.addEventListener('mouseenter', () => {
-                    cursor.style.width = '48px';
-                    cursor.style.height = '48px';
-                    cursor.style.backgroundColor = 'rgba(229, 169, 59, 0.15)';
+            // Expand scale dynamically over interactable elements
+            const interactiveSelectors = document.querySelectorAll('a, button, [onclick], input, select, textarea');
+            interactiveSelectors.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.style.width = '40px';
+                    cursor.style.height = '40px';
+                    cursor.style.transform = `translate3d(${mouseX - 20}px, ${mouseY - 20}px, 0)`;
+                    cursor.style.backgroundColor = 'rgba(229, 169, 59, 0.14)';
+                    cursor.style.borderColor = 'rgba(229, 169, 59, 0.6)';
                 });
-                target.addEventListener('mouseleave', () => {
-                    cursor.style.width = '32px';
-                    cursor.style.height = '32px';
+                element.addEventListener('mouseleave', () => {
+                    cursor.style.width = '24px';
+                    cursor.style.height = '24px';
+                    cursor.style.transform = `translate3d(${mouseX - 12}px, ${mouseY - 12}px, 0)`;
                     cursor.style.backgroundColor = 'rgba(229, 169, 59, 0.08)';
+                    cursor.style.borderColor = 'rgba(229, 169, 59, 0.4)';
                 });
             });
         }
