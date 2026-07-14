@@ -1,16 +1,18 @@
+<!-- STREAMING_CHUNK: Initializing document layout, adding meta tags, Tailwind, premium fonts and Lucide icons -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Raya Security Services Pvt. Ltd. - Your Safety, Our Priority</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for high quality corporate look -->
+    <!-- Google Fonts - Inter for premium corporate styling -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- STREAMING_CHUNK: Customizing brand themes and color variables inside Tailwind configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -33,23 +35,26 @@
         }
     </script>
 
+    <!-- STREAMING_CHUNK: Defining smooth animations, scroll transitions, and custom loading keyframes in CSS -->
     <style>
-        /* Webkit scrollbars styling */
+        /* Custom premium scrollbar styling matching image_8a70c1.jpg */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
         ::-webkit-scrollbar-track {
             background: #020b17;
         }
         ::-webkit-scrollbar-thumb {
-            background: #134074;
-            border-radius: 4px;
+            background: #0b2545;
+            border: 2px solid #020b17;
+            border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #e5a93b;
         }
         
-        /* Premium glass panels modeled from image_8195c9.jpg */
+        /* Glass-morphic panels modeled after image_8a70c1.jpg */
         .glass-panel {
             background: rgba(5, 22, 46, 0.45);
             backdrop-filter: blur(16px);
@@ -63,37 +68,51 @@
             border: 1px solid rgba(229, 169, 59, 0.25);
         }
 
-        /* Smooth transition class for the slider text content */
+        /* Smooth state fade transition classes */
         .fade-transition {
-            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .tab-transition {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Scroll reveal system for dynamic loading on scroll */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased selection:bg-brand-gold selection:text-brand-darkText">
+<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
 
-    <!-- Header / Navbar -->
+    <!-- STREAMING_CHUNK: Coding the header and premium responsive navigation structure -->
+    <!-- Header / Sticky Navigation Bar -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#05162e]/90 backdrop-blur-md border-b border-brand-gold/15 transition-all duration-300">
         <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Brand Logo & Shield Design -->
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60 group-hover:border-brand-gold transition-colors">
+            
+            <!-- Company Shield Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group" aria-label="Raya Security Services Logo Home">
+                <div class="w-10 h-10 rounded-lg border border-brand-gold/40 flex items-center justify-center bg-brand-navy/60 group-hover:border-brand-gold transition-all duration-300 transform group-hover:scale-105">
                     <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-white font-extrabold text-lg tracking-wide uppercase leading-tight group-hover:text-brand-gold transition-colors">RAYA SECURITY</span>
+                    <span class="text-white font-extrabold text-base tracking-wide uppercase leading-tight group-hover:text-brand-gold transition-colors">RAYA SECURITY</span>
                     <span class="text-[9px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="#home" class="text-white hover:text-brand-gold transition-colors font-bold">Home</a>
+            <!-- Desktop Navigation Menu Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider">
+                <a href="#home" class="text-white hover:text-brand-gold transition-colors font-extrabold">Home</a>
                 <a href="#about" class="text-brand-lightBlue hover:text-white transition-colors">About</a>
                 <a href="#why-choose" class="text-brand-lightBlue hover:text-white transition-colors">Why Us</a>
                 <a href="#services" class="text-brand-lightBlue hover:text-white transition-colors">Services</a>
@@ -103,24 +122,25 @@
                 <a href="#insights" class="text-brand-lightBlue hover:text-white transition-colors">Insights</a>
             </nav>
 
-            <!-- Quick Contact Actions + Hamburger trigger -->
+            <!-- Quick Action Action Hooks -->
             <div class="flex items-center gap-4">
-                <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Theme Mode">
+                <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold/30 transition-all" aria-label="Toggle Theme Mode">
                     <i data-lucide="sun" class="w-4 h-4"></i>
                 </button>
                 <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-darkText px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-goldHover transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md">
                     Request to Connect ↗
                 </a>
                 
-                <!-- Modern Hamburger menu button (Visible only on Mobile/Tablet) -->
-                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white hover:text-brand-gold focus:outline-none transition-all">
+                <!-- Hamburger menu toggle button for mobile/tablets -->
+                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white hover:text-brand-gold focus:outline-none transition-all" aria-label="Open Mobile Menu">
                     <i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- STREAMING_CHUNK: Implementing the mobile overlay navigation panel with toggle functionality -->
+    <!-- Mobile Navigation Panel -->
     <div id="mobile-menu" class="fixed inset-0 top-20 bg-[#05162e] z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden border-t border-white/5 flex flex-col justify-between p-6">
         <nav class="flex flex-col gap-5 text-lg font-semibold pt-4">
             <a href="#home" class="mobile-link text-white hover:text-brand-gold border-b border-white/5 pb-2">Home</a>
@@ -142,72 +162,95 @@
         </div>
     </div>
 
+    <!-- STREAMING_CHUNK: Coding the primary interactive hero showcase with smooth dynamic loading transitions -->
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
-        <!-- Dynamic background element updated by slider transitions -->
-        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0" style="background-image: url('https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Security+Command+Center+Operations');"></div>
+        <!-- Main dynamic background container -->
+        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0 scale-105" style="background-image: url('img1.png');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/95 via-brand-darkText/80 to-brand-darkText/95 z-10"></div>
 
-        <!-- Social Media Floating Bar exactly as pictured on the left side of image_8195c9.jpg -->
+        <!-- Left floating social bar modeled on image_8a70c1.jpg -->
         <div class="absolute left-6 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col gap-4">
-            <a href="#" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-blue-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+            <a href="#" class="w-10 h-10 rounded-lg bg-[#0077b5] hover:bg-blue-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg" aria-label="Raya LinkedIn Link">
                 <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-10 h-10 rounded-lg bg-[#1877f2] hover:bg-blue-900 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+            <a href="#" class="w-10 h-10 rounded-lg bg-[#1877f2] hover:bg-blue-900 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg" aria-label="Raya Facebook Link">
                 <i data-lucide="facebook" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg">
+            <a href="#" class="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 flex items-center justify-center text-white transition-all hover:scale-110 shadow-lg" aria-label="Raya Instagram Link">
                 <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
         </div>
 
-        <!-- Central Hero Content Grid -->
+        <!-- Dynamic Content Layout with professional smaller font scale -->
         <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
                 
-                <!-- Left Content Column -->
-                <div class="lg:col-span-7 flex flex-col items-start gap-4 fade-transition" id="hero-left-col">
+                <!-- Left dynamic text column -->
+                <div class="lg:col-span-7 flex flex-col items-start gap-4 fade-transition transform translate-y-0" id="hero-left-col">
                     <div class="glass-badge px-4 py-2 rounded-full flex items-center gap-2 text-[10px] sm:text-xs font-bold text-white tracking-widest uppercase">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
                         🛡️ SINCE 1992 · PSARA LICENSED · ISO CERTIFIED
                     </div>
 
-                    <span id="hero-category" class="text-brand-gold font-bold text-sm sm:text-base tracking-wider uppercase mt-2">Training</span>
+                    <span id="hero-category" class="text-brand-gold font-bold text-xs sm:text-sm tracking-wider uppercase mt-1">Integrated Security</span>
 
-                    <h1 id="hero-title" class="text-white font-extrabold text-4xl sm:text-6xl md:text-7xl leading-[1.1] tracking-tight">
-                        Security Academy
+                    <h1 id="hero-title" class="text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight max-w-xl">
+                        Next-Generation Security Solutions
                     </h1>
 
-                    <div class="glass-panel px-6 py-3 rounded-full flex items-center gap-3 mt-2 border border-brand-gold/20">
-                        <span id="hero-stat" class="text-brand-gold font-extrabold text-lg sm:text-xl">7500+</span>
-                        <span class="text-white text-xs sm:text-sm tracking-wide font-medium">Personnel Trained</span>
+                    <div class="glass-panel px-5 py-2.5 rounded-full flex items-center gap-3 mt-1 border border-brand-gold/20">
+                        <span id="hero-stat" class="text-brand-gold font-extrabold text-base sm:text-lg">7500+</span>
+                        <span class="text-white text-[11px] sm:text-xs tracking-wide font-medium">Employees</span>
                     </div>
 
-                    <!-- Interactive Progress Dashboard dashes -->
-                    <div class="flex items-center gap-2.5 mt-6 w-full max-w-xs" id="progress-indicator">
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-brand-gold transition-all duration-300"></div>
-                        <div class="h-1 flex-grow rounded-full bg-white/20 transition-all duration-300"></div>
+                    <!-- STREAMING_CHUNK: Designing the loading progress dash lines with dynamic timeline animation -->
+                    <!-- Dynamic Progress Loading Indicators exactly as requested -->
+                    <div class="flex items-center gap-2.5 mt-5 w-full max-w-sm" id="progress-indicator">
+                        <!-- Progress Dash #01 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-01" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #02 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-02" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #03 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-03" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #04 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-04" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #05 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-05" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #06 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-06" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
+                        <!-- Progress Dash #07 -->
+                        <div class="h-1 flex-grow rounded-full bg-white/10 overflow-hidden relative">
+                            <div id="progress-bar-07" class="h-full bg-brand-gold w-0 transition-all ease-linear"></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Content Column -->
-                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-6 border-l-0 lg:border-l border-white/10 fade-transition" id="hero-right-col">
-                    <h2 id="hero-right-title" class="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-snug">
+                <!-- Right Dynamic content column with professional scale -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:pl-10 gap-5 border-l-0 lg:border-l border-white/10 fade-transition transform translate-y-0" id="hero-right-col">
+                    <h2 id="hero-right-title" class="text-white font-bold text-xl sm:text-2xl md:text-3xl leading-snug">
                         Protecting People, Assets & Infrastructure.
                     </h2>
-                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-sm sm:text-base leading-relaxed font-normal">
-                        Certified training programs building the next generation of security professionals. 200+ hours of training per guard.
+                    <p id="hero-right-desc" class="text-brand-lightBlue/80 text-xs sm:text-sm leading-relaxed font-normal">
+                        Combining trained security personnel, AI-enabled surveillance, and strategic risk advisory to protect modern enterprises across 20+ industries.
                     </p>
-                    <div class="flex flex-wrap items-center gap-4 mt-2">
-                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    <div class="flex flex-wrap items-center gap-4 mt-1">
+                        <a href="#contact" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                             Request to Connect ↗
                         </a>
-                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2.5 transition-all">
+                        <a href="#services" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
                             Explore Solutions
                         </a>
                     </div>
@@ -216,44 +259,45 @@
             </div>
         </div>
 
-        <!-- Interactive Tab Strip matching the layout of image_8195c9.jpg -->
+        <!-- STREAMING_CHUNK: Building the sliding interactive bottom selector tab strip -->
+        <!-- Interactive Horizontal Selector Strip with clean compact sizing -->
         <div class="w-full z-20 bg-brand-darkText/95 border-t border-white/10 backdrop-blur-md">
             <div class="max-w-[1400px] mx-auto overflow-x-auto">
                 <div class="flex items-center justify-between min-w-[980px] px-6 py-4" id="hero-tabs-container">
                     
                     <button onclick="userSelectState('01')" id="tab-01" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-01" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#01</span>
-                        <span id="tab-text-01" class="text-sm font-medium text-white/60 group-hover:text-white">Manned Guarding</span>
+                        <span id="tab-num-01" class="text-[10px] font-semibold text-brand-gold">#01</span>
+                        <span id="tab-text-01" class="text-xs md:text-sm font-bold text-white">Manned Guarding</span>
                     </button>
 
                     <button onclick="userSelectState('02')" id="tab-02" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-02" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
-                        <span id="tab-text-02" class="text-sm font-medium text-white/60 group-hover:text-white">Surveillance</span>
+                        <span id="tab-num-02" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#02</span>
+                        <span id="tab-text-02" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Surveillance</span>
                     </button>
 
                     <button onclick="userSelectState('03')" id="tab-03" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-03" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
-                        <span id="tab-text-03" class="text-sm font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
+                        <span id="tab-num-03" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#03</span>
+                        <span id="tab-text-03" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Risk Consulting</span>
                     </button>
 
                     <button onclick="userSelectState('04')" id="tab-04" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-04" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
-                        <span id="tab-text-04" class="text-sm font-medium text-white/60 group-hover:text-white">Command Centre</span>
+                        <span id="tab-num-04" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#04</span>
+                        <span id="tab-text-04" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Command Centre</span>
                     </button>
 
                     <button onclick="userSelectState('05')" id="tab-05" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-05" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
-                        <span id="tab-text-05" class="text-sm font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
+                        <span id="tab-num-05" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#05</span>
+                        <span id="tab-text-05" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Facility Mgmt</span>
                     </button>
 
                     <button onclick="userSelectState('06')" id="tab-06" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-06" class="text-xs font-semibold text-brand-gold">#06</span>
-                        <span id="tab-text-06" class="text-sm font-bold text-white">Training Academy</span>
+                        <span id="tab-num-06" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#06</span>
+                        <span id="tab-text-06" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Training Academy</span>
                     </button>
 
                     <button onclick="userSelectState('07')" id="tab-07" class="tab-transition flex flex-col items-start gap-1 group text-left outline-none cursor-pointer">
-                        <span id="tab-num-07" class="text-xs font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
-                        <span id="tab-text-07" class="text-sm font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
+                        <span id="tab-num-07" class="text-[10px] font-semibold text-white/40 group-hover:text-brand-gold">#07</span>
+                        <span id="tab-text-07" class="text-xs md:text-sm font-medium text-white/60 group-hover:text-white">Executive Escorts</span>
                     </button>
 
                 </div>
@@ -261,8 +305,9 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the Quick Stats counters layout -->
     <!-- Stats Ribbon -->
-    <section class="bg-[#05162e] py-12 border-b border-brand-gold/15">
+    <section class="bg-[#05162e] py-12 border-b border-brand-gold/15 relative z-20">
         <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="flex flex-col items-center">
                 <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">15,000+</h3>
@@ -283,12 +328,13 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the Corporate overview and Tactical About Segment with scroll animation triggers -->
     <!-- About Section -->
-    <section class="py-24 bg-[#020b17]" id="about">
+    <section class="py-24 bg-[#020b17] scroll-reveal" id="about">
         <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-brand-slate rounded-xl blur opacity-30 group-hover:opacity-55 transition-all"></div>
-                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Professional+Security+Deployment" alt="image1" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-gold to-brand-slate rounded-xl blur opacity-35 group-hover:opacity-60 transition-all duration-500"></div>
+                <img src="https://placehold.co/600x400/0b2545/ffffff?text=Professional+Security+Deployment" alt="image1" class="relative rounded-xl border border-brand-gold/20 shadow-2xl object-cover w-full transform group-hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="flex flex-col items-start gap-4">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase">ABOUT OUR COMPANY</span>
@@ -296,8 +342,8 @@
                 <p class="text-brand-lightBlue/80 text-sm sm:text-base leading-relaxed font-normal">
                     Raya Security Services coordinates physical drilling setup, state-of-the-art geo-location checkins, and live field audits to keep warehouses, industrial hubs, and housing complexes protected with maximum integrity.
                 </p>
-                <ul class="flex flex-col gap-4 mt-2">
-                    <li class="flex items-start gap-3">
+                <ul class="flex flex-col gap-4 mt-2 w-full">
+                    <li class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-slate/20 transition-all duration-300">
                         <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
                             <i data-lucide="shield-check" class="w-4 h-4"></i>
                         </div>
@@ -306,7 +352,7 @@
                             <span class="text-xs text-brand-lightBlue/70">Completely compliant with government regulatory standards.</span>
                         </div>
                     </li>
-                    <li class="flex items-start gap-3">
+                    <li class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-slate/20 transition-all duration-300">
                         <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
                             <i data-lucide="users" class="w-4 h-4"></i>
                         </div>
@@ -315,7 +361,7 @@
                             <span class="text-xs text-brand-lightBlue/70">Background-vetted, disciplined, and alert tactical forces.</span>
                         </div>
                     </li>
-                    <li class="flex items-start gap-3">
+                    <li class="flex items-start gap-3 p-3 rounded-lg hover:bg-brand-slate/20 transition-all duration-300">
                         <div class="mt-1 bg-brand-gold/10 p-1.5 rounded text-brand-gold">
                             <i data-lucide="zap" class="w-4 h-4"></i>
                         </div>
@@ -325,41 +371,48 @@
                         </div>
                     </li>
                 </ul>
-                <a href="#services" class="mt-4 bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg transition-colors">
+                <a href="#services" class="mt-4 bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                     Explore Solutions
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the three-column 'Why Choose Us' feature layout -->
     <!-- Why Choose Us Section -->
-    <section class="py-24 bg-[#05162e]/40 border-t border-b border-brand-gold/15" id="why-choose">
+    <section class="py-24 bg-[#05162e]/45 border-t border-b border-brand-gold/15 scroll-reveal" id="why-choose">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">THE RAYA ADVANTAGE</span>
             <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Why Choose Raya?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- Card 1 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Elite+Training+Academy" alt="image2" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2">Elite Training Academy</h3>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">Elite Training Academy</h3>
                         <p class="text-brand-lightBlue/70 text-sm">Every field asset completes industrial training, physical fitness checks, and crowd control techniques.</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Smart+Tech+Patrolling" alt="image3" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2">Smart Tech Integration</h3>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">Smart Tech Integration</h3>
                         <p class="text-brand-lightBlue/70 text-sm">Using geotargeting check-ins, transparent patrols, and instant emergency dispatch telemetry.</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-2 hover:border-brand-gold/30">
-                    <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/e5a93b?text=Command+Center" alt="image4" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2">24/7 Command Control</h3>
+                        <h3 class="text-white font-bold text-lg mb-2 group-hover:text-brand-gold transition-colors">24/7 Command Control</h3>
                         <p class="text-brand-lightBlue/70 text-sm">Centrally managed operation hubs checking on status alerts and mobilizing quick action guards.</p>
                     </div>
                 </div>
@@ -367,8 +420,9 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the grid design of technical and security solutions -->
     <!-- Services Grid Section -->
-    <section class="py-24 bg-[#020b17]" id="services">
+    <section class="py-24 bg-[#020b17] scroll-reveal" id="services">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">OUR SERVICES</span>
@@ -377,48 +431,48 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="shield" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">Security Guards</h3>
                     <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Alert manned guarding professionals deployed to maintain access points, industrial complexes, and warehouse lines.</p>
                 </div>
                 <!-- Service 2 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="user-check" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">Event Security</h3>
                     <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Systematic entry controls, visitor registries, and structural crowd management for peaceful business programs.</p>
                 </div>
                 <!-- Service 3 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="award" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">All Security Types</h3>
                     <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Adaptable security architectures tailored explicitly to client operations, housing societies, and retail centers.</p>
                 </div>
                 <!-- Service 4 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="monitor" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">CCTV Surveillance</h3>
                     <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Persistent off-site visual audits combined with live camera feeds to flag physical perimeter vulnerabilities instantly.</p>
                 </div>
                 <!-- Service 5 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">Cash-In-Transit</h3>
                     <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Highly vetted security convoys handling bank operations, gold assets, and high-value equipment transfers safely.</p>
                 </div>
                 <!-- Service 6 -->
-                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6">
+                <div class="bg-brand-navy/60 border border-white/5 rounded-xl p-8 hover:border-brand-gold/30 hover:bg-brand-navy/80 hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 transition-transform duration-300 hover:rotate-6">
                         <i data-lucide="alert-triangle" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-white font-bold text-xl mb-3">Vulnerability Audits</h3>
@@ -428,22 +482,24 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Setting up the trusted industrial brand reference display -->
     <!-- Brands Section -->
     <section class="py-16 bg-brand-navy border-t border-b border-brand-gold/15">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-gold mb-8">Trusted by Corporate & Industrial Leaders</p>
-            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60">
-                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 transition-opacity">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-gold mb-8 animate-pulse">Trusted by Corporate & Industrial Leaders</p>
+            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-65">
+                <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="image5" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+                <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="image6" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+                <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="image7" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+                <img src="https://via.placeholder.com/120x60?text=Brand+4" alt="image8" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+                <img src="https://via.placeholder.com/120x60?text=Brand+5" alt="image9" class="h-8 object-contain filter invert opacity-80 hover:opacity-100 hover:scale-105 transition-all">
             </div>
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the certifications, PASARA licenses and ISO compliances list -->
     <!-- Compliance Section -->
-    <section class="py-24 bg-[#020b17]" id="compliances">
+    <section class="py-24 bg-[#020b17] scroll-reveal" id="compliances">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">VERIFICATION</span>
@@ -452,19 +508,19 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Cert 1 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
                     <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+9001:2015+Certificate" alt="image10" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">ISO 9001:2015</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Standard-setting operational frameworks across commercial security administration setups.</p>
                 </div>
                 <!-- Cert 2 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
                     <img src="https://placehold.co/300x400/0b2545/e5a93b?text=PASARA+License+Raya" alt="image11" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">PASARA License</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Fully registered private security agency regulation compliance credentials.</p>
                 </div>
                 <!-- Cert 3 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 transition-all">
+                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
                     <img src="https://placehold.co/300x400/0b2545/e5a93b?text=ISO+45001:2018+Certificate" alt="image12" class="w-full max-w-[240px] h-auto mx-auto rounded-lg mb-6 border border-white/10 shadow-lg">
                     <h3 class="text-white font-bold text-lg mb-2">ISO 45001:2018</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Guaranteed occupational risk elimination and guard personnel safety safeguards.</p>
@@ -473,14 +529,15 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Designing the local regional geographic presence block with maps -->
     <!-- Footprint Section -->
-    <section class="py-24 bg-brand-navy border-t border-b border-brand-gold/15" id="footprint">
+    <section class="py-24 bg-brand-navy border-t border-b border-brand-gold/15 scroll-reveal" id="footprint">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">REGIONAL REACH</span>
             <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Our Operational Reach</h2>
             
-            <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl">
-                <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="w-full h-auto block filter brightness-95 contrast-105">
+            <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl group">
+                <img src="https://placehold.co/950x450/0b2545/ffffff?text=Nagpur+and+Pune+Deployment+Geographic+Map" alt="image13" class="w-full h-auto block filter brightness-95 contrast-105 group-hover:scale-[1.01] transition-transform duration-700">
                 <div class="absolute bottom-4 right-4 bg-brand-darkText/90 border border-brand-gold/30 px-4 py-2 rounded-lg text-left backdrop-blur-md">
                     <span class="text-[10px] uppercase font-bold text-brand-gold block tracking-wider">Core Deployment Centers</span>
                     <span class="text-xs font-semibold text-white">Nagpur HQ & Pune Regional Branch</span>
@@ -489,14 +546,15 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the customer review / validation highlight panel -->
     <!-- Testimonials Section -->
-    <section class="py-24 bg-[#020b17]" id="testimonials">
+    <section class="py-24 bg-[#020b17] scroll-reveal" id="testimonials">
         <div class="max-w-[1000px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">TESTIMONIALS</span>
             <h2 class="text-white font-extrabold text-3xl sm:text-4xl mb-12">Words of Appreciation</h2>
 
-            <!-- Active Testimonial Card Frame -->
-            <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-8 sm:p-12 relative shadow-2xl">
+            <!-- Testimonial Frame with glowing gradient shadows -->
+            <div class="bg-brand-navy/40 border border-brand-gold/20 rounded-2xl p-8 sm:p-12 relative shadow-2xl hover:border-brand-gold/40 transition-colors duration-300">
                 <div class="text-brand-gold flex justify-center mb-6">
                     <i data-lucide="quote" class="w-12 h-12"></i>
                 </div>
@@ -509,8 +567,9 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Generating the blog insights and modern cybersecurity advisory logs -->
     <!-- Insights Section -->
-    <section class="py-24 bg-brand-slate/20 border-t border-brand-gold/15" id="insights">
+    <section class="py-24 bg-brand-slate/20 border-t border-brand-gold/15 scroll-reveal" id="insights">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">INSIGHTS</span>
@@ -519,8 +578,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Post 1 -->
-                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Modern+Threat+Controls" alt="image14" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/ffffff?text=Modern+Threat+Controls" alt="image14" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Threat Mitigation • July 10, 2026</div>
                         <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">Understanding Modern Electronic Threat Control Networks</h3>
@@ -530,8 +591,10 @@
                     </div>
                 </div>
                 <!-- Post 2 -->
-                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Corporate+Enterprise+Guarding" alt="image15" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/ffffff?text=Corporate+Enterprise+Guarding" alt="image15" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Enterprise Scale • July 05, 2026</div>
                         <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">How Corporate Enterprise Scalability Shifts Guarding Needs</h3>
@@ -541,8 +604,10 @@
                     </div>
                 </div>
                 <!-- Post 3 -->
-                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 transition-all">
-                    <img src="https://placehold.co/400x250/0b2545/ffffff?text=Crowd+De-escalation" alt="image16" class="w-full h-48 object-cover">
+                <div class="bg-brand-navy border border-white/5 rounded-xl overflow-hidden group hover:border-brand-gold/25 hover:-translate-y-2 transition-all duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://placehold.co/400x250/0b2545/ffffff?text=Crowd+De-escalation" alt="image16" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
                     <div class="p-6">
                         <div class="text-[10px] text-brand-gold uppercase font-bold tracking-wider mb-2">Operations • June 28, 2026</div>
                         <h3 class="text-white font-bold text-base group-hover:text-brand-gold transition-colors mb-4 leading-snug">De-escalation Mechanics Within High Crowd Environments</h3>
@@ -555,8 +620,9 @@
         </div>
     </section>
 
+    <!-- STREAMING_CHUNK: Coding the complete branch address list, maps and corporate footers based on Media.jpg -->
     <!-- Footer / Contact Hub -->
-    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20" id="contact">
+    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20" id="contact">
         <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
             
             <!-- Brand Column -->
@@ -598,7 +664,7 @@
                 </ul>
             </div>
 
-            <!-- Branch Details Column -->
+            <!-- Branch Details Column (Verified from Media.jpg) -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
                     Branch Locations
@@ -621,7 +687,7 @@
                 </div>
             </div>
 
-            <!-- Contact Coordinates Column -->
+            <!-- Contact Coordinates Column (Verified from Media.jpg) -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
                     Direct Contact Desk
@@ -649,20 +715,22 @@
         </div>
     </footer>
 
+    <!-- STREAMING_CHUNK: Coding modern interactive state machine scripts, progress bar loops, and Intersection Observers -->
+    <!-- Scripts Area -->
     <script>
-        // Initialize Lucide Icons vector drawings
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mapping hero states to their respective data panels
+        // Object containing interactive state details matching image_8a70c1.jpg
         const heroStateMap = {
-            '01': {
-                category: 'Guarding',
-                title: 'Manned Guarding',
-                stat: '15,000+',
-                statLabel: 'Guards Deployed',
-                rightTitle: 'Static & Mobile Guard Forces.',
-                rightDesc: 'Deploying highly disciplined, PSARA compliant field personnel for access point regulation, high-value asset protection, and corporate premise checks.',
-                bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Manned+Guarding+Sectors+Setup'
+            '01': { // Match exactly to image_8a70c1.jpg active state
+                category: 'Integrated Security',
+                title: 'Next-Generation Security Solutions',
+                stat: '7500+',
+                statLabel: 'Employees',
+                rightTitle: 'Protecting People, Assets & Infrastructure.',
+                rightDesc: 'Combining trained security personnel, AI-enabled surveillance, and strategic risk advisory to protect modern enterprises across 20+ industries.',
+                bg: 'img1.png'
             },
             '02': {
                 category: 'Monitoring',
@@ -700,7 +768,7 @@
                 rightDesc: 'Coordinating visitor registries, vehicle parking configurations, and secure gate protocols to maintain continuous site safety.',
                 bg: 'https://placehold.co/1920x1080/05162e/d5e1f0?text=Raya+Facility+Logistics+Management'
             },
-            '06': { // Active default state in image_8195c9.jpg
+            '06': {
                 category: 'Training',
                 title: 'Security Academy',
                 stat: '7500+',
@@ -720,12 +788,13 @@
             }
         };
 
-        // Track currently selected slider state index key
-        let currentActiveKey = '06';
-        let autoPlayTimer = null;
-        const autoPlayIntervalDuration = 5000; // 5 seconds slider interval
+        let currentActiveKey = '01'; // Default on load set to Manned Guarding from screenshot
+        let progress = 0;
+        let progressInterval = null;
+        const autoDuration = 5000; // 5 seconds per slide
+        const tickRate = 30; // update frequency in ms
 
-        // Trigger dynamic layout update with animation transitions
+        // Smooth state change switcher
         function switchHeroState(stateKey) {
             const state = heroStateMap[stateKey];
             if (!state) return;
@@ -735,35 +804,33 @@
             const leftCol = document.getElementById('hero-left-col');
             const rightCol = document.getElementById('hero-right-col');
 
-            // Apply smooth fade out class
+            // Apply fade-out animations smoothly
             leftCol.style.opacity = '0';
-            leftCol.style.transform = 'translateY(10px)';
+            leftCol.style.transform = 'translateY(12px)';
             rightCol.style.opacity = '0';
-            rightCol.style.transform = 'translateY(10px)';
+            rightCol.style.transform = 'translateY(12px)';
 
             setTimeout(() => {
-                // DOM Updates
+                // Update DOM elements on finish fade
                 document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
                 document.getElementById('hero-category').innerText = state.category;
                 document.getElementById('hero-title').innerText = state.title;
                 
-                // Updating stats content
                 const statBox = document.getElementById('hero-stat');
                 statBox.innerText = state.stat;
                 statBox.nextElementSibling.innerText = state.statLabel;
 
-                // Right block descriptors
                 document.getElementById('hero-right-title').innerText = state.rightTitle;
                 document.getElementById('hero-right-desc').innerText = state.rightDesc;
 
-                // Trigger smooth fade in animations
+                // Recover layout with smooth fade-in transform
                 leftCol.style.opacity = '1';
                 leftCol.style.transform = 'translateY(0)';
                 rightCol.style.opacity = '1';
                 rightCol.style.transform = 'translateY(0)';
             }, 300);
 
-            // Synchronize and update bottom tab buttons active highlights
+            // Synchronize highlights on bottom tab buttons
             const stateNum = parseInt(stateKey);
             for (let i = 1; i <= 7; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
@@ -771,48 +838,63 @@
                 const tabText = document.getElementById(`tab-text-${formattedKey}`);
                 
                 if (i === stateNum) {
-                    tabNum.className = 'text-xs font-semibold text-brand-gold';
-                    tabText.className = 'text-sm font-bold text-white';
+                    tabNum.className = 'text-[10px] font-semibold text-brand-gold';
+                    tabText.className = 'text-xs md:text-sm font-bold text-white';
                 } else {
-                    tabNum.className = 'text-xs font-semibold text-white/40 group-hover:text-brand-gold';
-                    tabText.className = 'text-sm font-medium text-white/60 group-hover:text-white';
-                }
-            }
-
-            // Sync dash progress markers
-            const progressDashes = document.getElementById('progress-indicator').children;
-            for (let j = 0; j < progressDashes.length; j++) {
-                if (j === stateNum - 1) {
-                    progressDashes[j].className = 'h-1 flex-grow rounded-full bg-brand-gold transition-all duration-300';
-                } else {
-                    progressDashes[j].className = 'h-1 flex-grow rounded-full bg-white/20 transition-all duration-300';
+                    tabNum.className = 'text-[10px] font-semibold text-white/40 group-hover:text-brand-gold';
+                    tabText.className = 'text-xs md:text-sm font-medium text-white/60 group-hover:text-white';
                 }
             }
         }
 
-        // Automatic slider timer setup
-        function startAutoSlider() {
-            autoPlayTimer = setInterval(() => {
-                let currentNum = parseInt(currentActiveKey);
-                let nextNum = currentNum + 1;
-                if (nextNum > 7) {
-                    nextNum = 1;
+        // Auto-progress loops with smooth incremental CSS updates
+        function startProgressLoop() {
+            if (progressInterval) clearInterval(progressInterval);
+
+            progressInterval = setInterval(() => {
+                progress += (tickRate / autoDuration) * 100;
+
+                if (progress >= 100) {
+                    progress = 0;
+                    let currentNum = parseInt(currentActiveKey);
+                    let nextNum = currentNum + 1;
+                    if (nextNum > 7) {
+                        nextNum = 1;
+                    }
+                    const nextKey = nextNum.toString().padStart(2, '0');
+                    switchHeroState(nextKey);
+                } else {
+                    updateProgressBarUI();
                 }
-                const nextKey = nextNum.toString().padStart(2, '0');
-                switchHeroState(nextKey);
-            }, autoPlayIntervalDuration);
+            }, tickRate);
         }
 
-        // Reset the auto-play timer when a user interacts manually
+        // Update single bar loading status based on active slide key
+        function updateProgressBarUI() {
+            for (let i = 1; i <= 7; i++) {
+                const formattedKey = i.toString().padStart(2, '0');
+                const progressBar = document.getElementById(`progress-bar-${formattedKey}`);
+                
+                if (formattedKey === currentActiveKey) {
+                    progressBar.style.width = `${progress}%`;
+                } else {
+                    // Reset inactive bars back to clean 0% immediately
+                    progressBar.style.width = '0%';
+                }
+            }
+        }
+
+        // Reset and restart animation if the user triggers a slide manually
         function userSelectState(stateKey) {
-            clearInterval(autoPlayTimer);
+            progress = 0;
+            updateProgressBarUI();
             switchHeroState(stateKey);
-            startAutoSlider(); // Restart interval timer
+            startProgressLoop();
         }
 
-        // DOM Setup on initialization
+        // STREAMING_CHUNK: Setup Intersection Observers to trigger scroll elements beautifully on view entry
         document.addEventListener('DOMContentLoaded', () => {
-            // Setup mobile hamburger toggles
+            // Setup Mobile hamburger navigation triggers
             const hamburgerBtn = document.getElementById('hamburger-btn');
             const hamburgerIcon = document.getElementById('hamburger-icon');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -828,10 +910,10 @@
                     mobileMenu.classList.remove('translate-x-full');
                     hamburgerIcon.setAttribute('data-lucide', 'x');
                 }
-                lucide.createIcons(); // Redraw Lucide icon elements
+                lucide.createIcons(); // Re-render Lucide icons
             });
 
-            // Close mobile navigation drawer when clicking any link
+            // Clean exit layout on clicks anywhere outside or on links
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
@@ -840,7 +922,6 @@
                 });
             });
 
-            // Close drawer if clicking outside the sidebar area
             document.addEventListener('click', (e) => {
                 if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
                     mobileMenu.classList.add('translate-x-full');
@@ -849,11 +930,30 @@
                 }
             });
 
-            // Initialize default active slide and kick-off automatic transitions
-            switchHeroState('06');
-            startAutoSlider();
+            // Initialize default active slide (01 - Manned Guarding with background img1.png)
+            switchHeroState('01');
+            startProgressLoop();
 
-            // Responsive scroll effects on sticky header transparency
+            // Set up scroll reveal hooks using Intersection Observer API
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Trigger only once for a smooth visual flow
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Dynamic header scroll states
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 40) {
