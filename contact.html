@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Contact Us - Raya Security Services Pvt. Ltd.</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#05162e', slate: '#0b2545', gold: '#e5a93b',
+                            goldHover: '#c9922b', lightBlue: '#d5e1f0', darkText: '#020b17',
+                        }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #020b17; }
+        ::-webkit-scrollbar-thumb { background: #0b2545; border: 2px solid #020b17; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #e5a93b; }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
+        .scroll-reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText pt-20">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-brand-navy/10 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Raya Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+                <div class="flex flex-col hidden sm:flex">
+                    <span class="text-brand-navy font-black text-sm tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                    <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-bold leading-none">SERVICES PVT. LTD.</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="index.html" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Home</a>
+                <a href="about.html" class="text-brand-navy/80 hover:text-brand-navy transition-colors">About</a>
+                <a href="why-us.html" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Why Us</a>
+                <a href="services.html" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Services</a>
+                <a href="contact.html" class="text-brand-gold transition-colors">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-brand-navy/10 flex items-center justify-center text-brand-navy"><i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 top-20 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden border-t border-brand-navy/5 flex flex-col justify-between p-6 shadow-xl">
+        <nav class="flex flex-col gap-4 text-base font-bold pt-4">
+            <a href="index.html" class="text-brand-navy/80 border-b border-brand-navy/5 pb-2">Home</a>
+            <a href="about.html" class="text-brand-navy/80 border-b border-brand-navy/5 pb-2">About</a>
+            <a href="why-us.html" class="text-brand-navy/80 border-b border-brand-navy/5 pb-2">Why Us</a>
+            <a href="services.html" class="text-brand-navy/80 border-b border-brand-navy/5 pb-2">Services</a>
+            <a href="contact.html" class="text-brand-gold border-b border-brand-navy/5 pb-2">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <div class="bg-brand-navy py-16 border-b border-brand-gold/15">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <h1 class="text-white font-extrabold text-4xl sm:text-5xl uppercase tracking-tight">Contact Us</h1>
+            <p class="text-brand-gold font-bold text-sm mt-4 uppercase tracking-widest">24/7 Operations Hub</p>
+        </div>
+    </div>
+
+    <!-- Contact Grid Section -->
+    <section class="py-24 bg-[#020b17] scroll-reveal">
+        <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Contact Info -->
+            <div class="flex flex-col gap-8">
+                <div>
+                    <h2 class="text-white font-extrabold text-3xl mb-4">Get in Touch</h2>
+                    <p class="text-brand-lightBlue/80 leading-relaxed">Whether you need immediate tactical deployment or a strategic risk consultation, our operations desk is standing by 24/7.</p>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <div class="bg-brand-navy/50 p-6 rounded-xl border border-brand-gold/10 flex items-start gap-4">
+                        <div class="p-3 bg-brand-gold/10 rounded-lg text-brand-gold"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Call Command Hub</h4>
+                            <p class="text-brand-gold font-bold">+91 8624998789</p>
+                            <p class="text-brand-lightBlue/60 text-sm">Available 24/7 for immediate dispatch</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-brand-navy/50 p-6 rounded-xl border border-brand-gold/10 flex items-start gap-4">
+                        <div class="p-3 bg-brand-gold/10 rounded-lg text-brand-gold"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Electronic Dispatch</h4>
+                            <p class="text-brand-lightBlue/90">info@rayasecurityservices.com</p>
+                            <p class="text-brand-lightBlue/90">rayasecurityservices7860@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-navy/50 p-6 rounded-xl border border-brand-gold/10 flex items-start gap-4">
+                        <div class="p-3 bg-brand-gold/10 rounded-lg text-brand-gold"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg mb-1">Nagpur HQ</h4>
+                            <p class="text-brand-lightBlue/80 text-sm">B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012</p>
+                            <h4 class="text-white font-bold text-lg mt-4 mb-1">Pune Branch</h4>
+                            <p class="text-brand-lightBlue/80 text-sm">Shop No. 17 Ellora Shopee Complex, Indrayani Nagar, Bhosari, Pune - 411026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-brand-navy p-8 sm:p-10 rounded-2xl border border-brand-gold/20 shadow-2xl">
+                <h3 class="text-white font-bold text-2xl mb-6">Request a Consultation</h3>
+                <form class="flex flex-col gap-5">
+                    <div>
+                        <label class="block text-brand-lightBlue/80 text-xs font-bold uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" class="w-full bg-[#020b17] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="e.g. Vikram Malhotra">
+                    </div>
+                    <div>
+                        <label class="block text-brand-lightBlue/80 text-xs font-bold uppercase tracking-wider mb-2">Company Name</label>
+                        <input type="text" class="w-full bg-[#020b17] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="e.g. National Logistics Corp">
+                    </div>
+                    <div>
+                        <label class="block text-brand-lightBlue/80 text-xs font-bold uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" class="w-full bg-[#020b17] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="vikram@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-brand-lightBlue/80 text-xs font-bold uppercase tracking-wider mb-2">Service Required</label>
+                        <select class="w-full bg-[#020b17] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors appearance-none">
+                            <option>Manned Guarding</option>
+                            <option>Event Security</option>
+                            <option>CCTV Analytics</option>
+                            <option>Vulnerability Audit</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-brand-lightBlue/80 text-xs font-bold uppercase tracking-wider mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-[#020b17] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="Describe your security needs..."></textarea>
+                    </div>
+                    <button type="button" class="mt-2 bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-sm uppercase tracking-widest px-6 py-4 rounded-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 w-full">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="flex flex-col">
+                        <span class="text-white font-extrabold text-lg tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                    </div>
+                </div>
+                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">India's premium architectural safety consultants.</p>
+            </div>
+        </div>
+        <div class="border-t border-brand-gold/20 py-6 text-center text-xs font-bold tracking-widest text-brand-lightBlue/50 bg-[#01060e]">
+            <p>&copy; 2026 Raya Security Services</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('hamburger-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('translate-x-full');
+        });
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); } });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
