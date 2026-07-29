@@ -107,9 +107,26 @@
         .animate-line-pulse {
             animation: linePulse 3s infinite ease-in-out;
         }
+
+        /* Right Moving Infinite Marquee */
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+        .animate-marquee-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 25s linear infinite;
+        }
     </style>
 </head>
-<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
+<body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText relative">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919284022701" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[99999] bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-square" class="w-7 h-7 fill-current"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs pl-0 group-hover:pl-2">Chat with Us</span>
+    </a>
 
     <!-- Premium Preloader Wrapper -->
     <div id="preloader" class="fixed inset-0 bg-[#020b17] z-[9999999] flex flex-col items-center justify-center transition-opacity duration-700 ease-out">
@@ -189,7 +206,7 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-between pt-24 bg-cover bg-center transition-all duration-700 overflow-hidden" id="home">
-        <!-- Main dynamic background container - Keep localized slider assets intact -->
+        <!-- Main dynamic background container -->
         <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 z-0 scale-100" style="background-image: url('img1.png');"></div>
         
         <!-- Premium transparent overlay supporting readable text -->
@@ -207,9 +224,12 @@
                     </div>
 
                     <span id="hero-category" class="text-brand-gold font-bold text-xs tracking-wider uppercase mt-1">Statewide Tactical Security</span>
-                    <h1 id="hero-title" class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight max-w-lg">
-                        Next-Generation Security Solutions
+                    
+                    <!-- Updated Headline with Clear Value Proposition -->
+                    <h1 id="hero-title" class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight max-w-xl">
+                        Maharashtra’s Most Trusted Security & Tactical Guarding Services
                     </h1>
+                    
                     <div class="glass-panel px-4 py-2 rounded-full flex items-center gap-2.5 mt-1 border border-brand-gold/20">
                         <span id="hero-stat" class="text-brand-gold font-extrabold text-sm sm:text-base">7500+</span>
                         <span class="text-white text-[10px] sm:text-[11px] tracking-wide font-medium">Verified Officers Deployed</span>
@@ -230,12 +250,14 @@
                     <p id="hero-right-desc" class="text-brand-lightBlue/80 text-xs leading-relaxed font-normal max-w-sm">
                         Deploying highly trained, physically drilled, and background-verified tactical personnel to protect corporate hubs, industrial sites, and critical assets across Maharashtra.
                     </p>
-                    <div class="flex flex-wrap items-center gap-3 mt-1">
-                        <a href="contact.html" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg">
-                            Request to Connect ↗
+                    
+                    <!-- Updated Buttons: Request a Quote & Contact Us -->
+                    <div class="flex flex-wrap items-center gap-3 mt-2">
+                        <a href="contact.html" class="bg-brand-gold hover:bg-brand-goldHover text-brand-darkText font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg">
+                            Request a Quote ↗
                         </a>
-                        <a href="services.html" class="border border-brand-gold/30 hover:border-brand-gold text-white hover:text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-lg flex items-center gap-2 transition-all">
-                            Explore Capabilities
+                        <a href="contact.html" class="border border-brand-gold/40 hover:border-brand-gold bg-brand-navy/60 text-white hover:text-brand-gold font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg flex items-center gap-2 transition-all">
+                            Contact Us
                         </a>
                     </div>
                 </div>
@@ -263,8 +285,20 @@
         </div>
     </section>
 
+    <!-- Yellow Content Strip Moving to the Right Side (Infinite Loop) -->
     <div class="bg-brand-gold text-brand-darkText py-3 overflow-hidden border-y border-brand-goldHover/50 flex shadow-lg relative z-20">
-        <div class="font-extrabold text-[10px] sm:text-xs tracking-[0.2em] flex whitespace-nowrap items-center animate-[marquee_25s_linear_infinite]">
+        <div class="animate-marquee-right font-extrabold text-[10px] sm:text-xs tracking-[0.2em] whitespace-nowrap">
+            <span class="mx-4">✦ 24/7 MAHARASHTRA OPERATIONS</span>
+            <span class="mx-4">✦ PSARA STATE COMPLIANT</span>
+            <span class="mx-4">✦ EXCLUSIVE STATEWIDE DEPLOYMENT</span>
+            <span class="mx-4">✦ ELITE TACTICAL SHIELDS</span>
+            <span class="mx-4">✦ ISO 9001:2015 CERTIFIED</span>
+            <span class="mx-4">✦ NAGPUR HQ & PUNE COMMAND DESK</span>
+            <span class="mx-4">✦ ZERO COMPROMISE METRIC</span>
+            <span class="mx-4">✦ 24/7 MAHARASHTRA OPERATIONS</span>
+            <span class="mx-4">✦ PSARA STATE COMPLIANT</span>
+            <span class="mx-4">✦ EXCLUSIVE STATEWIDE DEPLOYMENT</span>
+            <!-- Duplicate for seamless looping -->
             <span class="mx-4">✦ 24/7 MAHARASHTRA OPERATIONS</span>
             <span class="mx-4">✦ PSARA STATE COMPLIANT</span>
             <span class="mx-4">✦ EXCLUSIVE STATEWIDE DEPLOYMENT</span>
@@ -278,7 +312,7 @@
         </div>
     </div>
 
-    <!-- Stats Ribbon with Dynamic Counting System -->
+    <!-- Stats Ribbon with Updated Company Statistics -->
     <section id="stats-section" class="bg-[#05162e] py-12 border-b border-brand-gold/15 relative z-20">
         <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="flex flex-col items-center">
@@ -295,9 +329,9 @@
             </div>
             <div class="flex flex-col items-center">
                 <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">
-                    <span class="counter-val" data-target="15">0</span>+
+                    <span class="counter-val" data-target="16">0</span>+
                 </h3>
-                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Years Heritage</p>
+                <p class="text-xs sm:text-sm uppercase tracking-widest text-white/80 font-bold">Years of Experience</p>
             </div>
             <div class="flex flex-col items-center">
                 <h3 class="text-brand-gold font-black text-3xl sm:text-4xl md:text-5xl mb-2">24/7</h3>
@@ -404,58 +438,38 @@
     <!-- Why Choose Us Section -->
     <section class="py-24 bg-[#05162e]/45 border-t border-b border-brand-gold/15 scroll-reveal" id="why-choose">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
-            <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-[0.2em] uppercase mb-2 block">THE RAYA ADVANTAGE</span>
-            <h2 class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl mb-4">Why Choose Raya Security Services?</h2>
-            <p class="text-brand-gold font-semibold text-sm sm:text-base mb-3 tracking-wide">
-                Trusted Security. Trained Professionals. Complete Peace of Mind.
-            </p>
-            <p class="text-brand-lightBlue/80 text-xs sm:text-sm leading-relaxed max-w-3xl mx-auto mb-16">
-                At Raya Security Services, we go beyond providing security guards—we deliver reliable, professional, and customized security solutions that protect your people, property, and business. Our commitment to quality, discipline, and rapid response makes us a trusted security partner across industries.
-            </p>
+            <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">THE RAYA ADVANTAGE</span>
+            <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Why Choose Raya?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- Card 1 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/40 hover:shadow-[0_10px_30px_rgba(229,169,59,0.15)] group">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img1.png" alt="Professionally Trained Security Personnel" class="w-full h-52 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="img1.png" alt="Indian Security Manned Drills" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 flex flex-col gap-2">
-                        <h3 class="text-white font-bold text-base sm:text-lg group-hover:text-brand-gold transition-colors">
-                            Professionally Trained Security Personnel
-                        </h3>
-                        <p class="text-brand-lightBlue/70 text-xs leading-relaxed">
-                            Every security guard undergoes rigorous training in physical security, emergency response, access control, customer interaction, fire safety, first aid, and incident management to ensure the highest standards of service.
-                        </p>
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Elite Training Academy</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Every field asset completes industrial training, physical fitness checks, and crowd control techniques.</p>
                     </div>
                 </div>
-
                 <!-- Card 2 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/40 hover:shadow-[0_10px_30px_rgba(229,169,59,0.15)] group">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img3.png" alt="Technology-Driven Security Solutions" class="w-full h-52 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="img3.png" alt="Smart Security Operations Data" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 flex flex-col gap-2">
-                        <h3 class="text-white font-bold text-base sm:text-lg group-hover:text-brand-gold transition-colors">
-                            Technology-Driven Security Solutions
-                        </h3>
-                        <p class="text-brand-lightBlue/70 text-xs leading-relaxed">
-                            We combine experienced manpower with modern security technology, including GPS-enabled guard tracking, digital attendance, real-time reporting, patrol monitoring, CCTV integration, and instant incident escalation for complete operational transparency.
-                        </p>
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">Smart Tech Integration</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Using geotargeting check-ins, transparent patrols, and instant emergency dispatch telemetry.</p>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
-                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/40 hover:shadow-[0_10px_30px_rgba(229,169,59,0.15)] group">
+                <div class="bg-brand-navy border border-brand-gold/10 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brand-gold/30 group">
                     <div class="overflow-hidden">
-                        <img src="img6.png" alt="24×7 Operations & Rapid Response" class="w-full h-52 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <img src="img6.png" alt="Corporate Security Management Desk" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 flex flex-col gap-2">
-                        <h3 class="text-white font-bold text-base sm:text-lg group-hover:text-brand-gold transition-colors">
-                            24×7 Operations & Rapid Response
-                        </h3>
-                        <p class="text-brand-lightBlue/70 text-xs leading-relaxed">
-                            Our dedicated control room operates around the clock, ensuring continuous supervision, regular field inspections, immediate emergency response, and seamless communication with clients to maintain uninterrupted security at all times.
-                        </p>
+                    <div class="p-6">
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">24/7 Command Control</h3>
+                        <p class="text-brand-lightBlue/70 text-xs">Centrally managed operation hubs checking on status alerts and mobilizing quick action guards.</p>
                     </div>
                 </div>
             </div>
@@ -523,29 +537,46 @@
         </div>
     </section>
 
-    <!-- Compliance Section -->
+    <!-- Updated Compliance & Certifications Section with Specific Attached Images -->
     <section class="py-24 bg-[#020b17] scroll-reveal" id="compliances">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">VERIFICATION</span>
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">VERIFICATION & CREDENTIALS</span>
                 <h2 class="text-white font-extrabold text-2xl sm:text-3xl">Certifications & Compliances</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Cert 1 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <h3 class="text-white font-bold text-lg mb-2">ISO 9001:2015</h3>
-                    <p class="text-brand-lightBlue/60 text-xs">Standard-setting operational frameworks across commercial security administration setups.</p>
+                <!-- Cert 1: UDYAM REGISTRATION CERTIFICATE -->
+                <div class="bg-brand-navy/40 border border-white/10 rounded-xl p-6 text-center hover:border-brand-gold/40 hover:bg-brand-navy/60 hover:scale-[1.02] transition-all duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-full h-44 mb-4 rounded-lg bg-white/5 overflow-hidden flex items-center justify-center p-2 border border-brand-gold/10 group-hover:border-brand-gold/30 transition-colors">
+                        <img src="ud.png" alt="UDYAM Registration Certificate" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/400x250/0b2545/e5a93b?text=UDYAM+REGISTRATION'">
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">UDYAM REGISTRATION CERTIFICATE</h3>
+                        <p class="text-brand-lightBlue/60 text-xs">Official MSME Government Registration for Enterprise Operations.</p>
+                    </div>
                 </div>
-                <!-- Cert 2 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <h3 class="text-white font-bold text-lg mb-2">PASARA License</h3>
-                    <p class="text-brand-lightBlue/60 text-xs">Fully registered private security agency regulation compliance credentials in Maharashtra.</p>
+                
+                <!-- Cert 2: UDYAM CERTIFIED -->
+                <div class="bg-brand-navy/40 border border-white/10 rounded-xl p-6 text-center hover:border-brand-gold/40 hover:bg-brand-navy/60 hover:scale-[1.02] transition-all duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-full h-44 mb-4 rounded-lg bg-white/5 overflow-hidden flex items-center justify-center p-2 border border-brand-gold/10 group-hover:border-brand-gold/30 transition-colors">
+                        <img src="udc.png" alt="UDYAM Certified" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/400x250/0b2545/e5a93b?text=UDYAM+CERTIFIED'">
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">UDYAM CERTIFIED</h3>
+                        <p class="text-brand-lightBlue/60 text-xs">Certified compliance standards verifying government corporate metrics.</p>
+                    </div>
                 </div>
-                <!-- Cert 3 -->
-                <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                    <h3 class="text-white font-bold text-lg mb-2">ISO 45001:2018</h3>
-                    <p class="text-brand-lightBlue/60 text-xs">Guaranteed occupational risk elimination and guard personnel safety safeguards.</p>
+
+                <!-- Cert 3: PSARA LICENSE -->
+                <div class="bg-brand-navy/40 border border-white/10 rounded-xl p-6 text-center hover:border-brand-gold/40 hover:bg-brand-navy/60 hover:scale-[1.02] transition-all duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-full h-44 mb-4 rounded-lg bg-white/5 overflow-hidden flex items-center justify-center p-2 border border-brand-gold/10 group-hover:border-brand-gold/30 transition-colors">
+                        <img src="psa.png" alt="PSARA License Certificate" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/400x250/0b2545/e5a93b?text=PSARA+LICENSE'">
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-base mb-2 group-hover:text-brand-gold transition-colors">PSARA LICENSE</h3>
+                        <p class="text-brand-lightBlue/60 text-xs">Fully registered Private Security Agencies Regulation Act License in Maharashtra.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -556,7 +587,7 @@
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">STATE-WIDE REACH</span>
             <h2 class="text-white font-extrabold text-2xl sm:text-3xl mb-12">Our Maharashtra Operational Reach</h2>
-                                
+                                        
             <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-brand-gold/25 shadow-2xl group">
                 <img src="map.png" alt="India Grid Security Distribution Mapping" class="w-full h-auto block filter brightness-75 contrast-105 group-hover:scale-[1.01] transition-transform duration-700">
                 <div class="absolute bottom-4 right-4 bg-brand-darkText/90 border border-brand-gold/30 px-4 py-2 rounded-lg text-left backdrop-blur-md">
@@ -777,11 +808,11 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // 3-slide dynamic structural blueprint maps preserved untouched
+        // Dynamic structural blueprint maps for slider
         const heroStateMap = {
             '01': {
                 category: 'Tactical Guarding',
-                title: 'Next-Generation Security Solutions',
+                title: 'Maharashtra’s Most Trusted Security & Tactical Guarding Services',
                 stat: '7500+',
                 statLabel: 'Employees Deployed',
                 rightTitle: 'Protecting People, Assets & Infrastructure.',
@@ -790,7 +821,7 @@
             },
             '02': {
                 category: 'Surveillance Systems',
-                title: 'Surveillance & Remote Feeds',
+                title: 'Advanced Surveillance & Remote AI Feed Analytics',
                 stat: '24/7',
                 statLabel: 'Remote Command Watch',
                 rightTitle: 'AI Analytics & Perimeter Overwatch.',
@@ -799,7 +830,7 @@
             },
             '03': {
                 category: 'Risk Consulting',
-                title: 'Consulting & Site Sweeps',
+                title: 'Strategic Security Consulting & On-Site Sweeps',
                 stat: '100%',
                 statLabel: 'Vulnerabilities Fixed',
                 rightTitle: 'Detecting Physical Blindspots.',
@@ -831,7 +862,7 @@
                 document.getElementById('hero-bg').style.backgroundImage = `url('${state.bg}')`;
                 document.getElementById('hero-category').innerText = state.category;
                 document.getElementById('hero-title').innerText = state.title;
-                                        
+                                                        
                 const statBox = document.getElementById('hero-stat');
                 statBox.innerText = state.stat;
                 statBox.nextElementSibling.innerText = state.statLabel;
@@ -850,7 +881,7 @@
                 const formattedKey = i.toString().padStart(2, '0');
                 const tabNum = document.getElementById(`tab-num-${formattedKey}`);
                 const tabText = document.getElementById(`tab-text-${formattedKey}`);
-                                        
+                                                        
                 if (i === stateNum) {
                     tabNum.className = 'text-[10px] font-semibold text-brand-gold';
                     tabText.className = 'text-xs md:text-sm font-bold text-white';
@@ -884,7 +915,7 @@
             for (let i = 1; i <= 3; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
                 const progressBar = document.getElementById(`progress-bar-${formattedKey}`);
-                                                        
+                                                                        
                 if (formattedKey === currentActiveKey) {
                     progressBar.style.width = `${progress}%`;
                 } else {
@@ -911,7 +942,7 @@
                         const targetEl = entry.target;
                         const targetValue = parseInt(targetEl.getAttribute('data-target'), 10);
                         let startValue = 0;
-                                                                                
+                                                                                                
                         const duration = 2000; 
                         const frameRate = 1000 / 60; 
                         const totalFrames = Math.round(duration / frameRate);
@@ -955,7 +986,7 @@
                     loaderProgress = 100;
                     bar.style.width = '100%';
                     clearInterval(progressInterval);
-                                                        
+                                                                        
                     setTimeout(() => {
                         preloader.style.opacity = '0';
                         setTimeout(() => {
