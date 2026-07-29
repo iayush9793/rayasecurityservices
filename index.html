@@ -98,6 +98,15 @@
         .preloader-glow {
             animation: goldGlow 3s infinite ease-in-out;
         }
+
+        /* Methodology Line Pulse Animation */
+        @keyframes linePulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+        .animate-line-pulse {
+            animation: linePulse 3s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-[#020b17] text-brand-lightBlue font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-brand-darkText">
@@ -185,8 +194,6 @@
         
         <!-- Premium transparent overlay supporting readable text -->
         <div class="absolute inset-0 bg-gradient-to-r from-brand-darkText/90 via-brand-darkText/50 to-brand-darkText/80 z-10"></div>
-
-        <!-- Floating social links removed in compliance with image_0a5418.png request -->
 
         <!-- Dynamic Content Layout -->
         <div class="max-w-[1400px] w-full mx-auto px-4 sm:px-12 flex-grow flex items-center z-20 relative pt-10 pb-16">
@@ -340,48 +347,55 @@
         </div>
     </section>
 
-    <section class="py-24 bg-[#020b17] scroll-reveal border-t border-brand-gold/10">
+    <!-- Methodology / Security Process Section -->
+    <section class="py-24 bg-[#020b17] scroll-reveal border-t border-brand-gold/10 overflow-hidden" id="methodology">
         <div class="max-w-[1200px] mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">METHODOLOGY</span>
-                <h2 class="text-white font-extrabold text-2xl sm:text-3xl">Our Strategic Security Approach</h2>
-                <p class="text-brand-lightBlue/70 mt-4 max-w-2xl mx-auto text-xs sm:text-sm">We engineer elite custom safety perimeters designed explicitly for local Maharashtra risks and infrastructural blindspots.</p>
+                <span class="text-brand-gold font-bold text-xs sm:text-sm tracking-[0.2em] uppercase mb-2 block">OUR SECURITY PROCESS</span>
+                <h2 class="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl leading-tight">Protecting Your Business Through a Proven 4-Step Approach</h2>
+                <p class="text-brand-lightBlue/70 mt-4 max-w-3xl mx-auto text-xs sm:text-sm leading-relaxed">
+                    We provide customized security solutions through careful planning, professional deployment, and continuous monitoring—ensuring the safety of your people, property, and business operations.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <!-- Decorative connection line for desktop -->
-                <div class="hidden md:block absolute top-10 left-[12%] right-[12%] h-[1px] bg-brand-gold/20 z-0"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
+                <!-- Animated Golden Connection Line for Desktop -->
+                <div class="hidden md:block absolute top-10 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-brand-gold/20 via-brand-gold/60 to-brand-gold/20 z-0 animate-line-pulse"></div>
 
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(229,169,59,0.2)] group-hover:scale-105 transition-transform">
-                        <i data-lucide="search" class="w-6 h-6 text-brand-gold"></i>
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-20 h-20 bg-brand-navy rounded-full border border-brand-gold/50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(229,169,59,0.15)] group-hover:scale-110 group-hover:border-brand-gold group-hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-all duration-300">
+                        <i data-lucide="search" class="w-8 h-8 text-brand-gold group-hover:rotate-12 transition-transform duration-300"></i>
                     </div>
-                    <h3 class="text-white font-bold text-base mb-1">1. Audit & Analyze</h3>
-                    <p class="text-brand-lightBlue/70 text-xs">Exhaustive facility sweeps to detect blindspots and entrance failures.</p>
+                    <h3 class="text-white font-extrabold text-base sm:text-lg mb-2 group-hover:text-brand-gold transition-colors">1. Risk Assessment</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed max-w-[220px]">Identify security gaps and assess site-specific risks.</p>
                 </div>
 
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(229,169,59,0.2)] group-hover:scale-105 transition-transform">
-                        <i data-lucide="shield-alert" class="w-6 h-6 text-brand-gold"></i>
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-20 h-20 bg-brand-navy rounded-full border border-brand-gold/50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(229,169,59,0.15)] group-hover:scale-110 group-hover:border-brand-gold group-hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-all duration-300">
+                        <i data-lucide="shield" class="w-8 h-8 text-brand-gold group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h3 class="text-white font-bold text-base mb-1">2. Strategize</h3>
-                    <p class="text-brand-lightBlue/70 text-xs">Architecting precise operational orders mapping static guard patterns.</p>
+                    <h3 class="text-white font-extrabold text-base sm:text-lg mb-2 group-hover:text-brand-gold transition-colors">2. Security Planning</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed max-w-[220px]">Develop a customized protection strategy and deployment plan.</p>
                 </div>
 
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(229,169,59,0.2)] group-hover:scale-105 transition-transform">
-                        <i data-lucide="users" class="w-6 h-6 text-brand-gold"></i>
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-20 h-20 bg-brand-navy rounded-full border border-brand-gold/50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(229,169,59,0.15)] group-hover:scale-110 group-hover:border-brand-gold group-hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-all duration-300">
+                        <i data-lucide="users" class="w-8 h-8 text-brand-gold group-hover:-translate-y-1 transition-transform duration-300"></i>
                     </div>
-                    <h3 class="text-white font-bold text-base mb-1">3. Deploy</h3>
-                    <p class="text-brand-lightBlue/70 text-xs">Positioning background-vetted, highly-trained Maharashtra officers.</p>
+                    <h3 class="text-white font-extrabold text-base sm:text-lg mb-2 group-hover:text-brand-gold transition-colors">3. Professional Deployment</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed max-w-[220px]">Deploy trained, verified, and well-supervised security personnel.</p>
                 </div>
 
-                <div class="relative z-10 flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(229,169,59,0.2)] group-hover:scale-105 transition-transform">
-                        <i data-lucide="activity" class="w-6 h-6 text-brand-gold"></i>
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center text-center group cursor-pointer">
+                    <div class="w-20 h-20 bg-brand-navy rounded-full border border-brand-gold/50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(229,169,59,0.15)] group-hover:scale-110 group-hover:border-brand-gold group-hover:shadow-[0_0_30px_rgba(229,169,59,0.4)] transition-all duration-300">
+                        <i data-lucide="activity" class="w-8 h-8 text-brand-gold group-hover:pulse transition-transform duration-300"></i>
                     </div>
-                    <h3 class="text-white font-bold text-base mb-1">4. Monitor</h3>
-                    <p class="text-brand-lightBlue/70 text-xs">Persistent tracking from central Nagpur and Pune dispatch hubs.</p>
+                    <h3 class="text-white font-extrabold text-base sm:text-lg mb-2 group-hover:text-brand-gold transition-colors">4. Continuous Monitoring</h3>
+                    <p class="text-brand-lightBlue/70 text-xs leading-relaxed max-w-[220px]">Regular audits, supervisor visits, and performance reviews to maintain the highest standards.</p>
                 </div>
             </div>
         </div>
@@ -489,8 +503,6 @@
         </div>
     </section>
 
-    <!-- Brands / Collaborations section removed in compliance with request -->
-
     <!-- Compliance Section -->
     <section class="py-24 bg-[#020b17] scroll-reveal" id="compliances">
         <div class="max-w-[1200px] mx-auto px-6">
@@ -502,19 +514,16 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Cert 1 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                
                     <h3 class="text-white font-bold text-lg mb-2">ISO 9001:2015</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Standard-setting operational frameworks across commercial security administration setups.</p>
                 </div>
                 <!-- Cert 2 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                   
                     <h3 class="text-white font-bold text-lg mb-2">PASARA License</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Fully registered private security agency regulation compliance credentials in Maharashtra.</p>
                 </div>
                 <!-- Cert 3 -->
                 <div class="bg-brand-navy/30 border border-white/5 rounded-xl p-6 text-center hover:border-brand-gold/30 hover:bg-brand-navy/50 hover:scale-[1.02] transition-all duration-300">
-                   
                     <h3 class="text-white font-bold text-lg mb-2">ISO 45001:2018</h3>
                     <p class="text-brand-lightBlue/60 text-xs">Guaranteed occupational risk elimination and guard personnel safety safeguards.</p>
                 </div>
@@ -855,7 +864,7 @@
             for (let i = 1; i <= 3; i++) {
                 const formattedKey = i.toString().padStart(2, '0');
                 const progressBar = document.getElementById(`progress-bar-${formattedKey}`);
-                                                
+                                                        
                 if (formattedKey === currentActiveKey) {
                     progressBar.style.width = `${progress}%`;
                 } else {
@@ -882,7 +891,7 @@
                         const targetEl = entry.target;
                         const targetValue = parseInt(targetEl.getAttribute('data-target'), 10);
                         let startValue = 0;
-                                                                
+                                                                                
                         const duration = 2000; 
                         const frameRate = 1000 / 60; 
                         const totalFrames = Math.round(duration / frameRate);
@@ -926,7 +935,7 @@
                     loaderProgress = 100;
                     bar.style.width = '100%';
                     clearInterval(progressInterval);
-                                                
+                                                        
                     setTimeout(() => {
                         preloader.style.opacity = '0';
                         setTimeout(() => {
