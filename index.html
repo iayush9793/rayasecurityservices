@@ -830,12 +830,12 @@
         </div>
     </section>
 
-  <!-- Footer / Contact Hub -->
+<!-- Footer / Contact Hub -->
     <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20" id="contact">
-        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-16">
             
-            <!-- Brand Column -->
-            <div class="flex flex-col gap-6">
+            <!-- Brand & Contact Column -->
+            <div class="flex flex-col gap-6 lg:col-span-2">
                 <div class="flex items-center gap-3">
                     <img src="logo.png" alt="Raya Footer Logo" class="h-10 w-auto object-contain bg-white/10 p-1 rounded" onerror="this.style.display='none'">
                     <div class="flex flex-col">
@@ -843,7 +843,7 @@
                         <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
                     </div>
                 </div>
-                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">
+                <p class="text-brand-lightBlue/70 text-sm leading-relaxed max-w-sm">
                     Premium modern safety architecture and verified personnel solutions serving corporate complexes, logistics grids, and event venues across Maharashtra.
                 </p>
                 <div class="flex flex-col gap-2">
@@ -854,18 +854,38 @@
                         <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp: +91 9284022701
                     </a>
                 </div>
+
+                <!-- Social Media Channels -->
+                <div class="flex flex-col gap-3 mt-2">
+                    <span class="text-xs uppercase font-bold text-white tracking-wider">Follow Our Command Desk</span>
+                    <div class="flex items-center gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-brand-navy border border-brand-gold/20 flex items-center justify-center text-brand-lightBlue hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-brand-navy border border-brand-gold/20 flex items-center justify-center text-brand-lightBlue hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-brand-navy border border-brand-gold/20 flex items-center justify-center text-brand-lightBlue hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-brand-navy border border-brand-gold/20 flex items-center justify-center text-brand-lightBlue hover:text-brand-gold hover:border-brand-gold transition-all">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <!-- Operations Links Column -->
+            <!-- Quick Links Column -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
-                    Core Operations
+                    Quick Links
                 </h4>
                 <ul class="flex flex-col gap-3 text-sm">
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Manned Guard Services</a></li>
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Event Logistics Security</a></li>
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Corporate Security Drills</a></li>
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Vulnerability Audit Sweeps</a></li>
+                    <li><a href="index.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="about.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">About Us</a></li>
+                    <li><a href="why-us.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Why Choose Us</a></li>
+                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Our Services</a></li>
+                    <li><a href="contact.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -892,32 +912,42 @@
                 </div>
             </div>
 
-            <!-- Contact Coordinates Column -->
+            <!-- Direct Contact Desk Column -->
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
                     Direct Contact Desk
                 </h4>
                 <div class="flex flex-col gap-3 text-sm">
                     <a href="mailto:info@rayasecurityservices.com" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
-                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
-                        <span class="text-xs group-hover:underline">info@rayasecurityservices.com</span>
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span class="text-xs group-hover:underline break-all">info@rayasecurityservices.com</span>
                     </a>
                     <a href="mailto:rayasecurityservices7860@gmail.com" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
-                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
-                        <span class="text-xs group-hover:underline">rayasecurityservices7860@gmail.com</span>
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
+                        <span class="text-xs group-hover:underline break-all">rayasecurityservices7860@gmail.com</span>
                     </a>
                     <a href="https://www.rayasecurityservices.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
-                        <i data-lucide="globe" class="w-4 h-4 text-brand-gold"></i>
+                        <i data-lucide="globe" class="w-4 h-4 text-brand-gold flex-shrink-0"></i>
                         <span class="text-xs group-hover:underline">www.rayasecurityservices.com</span>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="border-t border-white/5 py-8 text-center text-xs text-brand-lightBlue/50 bg-[#020b17]">
-            <p>&copy; 2026 Raya Security Services Pvt. Ltd. All Rights Reserved. | Your Safety, Our Priority.</p>
+
+        <!-- Copyright & Legal Links Ribbon -->
+        <div class="border-t border-white/10 py-6 bg-[#01060e]">
+            <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-lightBlue/60">
+                <p>&copy; 2026 Raya Security Services Pvt. Ltd. All Rights Reserved. | Your Safety, Our Priority.</p>
+                <div class="flex items-center gap-6 font-medium">
+                    <a href="privacy-policy.html" class="hover:text-brand-gold transition-colors">Privacy Policy</a>
+                    <span class="text-white/20">|</span>
+                    <a href="terms.html" class="hover:text-brand-gold transition-colors">Terms of Service</a>
+                    <span class="text-white/20">|</span>
+                    <a href="psara-compliance.html" class="hover:text-brand-gold transition-colors">PSARA Compliance</a>
+                </div>
+            </div>
         </div>
     </footer>
-
     <!-- Scripts Area -->
     <script>
         // Initialize Lucide Icons
