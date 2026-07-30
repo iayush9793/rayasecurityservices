@@ -153,26 +153,91 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20">
-        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+<!-- Footer / Contact Hub -->
+    <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20" id="contact">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+            
+            <!-- Brand Column -->
             <div class="flex flex-col gap-6">
                 <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Raya Footer Logo" class="h-10 w-auto object-contain bg-white/10 p-1 rounded" onerror="this.style.display='none'">
                     <div class="flex flex-col">
-                        <span class="text-white font-extrabold text-lg tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                        <span class="text-white font-extrabold text-base tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                        <span class="text-[8px] text-brand-gold uppercase tracking-[0.25em] font-semibold leading-none">SERVICES PVT. LTD.</span>
                     </div>
                 </div>
-                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">India's premium architectural safety consultants.</p>
+                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">
+                    Premium modern safety architecture and verified personnel solutions serving corporate complexes, logistics grids, and event venues across Maharashtra.
+                </p>
+                <div class="flex flex-col gap-2">
+                    <a href="tel:+918624998789" class="text-brand-gold font-extrabold text-sm sm:text-base flex items-center gap-2 hover:underline transition-all">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#25D366]"></i> Call Now: +91 8624998789
+                    </a>
+                    <a href="https://wa.me/919284022701" target="_blank" rel="noopener noreferrer" class="text-[#25D366] font-extrabold text-sm sm:text-base flex items-center gap-2 hover:underline transition-all">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp: +91 9284022701
+                    </a>
+                </div>
             </div>
+
+            <!-- Operations Links Column -->
             <div class="flex flex-col gap-6">
-                <h4 class="text-white font-bold text-sm uppercase tracking-widest relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-brand-gold">Operations</h4>
-                <ul class="flex flex-col gap-4 text-sm font-medium">
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold">Manned Guarding</a></li>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Core Operations
+                </h4>
+                <ul class="flex flex-col gap-3 text-sm">
+                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Manned Guard Services</a></li>
+                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Event Logistics Security</a></li>
+                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Corporate Security Drills</a></li>
+                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Vulnerability Audit Sweeps</a></li>
                 </ul>
             </div>
+
+            <!-- Branch Details Column -->
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Branch Locations
+                </h4>
+                <div class="flex flex-col gap-4 text-xs leading-relaxed">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-white block text-sm mb-0.5">Nagpur Head Office:</strong>
+                            <span class="text-brand-lightBlue/70">B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-white block text-sm mb-0.5">Pune Branch:</strong>
+                            <span class="text-brand-lightBlue/70">Shop No. 17 Ellora Shopee Complex, Indrayani Nagar, Bhosari, Pune - 411026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Coordinates Column -->
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-brand-gold">
+                    Direct Contact Desk
+                </h4>
+                <div class="flex flex-col gap-3 text-sm">
+                    <a href="mailto:info@rayasecurityservices.com" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs group-hover:underline">info@rayasecurityservices.com</span>
+                    </a>
+                    <a href="mailto:rayasecurityservices7860@gmail.com" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs group-hover:underline">rayasecurityservices7860@gmail.com</span>
+                    </a>
+                    <a href="https://www.rayasecurityservices.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-brand-lightBlue/80 hover:text-brand-gold transition-colors group">
+                        <i data-lucide="globe" class="w-4 h-4 text-brand-gold"></i>
+                        <span class="text-xs group-hover:underline">www.rayasecurityservices.com</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="border-t border-brand-gold/20 py-6 text-center text-xs font-bold tracking-widest text-brand-lightBlue/50 bg-[#01060e]">
-            <p>&copy; 2026 Raya Security Services</p>
+        <div class="border-t border-white/5 py-8 text-center text-xs text-brand-lightBlue/50 bg-[#020b17]">
+            <p>&copy; 2026 Raya Security Services Pvt. Ltd. All Rights Reserved. | Your Safety, Our Priority.</p>
         </div>
     </footer>
 
