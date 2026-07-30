@@ -56,7 +56,7 @@
                 <a href="contact.html" class="text-brand-navy/80 hover:text-brand-navy transition-colors">Contact Us</a>
             </nav>
             <div class="flex items-center gap-3">
-                <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-gold shadow-md">Connect ↗</a>
+                <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-gold hover:text-brand-darkText transition-all shadow-md">Connect ↗</a>
                 <button id="hamburger-btn" class="lg:hidden w-10 h-10 rounded-lg border border-brand-navy/10 flex items-center justify-center text-brand-navy"><i data-lucide="menu" id="hamburger-icon" class="w-5 h-5"></i></button>
             </div>
         </div>
@@ -77,88 +77,280 @@
     <div class="bg-brand-navy py-16 border-b border-brand-gold/15">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
             <h1 class="text-white font-extrabold text-4xl sm:text-5xl uppercase tracking-tight">Our Services</h1>
-            <p class="text-brand-gold font-bold text-sm mt-4 uppercase tracking-widest">Specialized Protection Sectors</p>
+            <p class="text-brand-gold font-bold text-sm mt-4 uppercase tracking-widest">Comprehensive Tactical & Electronic Protection Solutions</p>
         </div>
     </div>
 
-    <!-- Services Grid Section -->
-    <section class="py-24 bg-[#020b17] scroll-reveal">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
+    <!-- Quick Jump Navigation -->
+    <div class="sticky top-20 z-30 bg-[#020b17]/90 backdrop-blur-md border-b border-brand-gold/20 py-4">
+        <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-start sm:justify-center gap-3 overflow-x-auto text-xs font-bold uppercase tracking-wider no-scrollbar">
+            <a href="#manned-guarding" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">Manned Guarding</a>
+            <a href="#event-security" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">Event Security</a>
+            <a href="#corporate-details" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">Corporate Guarding</a>
+            <a href="#cctv-analytics" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">CCTV Telemetry</a>
+            <a href="#cash-in-transit" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">Cash-In-Transit</a>
+            <a href="#vulnerability-audits" class="px-4 py-2 bg-brand-navy/80 border border-brand-gold/20 rounded-full hover:bg-brand-gold hover:text-brand-darkText transition-all whitespace-nowrap">Audits & Risk</a>
+        </div>
+    </div>
+
+    <!-- DETAILED SERVICE SECTIONS -->
+    <div class="space-y-16 py-16">
+
+        <!-- Service Section 1: Manned Guarding -->
+        <section id="manned-guarding" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
                         <i data-lucide="shield" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Manned Guarding</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Formidable static presence managing access gates, preventing unauthorized entry, and securing heavy industrial complexes.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
-                        <i data-lucide="user-check" class="w-7 h-7"></i>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 01 // Industrial & Manned Defense</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Static Manned Guarding</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        Formidable physical deterrence designed for heavy industrial sites, warehousing grids, residential complexes, and enterprise perimeters. Our static guards undergo rigorous paramilitary drill protocols, physical agility tests, and tactical de-escalation training.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Strict Gate Access & Material Log Management</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> 24/7 Patrol Scheduling with Digital Timestamp Logs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Armed & Unarmed Tactical Units Available</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20Static%20Manned%20Guarding%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Request Site Audit
+                        </a>
                     </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Event Security</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Precision crowd control mechanics, VIP corridor management, and absolute perimeter defense for high-profile gatherings.</p>
                 </div>
-                <!-- Service 3 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
-                        <i data-lucide="building" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Corporate Details</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Sleek, sharply dressed security ambassadors providing seamless lobby management and corporate asset protection.</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
-                        <i data-lucide="camera" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-white font-bold text-xl mb-3">CCTV Analytics</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Off-site electronic auditing. We monitor live feeds to identify blind-spot breaches before physical infiltration occurs.</p>
-                </div>
-                <!-- Service 5 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
-                        <i data-lucide="truck" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Cash-In-Transit</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Heavily armored, armed convoy units designed for the zero-risk transportation of banking reserves and high-value cargo.</p>
-                </div>
-                <!-- Service 6 -->
-                <div class="bg-brand-navy/80 border border-brand-gold/10 rounded-xl p-8 hover:border-brand-gold/40 hover:bg-brand-slate hover:-translate-y-1 transition-all duration-300 shadow-xl group">
-                    <div class="w-14 h-14 rounded-lg bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-darkText transition-colors duration-300">
-                        <i data-lucide="target" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-white font-bold text-xl mb-3">Vulnerability Audits</h3>
-                    <p class="text-brand-lightBlue/70 text-sm leading-relaxed">Exhaustive facility sweeps to isolate weak door nodes, fencing gaps, and communication failures in active client sites.</p>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-slate rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img1.png" alt="Static Manned Guarding" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Service Section 2: Event Security -->
+        <section id="event-security" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="relative group order-2 lg:order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-slate to-brand-gold rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img2.png" alt="Event Security" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                        <i data-lucide="user-check" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 02 // Rapid Deployment & Crowd Control</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Event Security & Bouncer Detail</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        High-capacity crowd control mechanics, VIP escort corridors, and robust entry-point screening for corporate galas, stadium sports, conventions, and high-profile private gatherings. We eliminate bottleneck vulnerabilities while maintaining absolute guest safety.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Metal Detection & Rapid Bag Scanning Stations</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> VIP Protection Units & Close Proximity Escorts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Emergency Evacuation & Anti-Stampede Response</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20Event%20Security%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Book Event Coverage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section 3: Corporate Details -->
+        <section id="corporate-details" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                        <i data-lucide="building" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 03 // Executive & Front Desk Management</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Corporate Security & Concierge</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        Sleek, sharply dressed security ambassadors tailored specifically for IT parks, financial institutions, and corporate headquarters. Seamlessly combining professional front-desk hospitality with vigilant visitor credentialing and asset security.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Integrated Digital Visitor Management Systems</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Executive Floor Protection & Keycard Control</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Fire Safety & First-Aid Certified Personnel</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20Corporate%20Security%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Schedule Consultation
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-slate rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img3.png" alt="Corporate Security Guarding" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section 4: CCTV Analytics & Telemetry -->
+        <section id="cctv-analytics" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="relative group order-2 lg:order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-slate to-brand-gold rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img4.png" alt="CCTV Telemetry Monitoring" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                        <i data-lucide="camera" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 04 // Off-Site Digital Telemetry</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">CCTV Analytics & Monitoring</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        Eliminate security blind spots through off-site real-time video surveillance. Our control center uses smart motion tracking, perimeter breach alerts, and direct line dispatch to intercept unauthorized movement before physical infiltration occurs.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Live Feeds Integrated with Quick Response Teams (QRT)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Automated Motion & Thermal Anomaly Warnings</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Archived Evidence Management & Incident Audit Reports</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20CCTV%20Analytics%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Setup Telemetry Audit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section 5: Cash-In-Transit -->
+        <section id="cash-in-transit" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                        <i data-lucide="truck" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 05 // High-Value Vault Transport</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Cash-In-Transit (CIT) Logistics</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        Armored transit solutions for financial institutions, jeweler networks, and corporate treasury dispatches. Every convoy is outfitted with GPS tracking, armed guards, vault locking mechanisms, and continuous satellite monitoring.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Reinforced Armored Transport Vehicles</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Specially Trained Armed Protection Detail</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Live Telematics & Geo-Fenced Route Tracking</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20Cash-In-Transit%20(CIT)%20Logistics." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Request Route Evaluation
+                        </a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-slate rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img5.png" alt="Cash In Transit Security Vehicle" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section 6: Vulnerability Audits -->
+        <section id="vulnerability-audits" class="scroll-reveal max-w-[1200px] mx-auto px-6 scroll-mt-36">
+            <div class="bg-brand-navy/50 border border-brand-gold/20 rounded-2xl p-8 lg:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="relative group order-2 lg:order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-slate to-brand-gold rounded-2xl blur opacity-30 group-hover:opacity-50 transition-all"></div>
+                    <img src="img6.png" alt="Vulnerability Risk Assessment" class="relative rounded-xl border border-brand-gold/20 object-cover w-full h-80 sm:h-[380px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                        <i data-lucide="target" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-gold font-bold text-xs tracking-widest uppercase block">Sector 06 // Risk Engineering & Compliance</span>
+                    <h2 class="text-white font-extrabold text-3xl sm:text-4xl">Vulnerability & Risk Audits</h2>
+                    <p class="text-brand-lightBlue/80 text-sm md:text-base leading-relaxed">
+                        Thorough architectural security audits. Experienced defense auditors conduct physical stress tests, review entry point configurations, test alarm responses, and deliver actionable threat minimization blueprints.
+                    </p>
+                    <ul class="space-y-2 text-sm text-brand-lightBlue/90">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Exhaustive Physical Perimeter Breach Vulnerability Inspections</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Standard Operating Procedure (SOP) Optimization</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold"></i> Compliance Audit Reports aligned with PASARA & ISO Standards</li>
+                    </ul>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919284022701?text=Hello,%20I%20am%20interested%20in%20Vulnerability%20and%20Risk%20Audits." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-darkText font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-goldHover transition-colors shadow-lg">
+                            <i data-lucide="message-square" class="w-4 h-4"></i> Enquire via WhatsApp
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border border-brand-gold/40 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider hover:bg-brand-navy transition-colors">
+                            Book Facility Audit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#020b17] border-t border-brand-gold/20 pt-20 relative z-20">
         <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
             <div class="flex flex-col gap-6">
                 <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Raya Footer Logo" class="h-12 w-auto object-contain bg-white/5 p-1.5 rounded border border-white/10" onerror="this.style.display='none'">
                     <div class="flex flex-col">
                         <span class="text-white font-extrabold text-lg tracking-wide uppercase leading-tight">RAYA SECURITY</span>
+                        <span class="text-[9px] text-brand-gold uppercase tracking-[0.3em] font-bold leading-none">SERVICES PVT. LTD.</span>
                     </div>
                 </div>
-                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">India's premium architectural safety consultants.</p>
+                <p class="text-brand-lightBlue/70 text-sm leading-relaxed">India's premium architectural safety consultants, deploying elite personnel to secure massive logistics grids and corporate complexes.</p>
             </div>
             <div class="flex flex-col gap-6">
                 <h4 class="text-white font-bold text-sm uppercase tracking-widest relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-brand-gold">Operations</h4>
                 <ul class="flex flex-col gap-4 text-sm font-medium">
-                    <li><a href="services.html" class="text-brand-lightBlue/80 hover:text-brand-gold">Manned Guarding</a></li>
+                    <li><a href="#manned-guarding" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Manned Guarding</a></li>
+                    <li><a href="#event-security" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Event Logistics</a></li>
+                    <li><a href="#vulnerability-audits" class="text-brand-lightBlue/80 hover:text-brand-gold transition-colors">Vulnerability Audits</a></li>
                 </ul>
             </div>
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-brand-gold">Deployment Bases</h4>
+                <div class="flex flex-col gap-5 text-sm leading-relaxed">
+                    <div class="flex items-start gap-3 bg-white/5 p-3 rounded-lg border border-white/10">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="text-white block mb-0.5">Nagpur Headquarters:</strong>
+                            <span class="text-brand-lightBlue/70 text-xs">B/23 Ravi Renu Apartment, Dhantoli, Nagpur - 440012</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-6">
+                <h4 class="text-white font-bold text-sm uppercase tracking-widest relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-[2px] after:bg-brand-gold">Electronic Dispatch</h4>
+                <div class="flex flex-col gap-4 text-sm">
+                    <div class="flex items-center gap-3 text-brand-lightBlue/80">
+                        <div class="bg-brand-navy p-2 rounded border border-white/10"><i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i></div>
+                        <span class="text-xs font-medium">info@rayasecurityservices.com</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="border-t border-brand-gold/20 py-6 text-center text-xs font-bold tracking-widest text-brand-lightBlue/50 bg-[#01060e]">
-            <p>&copy; 2026 Raya Security Services</p>
+        <div class="border-t border-brand-gold/20 py-6 text-center text-xs font-bold tracking-widest uppercase text-brand-lightBlue/50 bg-[#01060e]">
+            <p>&copy; 2026 Raya Security Services Pvt. Ltd. | Tactical Protection Assured.</p>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/919284022701" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 group" aria-label="Contact Us on WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7 fill-current"></i>
+        <span class="absolute right-16 bg-[#05162e] text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-brand-gold/30 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+            Chat on WhatsApp
+        </span>
+    </a>
 
     <script>
         lucide.createIcons();
